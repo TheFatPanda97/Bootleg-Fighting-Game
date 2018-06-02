@@ -336,9 +336,6 @@ public class Player extends JLabel {
     //sets all the keybinders for player 1
     void setKeyBindingP1(JComponent RootPane) {
 
-        //TODO: make the exit button into gui, not escape
-        addKeyBinder(RootPane, KeyEvent.VK_ESCAPE, "P1Exit", e -> System.exit(0));
-
         //sets the movement block
         addKeyBinder(RootPane, KeyEvent.VK_S, "P1Block", e -> PBlock(), e -> RBlock());
 

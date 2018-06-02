@@ -6,6 +6,7 @@ public class Read_Write {
 
     String highFileName = "High Score.txt";
     String DLCFileName = "DLC.txt";
+    String KakaFileName = "KakaData.txt";
     boolean DLC = false;
     int currentHighScore = 0;
     Stack stackInfo = new Stack();
@@ -40,8 +41,6 @@ public class Read_Write {
 
                 stackInfo.push(name, score);
 
-//                allInfo.add(name, score);
-
             }
 
 
@@ -64,6 +63,38 @@ public class Read_Write {
 
         }
 
+
+    }
+
+    ArrayList<Integer> readKakaData() {
+
+        ArrayList<Integer> tempArray = new ArrayList<>();
+        try {
+
+            Scanner readData = new Scanner(new File(System.getProperty("user.dir") + "/src/" + KakaFileName));
+            System.out.print("Files found...");
+
+            while (readData.hasNext()) {
+
+                tempArray.add(Integer.parseInt(readData.nextLine()));
+
+            }
+
+            selectionSort(tempArray);
+
+
+            readData.close();
+            System.out.println("File read successfully!!");
+
+
+
+        } catch (FileNotFoundException e) {
+
+            System.out.println("Could not find file!!");
+
+        }
+
+        return tempArray;
 
     }
 
@@ -140,6 +171,32 @@ public class Read_Write {
 
         return false;
 
+
+    }
+
+    void selectionSort(ArrayList<Integer> arr) {
+
+        for (int i = 0; i < arr.size() - 1; i++) {
+
+            int index = i;
+            for (int j = i + 1; j < arr.size(); j++) {
+
+                if (arr.get(j) < arr.get(index)) {
+                    index = j;
+                }
+
+            }
+
+            switchNums(i, index, arr);
+        }
+
+    }
+
+    void switchNums(int i, int index, ArrayList<Integer> a) {
+
+        int temp = a.get(i);
+        a.set(i,a.get(index));
+        a.set(index, temp);
 
     }
 

@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
@@ -12,6 +13,8 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CharacterSelect extends AllWindows {
 
@@ -50,8 +53,8 @@ public class CharacterSelect extends AllWindows {
     ImageIcon[] P1allCharacter = new ImageIcon[3];
     ImageIcon[] P2allCharacter = new ImageIcon[3];
 
-    ImageIcon[][] allImg = new ImageIcon[4][6];
-
+    ImageIcon[][] allKakaImg = new ImageIcon[4][6];
+    ArrayList<Integer> allKakaData = new ArrayList<>();
 
     JLabel lblHighlight = new JLabel();
     JLabel lblKaka = new JLabel();
@@ -631,7 +634,7 @@ public class CharacterSelect extends AllWindows {
 
         } else if (firstDownload) {
 
-            Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allImg);
+            Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
             return true;
 
         } else if (P1At == 1 || P2At == 1) {
@@ -647,7 +650,6 @@ public class CharacterSelect extends AllWindows {
                 } else if (code.equals("SHAWN SO SMART O GOD")) {
 
                     JOptionPane.showMessageDialog(null, "Start Download");
-
 
                     try {
 
@@ -665,56 +667,67 @@ public class CharacterSelect extends AllWindows {
                         URL LKick = new URL("https://i.imgur.com/musMFut.gif");
                         URL LTele = new URL("https://i.imgur.com/D8ZlWW5.gif");
                         URL LSuper = new URL("https://i.imgur.com/m4Qs2VM.gif");
+                        URL KakaData = new URL("https://pastebin.com/raw/WWRjgPyq");
 
-                        JOptionPane.showMessageDialog(null, "found the images...");
+                        JOptionPane.showMessageDialog(null, "found the data...");
+
+                        Scanner read = new Scanner(new InputStreamReader(KakaData.openStream()));
+
+                        while (read.hasNext()) {
+
+                            allKakaData.add(Integer.parseInt(read.nextLine()));
+
+                        }
+
+                        selectionSort(allKakaData);
 
                         //setting pics for the first time download
-                        allImg[0][0] = RKakaStat;
-                        allImg[0][1] = new ImageIcon(RJump);
-                        allImg[1][0] = new ImageIcon(LWalk);
-                        allImg[1][1] = new ImageIcon(RBlock);
-                        allImg[1][2] = new ImageIcon(RWalk);
-                        allImg[0][3] = new ImageIcon(RSuper);
-                        allImg[1][3] = new ImageIcon(RPunch);
-                        allImg[1][4] = new ImageIcon(RKick);
-                        allImg[1][5] = new ImageIcon(RTele);
+                        allKakaImg[0][0] = RKakaStat;
+                        allKakaImg[0][1] = new ImageIcon(RJump);
+                        allKakaImg[1][0] = new ImageIcon(LWalk);
+                        allKakaImg[1][1] = new ImageIcon(RBlock);
+                        allKakaImg[1][2] = new ImageIcon(RWalk);
+                        allKakaImg[0][3] = new ImageIcon(RSuper);
+                        allKakaImg[1][3] = new ImageIcon(RPunch);
+                        allKakaImg[1][4] = new ImageIcon(RKick);
+                        allKakaImg[1][5] = new ImageIcon(RTele);
 
                         JOptionPane.showMessageDialog(null, "so very close my friend");
 
-                        allImg[2][0] = LKakaStat;
-                        allImg[2][1] = new ImageIcon(LJump);
-                        allImg[3][0] = new ImageIcon(LWalk);
-                        allImg[3][1] = new ImageIcon(LBlock);
-                        allImg[3][2] = new ImageIcon(RWalk);
-                        allImg[2][3] = new ImageIcon(LSuper);
-                        allImg[3][3] = new ImageIcon(LPunch);
-                        allImg[3][4] = new ImageIcon(LKick);
-                        allImg[3][5] = new ImageIcon(LTele);
+                        allKakaImg[2][0] = LKakaStat;
+                        allKakaImg[2][1] = new ImageIcon(LJump);
+                        allKakaImg[3][0] = new ImageIcon(LWalk);
+                        allKakaImg[3][1] = new ImageIcon(LBlock);
+                        allKakaImg[3][2] = new ImageIcon(RWalk);
+                        allKakaImg[2][3] = new ImageIcon(LSuper);
+                        allKakaImg[3][3] = new ImageIcon(LPunch);
+                        allKakaImg[3][4] = new ImageIcon(LKick);
+                        allKakaImg[3][5] = new ImageIcon(LTele);
 
-                        JOptionPane.showMessageDialog(null, "so close I can touch it");
+                        JOptionPane.showMessageDialog(null, "I can almost touch it");
 
                         //storing the images so you don't have to internet to play the DLC the second time
-                        Files.copy(RWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaWalk.gif"));
-                        Files.copy(RJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaJump.gif"));
-                        Files.copy(RBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaBlock.gif"));
-                        Files.copy(RPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaPunch.gif"));
-                        Files.copy(RKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaKick.gif"));
-                        Files.copy(RTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaTeleport.gif"));
-                        Files.copy(RSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/RKakaSuper.gif"));
-                        Files.copy(LWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaWalk.gif"));
-                        Files.copy(LJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaJump.gif"));
-                        Files.copy(LBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaBlock.gif"));
-                        Files.copy(LPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaPunch.gif"));
-                        Files.copy(LKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaKick.gif"));
-                        Files.copy(LTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaTeleport.gif"));
-                        Files.copy(LSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/com/company/LKakaSuper.gif"));
-
-                        JOptionPane.showMessageDialog(null, "and the DLC is downloaded, enjoy being overpowered :)");
+                        Files.copy(RWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaWalk.gif"));
+                        Files.copy(RJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaJump.gif"));
+                        Files.copy(RBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaBlock.gif"));
+                        Files.copy(RPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaPunch.gif"));
+                        Files.copy(RKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaKick.gif"));
+                        Files.copy(RTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaTeleport.gif"));
+                        Files.copy(RSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaSuper.gif"));
+                        Files.copy(LWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaWalk.gif"));
+                        Files.copy(LJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaJump.gif"));
+                        Files.copy(LBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaBlock.gif"));
+                        Files.copy(LPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaPunch.gif"));
+                        Files.copy(LKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaKick.gif"));
+                        Files.copy(LTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaTeleport.gif"));
+                        Files.copy(LSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaSuper.gif"));
+                        Files.copy(KakaData.openStream(), Paths.get(System.getProperty("user.dir") + "/src/KakaData.txt"));
 
                         firstDownload = true;
-                        Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allImg);
+                        Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
 
-                        System.out.println("successful");
+                        JOptionPane.showMessageDialog(null, "and the DLC is downloaded. War Or Revenge, Sad Happiness Is Possible...");
+
                         return true;
 
                     } catch (UnknownHostException e) {
@@ -786,6 +799,32 @@ public class CharacterSelect extends AllWindows {
 
             return false;
         }
+
+    }
+
+    void selectionSort(ArrayList<Integer> arr) {
+
+        for (int i = 0; i < arr.size() - 1; i++) {
+
+            int index = i;
+            for (int j = i + 1; j < arr.size(); j++) {
+
+                if (arr.get(j) < arr.get(index)) {
+                    index = j;
+                }
+
+            }
+
+            switchNums(i, index, arr);
+        }
+
+    }
+
+    void switchNums(int i, int index, ArrayList<Integer> a) {
+
+        int temp = a.get(i);
+        a.set(i,a.get(index));
+        a.set(index, temp);
 
     }
 

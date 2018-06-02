@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 
 public class FightClub extends AllWindows {
@@ -275,7 +276,7 @@ public class FightClub extends AllWindows {
         directionTimer.start();
     }
 
-    void setPLayer(int P1At, int P2At, String P1N, String P2N, ImageIcon[][] p) {
+    void setPLayer(int P1At, int P2At, String P1N, String P2N, ImageIcon[][] p, ArrayList<Integer> d) {
 
         lblRealCount.setText(count + "");
         P1Name = P1N;
@@ -287,7 +288,7 @@ public class FightClub extends AllWindows {
 
         } else if (P1At == 1) {
 
-            P1 = new Kakashi(getRootPane(), 1, p);
+            P1 = new Kakashi(getRootPane(), 1, p, d);
 
         } else if (P1At == 2) {
 
@@ -301,7 +302,7 @@ public class FightClub extends AllWindows {
 
         } else if (P2At == 1) {
 
-            P2 = new Kakashi(getRootPane(), 2, p);
+            P2 = new Kakashi(getRootPane(), 2, p, d);
 
         } else if (P2At == 2) {
 

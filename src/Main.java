@@ -3,13 +3,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.nio.charset.Charset;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -21,7 +25,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-
 
 //
 //        JLabel lblMapArea = new JLabel();

@@ -1,12 +1,17 @@
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.nio.charset.Charset;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Kakashi extends Player {
 
@@ -32,19 +37,23 @@ public class Kakashi extends Player {
 
     public Kakashi(JComponent RootPane, int WPN) {
 
+        ArrayList<Integer> allkakaData = Main.rw.readKakaData();
+
+
         whichPlayerNum = WPN;
 
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
-        setMoveSpeed(13);
-        setProjectSpeed(30);
+        setMoveSpeed(allkakaData.get(0));
+        setProjectSpeed(allkakaData.get(3));
 
 
         stopAct(10, e -> {
 
+
             //punch
-            if (allBoolMove[1][3] && count == 18) {
+            if (allBoolMove[1][3] && count == allkakaData.get(1)) {
 
                 if (facingLeft()) {
 
@@ -56,14 +65,14 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //kick
-            } else if (allBoolMove[1][4] && count == 18) {
+            } else if (allBoolMove[1][4] && count == allkakaData.get(1)) {
 
                 stopMoving();
                 reset(1, 4);
                 stopTimer.stop();
 
                 //shoot
-            } else if (allBoolMove[1][5] && count == 25) {
+            } else if (allBoolMove[1][5] && count == allkakaData.get(2)) {
 
                 teleport();
                 stopMoving();
@@ -71,14 +80,14 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //super
-            } else if (allBoolMove[0][3] && count == 140) {
+            } else if (allBoolMove[0][3] && count == allkakaData.get(4)) {
 
                 superFacing = facing;
                 teleport();
                 chidori = true;
 
                 //super continued
-            } else if (allBoolMove[0][3] && count == 210) {
+            } else if (allBoolMove[0][3] && count == allkakaData.get(5)) {
 
                 chidori = false;
                 stopMoving();
@@ -102,7 +111,7 @@ public class Kakashi extends Player {
 
             }
 
-            if (allBoolMove[0][3] && count >= 140) {
+            if (allBoolMove[0][3] && count >= allkakaData.get(4)) {
 
                 if (superFacing == 0) {
 
@@ -126,7 +135,7 @@ public class Kakashi extends Player {
 
     }
 
-    public Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p) {
+    public Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
 
         whichPlayerNum = WPN;
 
@@ -136,11 +145,11 @@ public class Kakashi extends Player {
         setMoveSpeed(13);
         setProjectSpeed(30);
 
-
         stopAct(10, e -> {
 
+
             //punch
-            if (allBoolMove[1][3] && count == 18) {
+            if (allBoolMove[1][3] && count == d.get(1)) {
 
                 if (facingLeft()) {
 
@@ -152,14 +161,14 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //kick
-            } else if (allBoolMove[1][4] && count == 18) {
+            } else if (allBoolMove[1][4] && count == d.get(1)) {
 
                 stopMoving();
                 reset(1, 4);
                 stopTimer.stop();
 
                 //shoot
-            } else if (allBoolMove[1][5] && count == 25) {
+            } else if (allBoolMove[1][5] && count == d.get(2)) {
 
                 teleport();
                 stopMoving();
@@ -167,14 +176,14 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //super
-            } else if (allBoolMove[0][3] && count == 140) {
+            } else if (allBoolMove[0][3] && count == d.get(4)) {
 
                 superFacing = facing;
                 teleport();
                 chidori = true;
 
                 //super continued
-            } else if (allBoolMove[0][3] && count == 210) {
+            } else if (allBoolMove[0][3] && count == d.get(5)) {
 
                 chidori = false;
                 stopMoving();
@@ -198,7 +207,7 @@ public class Kakashi extends Player {
 
             }
 
-            if (allBoolMove[0][3] && count >= 140) {
+            if (allBoolMove[0][3] && count >= d.get(4)) {
 
                 if (superFacing == 0) {
 
@@ -216,7 +225,6 @@ public class Kakashi extends Player {
             count++;
 
         });
-
 
         movementTimer.start();
 
