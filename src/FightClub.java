@@ -214,7 +214,11 @@ public class FightClub extends AllWindows {
 
             if (count == 0) {
 
-                if (P1.hpMagic.hp.getWidth() > P2.hpMagic.hp.getWidth()) {
+                if (P1.hpMagic.hp.getWidth() == P2.hpMagic.hp.getWidth()) {
+
+                    endGame("NO ONE");
+
+                } else if (P1.hpMagic.hp.getWidth() > P2.hpMagic.hp.getWidth()) {
 
                     endGame(P1Name);
 
