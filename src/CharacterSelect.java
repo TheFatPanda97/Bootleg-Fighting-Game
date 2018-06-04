@@ -823,7 +823,7 @@ public class CharacterSelect extends AllWindows {
     void switchNums(int i, int index, ArrayList<Integer> a) {
 
         int temp = a.get(i);
-        a.set(i,a.get(index));
+        a.set(i, a.get(index));
         a.set(index, temp);
 
     }
