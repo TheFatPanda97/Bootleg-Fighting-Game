@@ -94,6 +94,65 @@ public class Robot extends Player {
 
     }
 
+    void punch() {
+
+        if (!isAttacking() && !gameOver) {
+
+            punchSetback();
+            super.punch();
+
+        }
+
+    }
+
+    void kick() {
+
+        if (!isAttacking() && !atTop && !gameOver) {
+
+            kickSetback();
+            super.kick();
+
+        }
+
+    }
+
+    void shoot() {
+
+        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !gameOver) {
+
+            shootSetback();
+            super.shoot();
+
+        }
+
+    }
+
+    void superPower() {
+
+        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !gameOver) {
+
+            super.superPower();
+            bulletCreation(true);
+            bulletTimer.start();
+
+        }
+
+    }
+
+    void bulletCreation() {
+
+        allBulltes.add(new Projectile(this, facing, ROB_SHOOT, 1));
+        super.bulletCreation();
+
+    }
+
+    void bulletCreation(boolean sups) {
+
+        allBulltes.add(new Projectile(this, facing, 1, whichPlayerNum, sups));
+        super.bulletCreation();
+
+    }
+
     void setInitLoc(int whichPlayerNum) {
 
         if (whichPlayerNum == 1) {
@@ -106,6 +165,37 @@ public class Robot extends Player {
 
             setIcon(LNormRobStat);
             setBounds(FightClub.width - LNormRobStat.getIconWidth() - 30, FightClub.height - LNormRobStat.getIconHeight() - COMMON_FLOOR, LNormRobStat.getIconWidth(), LNormRobStat.getIconHeight());
+
+        }
+
+    }
+
+    void kickSetback() {
+
+        if (facingLeft()) {
+
+            moveHorizontal(-RobKickDistance);
+
+        }
+
+    }
+
+    void shootSetback() {
+
+        if (facingLeft()) {
+
+            moveHorizontal(-RobShootDistance);
+
+        }
+
+
+    }
+
+    void punchSetback() {
+
+        if (facingLeft()) {
+
+            moveHorizontal(-RobPunchDistance);
 
         }
 
@@ -133,8 +223,8 @@ public class Robot extends Player {
         allPic[3][4] = LNormRobKick;
         allPic[3][5] = LNormRobShot;
 
-        whichPlayer[1] = true;
-        hpMagic = new Bar(whichPlayerNum, whichPlayer);
+        whichCharacter[1] = true;
+        hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
 
     }

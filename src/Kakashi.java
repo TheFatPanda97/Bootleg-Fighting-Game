@@ -1,17 +1,5 @@
 import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.net.UnknownHostException;
-import java.nio.charset.Charset;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Kakashi extends Player {
 
@@ -230,6 +218,44 @@ public class Kakashi extends Player {
 
     }
 
+    void punch() {
+
+        if (!isAttacking() && !gameOver) {
+
+            punchSetback();
+            super.punch();
+
+        }
+
+    }
+
+    void superPower() {
+
+        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !gameOver) {
+
+            super.superPower();
+            superSetback();
+
+        }
+
+    }
+
+    void punchSetback() {
+
+        if (facingLeft()) {
+
+            moveHorizontal(-KakaPunchDistance);
+
+        }
+
+    }
+
+    void superSetback() {
+
+        moveVertical(KakaSuperDistance);
+
+    }
+
     void setInitLoc(int whichPlayerNum) {
 
         if (whichPlayerNum == 1) {
@@ -293,8 +319,8 @@ public class Kakashi extends Player {
         setIcon(RKakaStat);
         setBounds(0, FightClub.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
-        whichPlayer[2] = true;
-        hpMagic = new Bar(whichPlayerNum, whichPlayer);
+        whichCharacter[2] = true;
+        hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
 
@@ -310,8 +336,8 @@ public class Kakashi extends Player {
         setIcon(RKakaStat);
         setBounds(0, FightClub.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
-        whichPlayer[2] = true;
-        hpMagic = new Bar(whichPlayerNum, whichPlayer);
+        whichCharacter[2] = true;
+        hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
 

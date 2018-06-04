@@ -13,7 +13,7 @@ public class Player extends JLabel {
     boolean beingHit = false;
     boolean beingSuped = false;
     boolean[][] allBoolMove = new boolean[2][6];
-    boolean[] whichPlayer = new boolean[3];
+    boolean[] whichCharacter = new boolean[3];
     boolean chidori = false;
 
     ImageIcon[][] allPic = new ImageIcon[4][6];
@@ -452,79 +452,6 @@ public class Player extends JLabel {
 
     }
 
-    void kickSetback() {
-
-        if (whichPlayer[0]) {
-
-            setLocation(getX(), getY() + spinDown);
-
-        }
-
-        if (facingLeft()) {
-
-            if (whichPlayer[1]) {
-
-                moveHorizontal(-RobKickDistance);
-
-            }
-
-
-        }
-
-    }
-
-    void shootSetback() {
-
-        if (facingLeft()) {
-
-            if (whichPlayer[0]) {
-
-                moveHorizontal(-WizShootDistance);
-
-            } else if (whichPlayer[1]) {
-
-                moveHorizontal(-RobShootDistance);
-
-            }
-
-        }
-
-    }
-
-    void punchSetback() {
-
-        if (facingLeft()) {
-
-            if (whichPlayer[0]) {
-
-                moveHorizontal(-WizPunchDistance);
-
-            } else if (whichPlayer[1]) {
-
-                moveHorizontal(-RobPunchDistance);
-
-            } else if (whichPlayer[2]) {
-
-                moveHorizontal(-KakaPunchDistance);
-
-            }
-
-        }
-
-
-    }
-
-    void superSetback() {
-
-        if (whichPlayer[2]) {
-
-            moveVertical(KakaSuperDistance);
-
-        }
-
-    }
-
-
     void PBlock() {
 
         if (!isAttacking() && !isJumping() && !beingSuped && !gameOver) {
@@ -602,74 +529,35 @@ public class Player extends JLabel {
 
     void punch() {
 
-        if (!isAttacking() && !gameOver) {
-
-            punchSetback();
-
-            set(1, 3);
-            stopTimer.start();
-
-        }
+        set(1, 3);
+        stopTimer.start();
 
     }
 
     void kick() {
 
-        if (!isAttacking() && !atTop && !gameOver) {
-
-            kickSetback();
-            set(1, 4);
-            stopTimer.start();
-
-        }
-
+        set(1, 4);
+        stopTimer.start();
 
     }
 
     void shoot() {
 
-        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !gameOver) {
-
-            stopMoving();
-            shootSetback();
-            hpMagic.decMagic(PROJECTILE_MGI);
-            set(1, 5);
-            bulletCreation();
-            bulletTimer.start();
-            stopTimer.start();
-
-        }
+        stopMoving();
+        hpMagic.decMagic(PROJECTILE_MGI);
+        set(1, 5);
+        bulletCreation();
+        bulletTimer.start();
+        stopTimer.start();
 
     }
 
     void superPower() {
 
-        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !gameOver) {
-
-            stopMoving();
-            set(0, 3);
-            hpMagic.decMagic(SUPER_MGI);
-
-            if (whichPlayer[0]) {
-
-                emergencyStop = true;
-                setLocation(getX(), FightClub.height - allPic[0][3].getIconHeight() + lightUp);
-                set(0, 3);
-
-            } else if (whichPlayer[1]) {
-
-                bulletCreation(true);
-                bulletTimer.start();
-
-            } else if (whichPlayer[2]) {
-
-                superSetback();
-
-            }
-
-            stopTimer.start();
-
-        }
+        stopMoving();
+        set(0, 3);
+        hpMagic.decMagic(SUPER_MGI);
+        stopTimer.start();
 
     }
 
@@ -800,40 +688,10 @@ public class Player extends JLabel {
 
     void bulletCreation() {
 
-        if (whichPlayer[0] || whichPlayer[1]) {
-
-            if (whichPlayer[0]) {
-
-                allBulltes.add(new Projectile(this, facing, 0));
-
-
-            } else if (whichPlayer[1]) {
-
-                allBulltes.add(new Projectile(this, facing, ROB_SHOOT, 1));
-
-            }
-
-            Main.fightWindow.add(allBulltes.get(projectStart), 0);
-            ++projectStart;
-
-        }
-
-
-    }
-
-    void bulletCreation(boolean sups) {
-
-        if (whichPlayer[1]) {
-
-            allBulltes.add(new Projectile(this, facing, 1, whichPlayerNum, sups));
-
-        }
-
         Main.fightWindow.add(allBulltes.get(projectStart), 0);
         ++projectStart;
 
     }
-
 
     boolean isAllBoolFalse(boolean[][] t) {
 

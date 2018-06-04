@@ -103,6 +103,84 @@ public class Wizard extends Player {
 
     }
 
+    void punch() {
+
+        if (!isAttacking() && !gameOver) {
+
+            punchSetback();
+            super.punch();
+
+        }
+
+    }
+
+    void kick() {
+
+        if (!isAttacking() && !atTop && !gameOver) {
+
+            kickSetback();
+            super.kick();
+
+        }
+
+    }
+
+    void shoot() {
+
+        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !gameOver) {
+
+            shootSetback();
+            super.shoot();
+
+        }
+
+    }
+
+    void superPower() {
+
+        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !gameOver) {
+
+            super.superPower();
+            emergencyStop = true;
+            setLocation(getX(), FightClub.height - allPic[0][3].getIconHeight() + lightUp);
+
+        }
+
+    }
+
+    void bulletCreation() {
+
+        allBulltes.add(new Projectile(this, facing, 0));
+        super.bulletCreation();
+
+    }
+
+    void kickSetback() {
+
+        setLocation(getX(), getY() + spinDown);
+
+    }
+
+    void shootSetback() {
+
+        if (facingLeft()) {
+
+            moveHorizontal(-WizShootDistance);
+
+        }
+
+    }
+
+    void punchSetback() {
+
+        if (facingLeft()) {
+
+            moveHorizontal(-WizPunchDistance);
+
+        }
+
+    }
+
     //setup pics
     void setWizPics(int whichPlayerNum) {
 
@@ -131,8 +209,8 @@ public class Wizard extends Player {
         setIcon(RNormWizStat);
         setBounds(0, FightClub.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
 
-        whichPlayer[0] = true;
-        hpMagic = new Bar(whichPlayerNum, whichPlayer);
+        whichCharacter[0] = true;
+        hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
 

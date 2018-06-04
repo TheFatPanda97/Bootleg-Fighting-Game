@@ -180,7 +180,7 @@ public class FightClub extends AllWindows {
 
             }
 
-            if (P1.whichPlayer[2] && P1.isSuper() && hitEachOther(P1, P2) && P1.chidori) {
+            if (P1.whichCharacter[2] && P1.isSuper() && hitEachOther(P1, P2) && P1.chidori) {
 
                 P2.beingHit = false;
 //                System.out.println(P2.facing);
@@ -192,7 +192,7 @@ public class FightClub extends AllWindows {
 
             }
 
-            if (P2.whichPlayer[2] && P2.isSuper() && hitEachOther(P2, P1) && P2.chidori) {
+            if (P2.whichCharacter[2] && P2.isSuper() && hitEachOther(P2, P1) && P2.chidori) {
 
                 P1.beingHit = false;
 //                System.out.println(P2.facing);
@@ -401,13 +401,13 @@ public class FightClub extends AllWindows {
 
         } else {
 
-            if (a.whichPlayer[0]) {
+            if (a.whichCharacter[0]) {
 
                 b.hpMagic.decHP(Player.SUPER_DMG, b.isBlocking());
                 b.setBack(SUPER_HITBACK);
                 b.hpMagic.decMagic(SUPER_HITBACK / 2);
 
-            } else if (a.whichPlayer[1]) {
+            } else if (a.whichCharacter[1]) {
 
                 b.hpMagic.decHP(Player.SUPER_DMG / SUP_DILUTE, b.isBlocking());
 
