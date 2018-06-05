@@ -21,11 +21,11 @@ public class CharacterSelect extends AllWindows {
     boolean firstDownload;
 
     ImageIcon CSelect = new ImageIcon(getClass().getResource("player selection.jpg"));
-    ImageIcon imgHighlight = new ImageIcon(getClass().getResource("Button Highlight.png"));
+    ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
-    ImageIcon WizFace = new ImageIcon(getClass().getResource("RWizFace.png"));
-    ImageIcon KakaFace = new ImageIcon(getClass().getResource("KakaFace.png"));
-    ImageIcon RobFace = new ImageIcon(getClass().getResource("RobFace.png"));
+    ImageIcon WizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
+    ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
+    ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
 
     ImageIcon P1Select = new ImageIcon(getClass().getResource("P1.png"));
     ImageIcon P2Select = new ImageIcon(getClass().getResource("P2.png"));
@@ -40,14 +40,14 @@ public class CharacterSelect extends AllWindows {
     ImageIcon RKakaStat = new ImageIcon(getClass().getResource("RKakaStat.gif"));
     ImageIcon LKakaStat = new ImageIcon(getClass().getResource("LKakaStat.gif"));
 
-    ImageIcon Fire = new ImageIcon(getClass().getResource("Fire.gif"));
+    ImageIcon Fire = new ImageIcon("src/Resource/Decoration/Fire.gif");
 
-    ImageIcon FJap = new ImageIcon(getClass().getResource("Japan.gif"));
-    ImageIcon FCad = new ImageIcon(getClass().getResource("Canada.gif"));
-    ImageIcon FIdk = new ImageIcon(getClass().getResource("IDK.gif"));
-    ImageIcon FChi = new ImageIcon(getClass().getResource("china.gif"));
-    ImageIcon FFra = new ImageIcon(getClass().getResource("france.gif"));
-    ImageIcon FUSA = new ImageIcon(getClass().getResource("USA.gif"));
+    ImageIcon FJap = new ImageIcon("src/Resource/Fighting_Background/Japan.gif");
+    ImageIcon FCad = new ImageIcon("src/Resource/Fighting_Background/Canada.gif");
+    ImageIcon FIdk = new ImageIcon("src/Resource/Fighting_Background/IDK.gif");
+    ImageIcon FChi = new ImageIcon("src/Resource/Fighting_Background/China.gif");
+    ImageIcon FFra = new ImageIcon("src/Resource/Fighting_Background/France.gif");
+    ImageIcon FUSA = new ImageIcon("src/Resource/Fighting_Background/USA.gif");
 
     JLabel[] allCharacter = new JLabel[3];
     ImageIcon[] P1allCharacter = new ImageIcon[3];
@@ -247,8 +247,6 @@ public class CharacterSelect extends AllWindows {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-
-                requestFocus();
 
             }
 

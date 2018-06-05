@@ -23,11 +23,11 @@ public class Bar extends JLabel {
     ImageIcon RBar = new ImageIcon(getClass().getResource("RBar.png"));
     ImageIcon LBar = new ImageIcon(getClass().getResource("LBar.png"));
 
-    ImageIcon RWizFace = new ImageIcon(getClass().getResource("RWizFace.png"));
-    ImageIcon LWizFace = new ImageIcon(getClass().getResource("LWizFace.png"));
+    ImageIcon RWizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
+    ImageIcon LWizFace = new ImageIcon("src/Resource/Mugshots/LWizFace.png");
 
-    ImageIcon RobFace = new ImageIcon(getClass().getResource("RobFace.png"));
-    ImageIcon KakaFace = new ImageIcon(getClass().getResource("KakaFace.png"));
+    ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
+    ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
 
     JLabel mugshot = new JLabel();
     JLabel hp = new JLabel();

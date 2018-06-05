@@ -5,15 +5,14 @@ import java.awt.event.MouseListener;
 public class Button extends JLabel {
 
     ImageIcon[][] allButtonImg = new ImageIcon[4][2];
-    ImageIcon SStart = new ImageIcon(getClass().getResource("SStart.png"));
-    ImageIcon HStart = new ImageIcon(getClass().getResource("HStart.png"));
-    ImageIcon SExit = new ImageIcon(getClass().getResource("SExit.png"));
-    ImageIcon HExit = new ImageIcon(getClass().getResource("HExit.png"));
-    ImageIcon SMain = new ImageIcon(getClass().getResource("SMain.png"));
-    ImageIcon HMain = new ImageIcon(getClass().getResource("HMain.png"));
-    ImageIcon SHigh = new ImageIcon(getClass().getResource("SHigh.png"));
-    ImageIcon HHigh = new ImageIcon(getClass().getResource("HHigh.png"));
-
+    ImageIcon SStart = new ImageIcon("src/Resource/Buttons/SStart.png");
+    ImageIcon HStart = new ImageIcon("src/Resource/Buttons/HStart.png");
+    ImageIcon SExit = new ImageIcon("src/Resource/Buttons/SExit.png");
+    ImageIcon HExit = new ImageIcon("src/Resource/Buttons/HExit.png");
+    ImageIcon SMain = new ImageIcon("src/Resource/Buttons/SMain.png");
+    ImageIcon HMain = new ImageIcon("src/Resource/Buttons/HMain.png");
+    ImageIcon SHigh = new ImageIcon("src/Resource/Buttons/SHigh.png");
+    ImageIcon HHigh = new ImageIcon("src/Resource/Buttons/HHigh.png");
 
 
     Button(int set) {

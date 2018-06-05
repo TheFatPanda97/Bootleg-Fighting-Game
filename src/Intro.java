@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 public class Intro extends AllWindows {
 
     ImageIcon IntroScreen = new ImageIcon(getClass().getResource("Intro Screen.gif"));
-    ImageIcon imgHighlight = new ImageIcon(getClass().getResource("Button Highlight.png"));
+    ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
     JLabel lblHighlight = new JLabel();
     Button btnStart = new Button(0);
