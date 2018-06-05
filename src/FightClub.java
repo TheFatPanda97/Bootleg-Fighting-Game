@@ -26,7 +26,7 @@ public class FightClub extends AllWindows {
 
     String P1Name, P2Name;
 
-    ImageIcon countDown = new ImageIcon(getClass().getResource("Count Down.png"));
+    ImageIcon countDown = new ImageIcon("src/Resource/Hexagon/Count Down.png");
     ImageIcon over = new ImageIcon("src/Resource/Decoration/GameOver.gif");
 
     JLabel background = new JLabel();

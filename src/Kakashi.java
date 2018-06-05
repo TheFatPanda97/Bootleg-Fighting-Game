@@ -240,6 +240,10 @@ public class Kakashi extends Player {
 
     }
 
+    void bulletCreation() {
+
+    }
+
     void punchSetback() {
 
         if (facingLeft()) {
@@ -276,23 +280,23 @@ public class Kakashi extends Player {
     //setup pics
     void setKakaPics(int whichPlayerNum) {
 
-        RKakaStat = new ImageIcon(getClass().getResource("RKakaStat.gif"));
-        RKakaWalk = new ImageIcon(getClass().getResource("RKakaWalk.gif"));
-        RKakaBlock = new ImageIcon(getClass().getResource("RKakaBlock.gif"));
-        RKakaJump = new ImageIcon(getClass().getResource("RKakaJump.gif"));
-        RKakaPunch = new ImageIcon(getClass().getResource("RKakaPunch.gif"));
-        RKakaKick = new ImageIcon(getClass().getResource("RKakaKick.gif"));
-        RKakaTele = new ImageIcon(getClass().getResource("RKakaTeleport.gif"));
-        RKakaChi = new ImageIcon(getClass().getResource("RKakaSuper.gif"));
+        RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
+        RKakaWalk = new ImageIcon("src/Resource/Kakashi/DLC/RKakaWalk.gif");
+        RKakaBlock = new ImageIcon("src/Resource/Kakashi/DLC/RKakaBlock.gif");
+        RKakaJump = new ImageIcon("src/Resource/Kakashi/DLC/RKakaJump.gif");
+        RKakaPunch = new ImageIcon("src/Resource/Kakashi/DLC/RKakaPunch.gif");
+        RKakaKick = new ImageIcon("src/Resource/Kakashi/DLC/RKakaKick.gif");
+        RKakaTele = new ImageIcon("src/Resource/Kakashi/DLC/RKakaTeleport.gif");
+        RKakaChi = new ImageIcon("src/Resource/Kakashi/DLC/RKakaSuper.gif");
 
-        LKakaStat = new ImageIcon(getClass().getResource("LKakaStat.gif"));
-        LKakaWalk = new ImageIcon(getClass().getResource("LKakaWalk.gif"));
-        LKakaBlock = new ImageIcon(getClass().getResource("LKakaBlock.gif"));
-        LKakaJump = new ImageIcon(getClass().getResource("LKakaJump.gif"));
-        LKakaPunch = new ImageIcon(getClass().getResource("LKakaPunch.gif"));
-        LKakaKick = new ImageIcon(getClass().getResource("LKakaKick.gif"));
-        LKakaTele = new ImageIcon(getClass().getResource("RKakaTeleport.gif"));
-        LKakaChi = new ImageIcon(getClass().getResource("LKakaSuper.gif"));
+        LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
+        LKakaWalk = new ImageIcon("src/Resource/Kakashi/DLC/LKakaWalk.gif");
+        LKakaBlock = new ImageIcon("src/Resource/Kakashi/DLC/LKakaBlock.gif");
+        LKakaJump = new ImageIcon("src/Resource/Kakashi/DLC/LKakaJump.gif");
+        LKakaPunch = new ImageIcon("src/Resource/Kakashi/DLC/LKakaPunch.gif");
+        LKakaKick = new ImageIcon("src/Resource/Kakashi/DLC/LKakaKick.gif");
+        LKakaTele = new ImageIcon("src/Resource/Kakashi/DLC/RKakaTeleport.gif");
+        LKakaChi = new ImageIcon("src/Resource/Kakashi/DLC/LKakaSuper.gif");
 
         //setting pics
         allPic[0][0] = RKakaStat;

@@ -20,25 +20,25 @@ public class CharacterSelect extends AllWindows {
 
     boolean firstDownload;
 
-    ImageIcon CSelect = new ImageIcon(getClass().getResource("player selection.jpg"));
+    ImageIcon CSelect = new ImageIcon("src/Resource/Screen_Background/player selection.jpg");
     ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
     ImageIcon WizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
     ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
     ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
 
-    ImageIcon P1Select = new ImageIcon(getClass().getResource("P1.png"));
-    ImageIcon P2Select = new ImageIcon(getClass().getResource("P2.png"));
-    ImageIcon Together = new ImageIcon(getClass().getResource("Together.png"));
+    ImageIcon P1Select = new ImageIcon("src/Resource/Hexagon/P1.png");
+    ImageIcon P2Select = new ImageIcon("src/Resource/Hexagon/P2.png");
+    ImageIcon Together = new ImageIcon("src/Resource/Hexagon/Together.png");
 
-    ImageIcon RNormWizStat = new ImageIcon(getClass().getResource("R_Norm_Wiz_Stat_v1.gif"));
-    ImageIcon LNormWizStat = new ImageIcon(getClass().getResource("L_Norm_Wiz_Stat_v1.gif"));
+    ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
+    ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
 
-    ImageIcon RNormRobStat = new ImageIcon(getClass().getResource("R_Norm_Rob_Stat_v2.gif"));
-    ImageIcon LNormRobStat = new ImageIcon(getClass().getResource("L_Norm_Rob_Stat_v2.gif"));
+    ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
+    ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
 
-    ImageIcon RKakaStat = new ImageIcon(getClass().getResource("RKakaStat.gif"));
-    ImageIcon LKakaStat = new ImageIcon(getClass().getResource("LKakaStat.gif"));
+    ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
+    ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
 
     ImageIcon Fire = new ImageIcon("src/Resource/Decoration/Fire.gif");
 
@@ -82,6 +82,8 @@ public class CharacterSelect extends AllWindows {
     final int CORNER_DIS = 20;
     final int TEXT_WIDTH = 200;
     final int TEXT_HEIGHT = 40;
+
+    boolean downloadSuccess;
 
 
     CharacterSelect() {
@@ -705,26 +707,27 @@ public class CharacterSelect extends AllWindows {
                         JOptionPane.showMessageDialog(null, "I can almost touch it");
 
                         //storing the images so you don't have to internet to play the DLC the second time
-                        Files.copy(RWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaWalk.gif"));
-                        Files.copy(RJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaJump.gif"));
-                        Files.copy(RBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaBlock.gif"));
-                        Files.copy(RPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaPunch.gif"));
-                        Files.copy(RKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaKick.gif"));
-                        Files.copy(RTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaTeleport.gif"));
-                        Files.copy(RSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/RKakaSuper.gif"));
-                        Files.copy(LWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaWalk.gif"));
-                        Files.copy(LJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaJump.gif"));
-                        Files.copy(LBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaBlock.gif"));
-                        Files.copy(LPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaPunch.gif"));
-                        Files.copy(LKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaKick.gif"));
-                        Files.copy(LTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaTeleport.gif"));
-                        Files.copy(LSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/LKakaSuper.gif"));
-                        Files.copy(KakaData.openStream(), Paths.get(System.getProperty("user.dir") + "/src/KakaData.txt"));
+                        Files.copy(RWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaWalk.gif"));
+                        Files.copy(RJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaJump.gif"));
+                        Files.copy(RBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaBlock.gif"));
+                        Files.copy(RPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaPunch.gif"));
+                        Files.copy(RKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaKick.gif"));
+                        Files.copy(RTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaTeleport.gif"));
+                        Files.copy(RSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/RKakaSuper.gif"));
+                        Files.copy(LWalk.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaWalk.gif"));
+                        Files.copy(LJump.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaJump.gif"));
+                        Files.copy(LBlock.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaBlock.gif"));
+                        Files.copy(LPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaPunch.gif"));
+                        Files.copy(LKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaKick.gif"));
+                        Files.copy(LTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaTeleport.gif"));
+                        Files.copy(LSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaSuper.gif"));
+                        Files.copy(KakaData.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/All_Data/KakaData.txt"));
 
                         firstDownload = true;
                         Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
 
                         JOptionPane.showMessageDialog(null, "and the DLC is downloaded. War Or Revenge, Sad Happiness Is Possible...");
+                        downloadSuccess = true;
 
                         return true;
 

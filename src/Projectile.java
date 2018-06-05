@@ -3,12 +3,12 @@ import java.awt.event.ActionListener;
 
 public class Projectile extends JLabel {
 
-    ImageIcon RShot = new ImageIcon(getClass().getResource("RShot.gif"));
-    ImageIcon LShot = new ImageIcon(getClass().getResource("LShot.gif"));
-    ImageIcon RExplosion = new ImageIcon(getClass().getResource("RExplosion.gif"));
-    ImageIcon LExplosion = new ImageIcon(getClass().getResource("LExplosion.gif"));
-    ImageIcon RRobSuper = new ImageIcon(getClass().getResource("RRobSuper.gif"));
-    ImageIcon LRobSuper = new ImageIcon(getClass().getResource("LRobSuper.gif"));
+    ImageIcon RShot = new ImageIcon("src/Resource/Shot/RShot.gif");
+    ImageIcon LShot = new ImageIcon("src/Resource/Shot/LShot.gif");
+    ImageIcon RExplosion = new ImageIcon("src/Resource/Shot_Explosion/RExplosion.gif");
+    ImageIcon LExplosion = new ImageIcon("src/Resource/Shot_Explosion/LExplosion.gif");
+    ImageIcon RRobSuper = new ImageIcon("src/Resource/Shot/RRobSuper.gif");
+    ImageIcon LRobSuper = new ImageIcon("src/Resource/Shot/LRobSuper.gif");
 
 
     ImageIcon[][] allShot = new ImageIcon[3][4];

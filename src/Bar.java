@@ -20,8 +20,8 @@ public class Bar extends JLabel {
 
     int whichPlayerNum;
 
-    ImageIcon RBar = new ImageIcon(getClass().getResource("RBar.png"));
-    ImageIcon LBar = new ImageIcon(getClass().getResource("LBar.png"));
+    ImageIcon RBar = new ImageIcon("src/Resource/Status/RBar.png");
+    ImageIcon LBar = new ImageIcon("src/Resource/Status/LBar.png");
 
     ImageIcon RWizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
     ImageIcon LWizFace = new ImageIcon("src/Resource/Mugshots/LWizFace.png");

@@ -9,7 +9,7 @@ public class HighScore extends AllWindows {
     JList List;
     JScrollPane ScrollView = new JScrollPane();
     ArrayList<String> items = new ArrayList<>();
-    ImageIcon IntroScreen = new ImageIcon(getClass().getResource("Intro Screen.gif"));
+    ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
     JLabel lblBackground = new JLabel();
     Button btnInfo = new Button(2);
     final int SIDE_LENGTH = 20;

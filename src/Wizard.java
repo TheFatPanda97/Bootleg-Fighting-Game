@@ -2,23 +2,23 @@ import javax.swing.*;
 
 public class Wizard extends Player {
 
-    ImageIcon RNormWizStat = new ImageIcon(getClass().getResource("R_Norm_Wiz_Stat_v1.gif"));
-    ImageIcon RNormWizWalk = new ImageIcon(getClass().getResource("R_Norm_Wiz_Walk_v1.gif"));
-    ImageIcon RNormWizBlock = new ImageIcon(getClass().getResource("RBlock.gif"));
-    ImageIcon RNormWizJump = new ImageIcon(getClass().getResource("R_Norm_Wiz_Jump_v2.gif"));
-    ImageIcon RNormWizPunch = new ImageIcon(getClass().getResource("R_Norm_Wiz_Punch_v3.gif"));
-    ImageIcon RNormWizShot = new ImageIcon(getClass().getResource("R_Norm_Wiz_Shot_v1.gif"));
-    ImageIcon RNormWizSpin = new ImageIcon(getClass().getResource("R_Norm_Wiz_SPin_v1.gif"));
-    ImageIcon RNormWizLight = new ImageIcon(getClass().getResource("R_Norm_Wiz_Lightning_v4.gif"));
+    ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
+    ImageIcon RNormWizWalk = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Walk_v1.gif");
+    ImageIcon RNormWizBlock = new ImageIcon("src/Resource/Wizard/R_Wiz_Block.gif");
+    ImageIcon RNormWizJump = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Jump_v2.gif");
+    ImageIcon RNormWizPunch = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Punch_v3.gif");
+    ImageIcon RNormWizShot = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Shot_v1.gif");
+    ImageIcon RNormWizSpin = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_SPin_v1.gif");
+    ImageIcon RNormWizLight = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Lightning_v4.gif");
 
-    ImageIcon LNormWizStat = new ImageIcon(getClass().getResource("L_Norm_Wiz_Stat_v1.gif"));
-    ImageIcon LNormWizWalk = new ImageIcon(getClass().getResource("L_Norm_Wiz_Walk_v1.gif"));
-    ImageIcon LNormWizBlock = new ImageIcon(getClass().getResource("LBlock.gif"));
-    ImageIcon LNormWizJump = new ImageIcon(getClass().getResource("L_Norm_Wiz_Jump_v2.gif"));
-    ImageIcon LNormWizPunch = new ImageIcon(getClass().getResource("L_Norm_Wiz_Punch_v3.gif"));
-    ImageIcon LNormWizShot = new ImageIcon(getClass().getResource("L_Norm_Wiz_Shot_v1.gif"));
-    ImageIcon LNormWizSpin = new ImageIcon(getClass().getResource("L_Norm_Wiz_SPin_v1.gif"));
-    ImageIcon LNormWizLight = new ImageIcon(getClass().getResource("L_Norm_Wiz_Lightning_v4.gif"));
+    ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
+    ImageIcon LNormWizWalk = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Walk_v1.gif");
+    ImageIcon LNormWizBlock = new ImageIcon("src/Resource/Wizard/L_Wiz_Block.gif");
+    ImageIcon LNormWizJump = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Jump_v2.gif");
+    ImageIcon LNormWizPunch = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Punch_v3.gif");
+    ImageIcon LNormWizShot = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Shot_v1.gif");
+    ImageIcon LNormWizSpin = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_SPin_v1.gif");
+    ImageIcon LNormWizLight = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Lightning_v4.gif");
 
     Wizard(JComponent RootPane, int WPN) {
 

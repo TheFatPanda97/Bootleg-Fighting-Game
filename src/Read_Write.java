@@ -7,6 +7,7 @@ public class Read_Write {
     String highFileName = "High Score.txt";
     String DLCFileName = "DLC.txt";
     String KakaFileName = "KakaData.txt";
+    String path = "/src/Resource/All_Data/";
     boolean DLC = false;
     int currentHighScore = 0;
     Stack stackInfo = new Stack();
@@ -16,8 +17,8 @@ public class Read_Write {
         try {
 
             stackInfo.clear();
-            Scanner readHigh = new Scanner(new File(System.getProperty("user.dir") + "/src/" + highFileName));
-            Scanner readDLC = new Scanner(new File(System.getProperty("user.dir") + "/src/" + DLCFileName));
+            Scanner readHigh = new Scanner(new File(System.getProperty("user.dir") + path + highFileName));
+            Scanner readDLC = new Scanner(new File(System.getProperty("user.dir") + path + DLCFileName));
             System.out.print("Files found...");
 
             if (!readDLC.hasNext()) {
@@ -71,7 +72,7 @@ public class Read_Write {
         ArrayList<Integer> tempArray = new ArrayList<>();
         try {
 
-            Scanner readData = new Scanner(new File(System.getProperty("user.dir") + "/src/" + KakaFileName));
+            Scanner readData = new Scanner(new File(System.getProperty("user.dir") + path + KakaFileName));
             System.out.print("Files found...");
 
             while (readData.hasNext()) {
@@ -85,7 +86,6 @@ public class Read_Write {
 
             readData.close();
             System.out.println("File read successfully!!");
-
 
 
         } catch (FileNotFoundException e) {
@@ -102,7 +102,7 @@ public class Read_Write {
 
         try {
 
-            PrintWriter outputStream = new PrintWriter(System.getProperty("user.dir") + "/src/" + DLCFileName);
+            PrintWriter outputStream = new PrintWriter(System.getProperty("user.dir") + path + DLCFileName);
             System.out.print("File found during writing...");
 
 
@@ -120,11 +120,44 @@ public class Read_Write {
 
     }
 
+//    void writeMessage(String s, boolean success) {
+//
+//        try {
+//
+//            PrintWriter outputStream = new PrintWriter(System.getProperty("user.dir") + path + DLCFileName);
+//            System.out.print("File found during writing...");
+//
+//
+//            if (success) {
+//
+//                outputStream.println(s);
+//
+//            }
+//
+//            if(!DLC) {
+//
+//                outputStream.println("NO DLC YET");
+//
+//            }
+//
+//            outputStream.close();
+//
+//            System.out.println("File written successfully!!");
+//
+//
+//        } catch (FileNotFoundException e) {
+//
+//            System.out.println("Could not find file!!");
+//
+//        }
+//
+//    }
+
     void writeMessage(Node n) {
 
         try {
 
-            PrintWriter outputStream = new PrintWriter(new FileWriter(System.getProperty("user.dir") + "/src/" + highFileName, true));
+            PrintWriter outputStream = new PrintWriter(new FileWriter(System.getProperty("user.dir") + path + highFileName, true));
             System.out.print("File found during writing...");
 
 
@@ -195,7 +228,7 @@ public class Read_Write {
     void switchNums(int i, int index, ArrayList<Integer> a) {
 
         int temp = a.get(i);
-        a.set(i,a.get(index));
+        a.set(i, a.get(index));
         a.set(index, temp);
 
     }

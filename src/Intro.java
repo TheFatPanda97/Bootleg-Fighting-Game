@@ -4,7 +4,7 @@ import java.awt.event.MouseListener;
 
 public class Intro extends AllWindows {
 
-    ImageIcon IntroScreen = new ImageIcon(getClass().getResource("Intro Screen.gif"));
+    ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
     ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
     JLabel lblHighlight = new JLabel();
@@ -106,8 +106,12 @@ public class Intro extends AllWindows {
             public void mousePressed(MouseEvent e) {
 
 
-                 Main.rw.DLC = true;
-                 Main.rw.writeMessage("SHAWN SO SMART O GOD");
+                if (Main.CSelectWindow.downloadSuccess) {
+
+                    Main.rw.DLC = true;
+                    Main.rw.writeMessage("SHAWN SO SMART O GOD");
+
+                }
                 System.exit(0);
 
             }

@@ -2,23 +2,23 @@ import javax.swing.*;
 
 public class Robot extends Player {
 
-    ImageIcon RNormRobStat = new ImageIcon(getClass().getResource("R_Norm_Rob_Stat_v2.gif"));
-    ImageIcon RNormRobWalk = new ImageIcon(getClass().getResource("R_Norm_Rob_Walk_v2.gif"));
-    ImageIcon RNormRobJump = new ImageIcon(getClass().getResource("R_Norm_Rob_Jump_v1.gif"));
-    ImageIcon RRobBlock = new ImageIcon(getClass().getResource("R_Rob_Block.gif"));
-    ImageIcon RNormRobPunch = new ImageIcon(getClass().getResource("R_Norm_Rob_Punch_v2.gif"));
-    ImageIcon RNormRobShot = new ImageIcon(getClass().getResource("R_Norm_Rob_Gun_v2.gif"));
-    ImageIcon RNormRobKick = new ImageIcon(getClass().getResource("R_Norm_Rob_Kick_v2.gif"));
-    ImageIcon RNormRobSlam = new ImageIcon(getClass().getResource("R_Norm_Rob_Ground_Slam_v2.gif"));
+    ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
+    ImageIcon RNormRobWalk = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Walk_v2.gif");
+    ImageIcon RNormRobJump = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Jump_v1.gif");
+    ImageIcon RRobBlock = new ImageIcon("src/Resource/Robot/R_Rob_Block.gif");
+    ImageIcon RNormRobPunch = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Punch_v2.gif");
+    ImageIcon RNormRobShot = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Gun_v2.gif");
+    ImageIcon RNormRobKick = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Kick_v2.gif");
+    ImageIcon RNormRobSlam = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Ground_Slam_v2.gif");
 
-    ImageIcon LNormRobStat = new ImageIcon(getClass().getResource("L_Norm_Rob_Stat_v2.gif"));
-    ImageIcon LNormRobWalk = new ImageIcon(getClass().getResource("L_Norm_Rob_Walk_v2.gif"));
-    ImageIcon LNormRobJump = new ImageIcon(getClass().getResource("L_Norm_Rob_Jump_v1.gif"));
-    ImageIcon LRobBlock = new ImageIcon(getClass().getResource("L_Rob_Block.gif"));
-    ImageIcon LNormRobPunch = new ImageIcon(getClass().getResource("L_Norm_Rob_Punch_v2.gif"));
-    ImageIcon LNormRobShot = new ImageIcon(getClass().getResource("L_Norm_Rob_Gun_v2.gif"));
-    ImageIcon LNormRobKick = new ImageIcon(getClass().getResource("L_Norm_Rob_Kick_v2.gif"));
-    ImageIcon LNormRobSlam = new ImageIcon(getClass().getResource("L_Norm_Rob_Ground_Slam_v2.gif"));
+    ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
+    ImageIcon LNormRobWalk = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Walk_v2.gif");
+    ImageIcon LNormRobJump = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Jump_v1.gif");
+    ImageIcon LRobBlock = new ImageIcon("src/Resource/Robot/L_Rob_Block.gif");
+    ImageIcon LNormRobPunch = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Punch_v2.gif");
+    ImageIcon LNormRobShot = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Gun_v2.gif");
+    ImageIcon LNormRobKick = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Kick_v2.gif");
+    ImageIcon LNormRobSlam = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Ground_Slam_v2.gif");
 
     Robot(JComponent RootPane, int WPN) {
 

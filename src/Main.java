@@ -18,10 +18,10 @@ import java.util.Scanner;
 public class Main {
 
     static Read_Write rw = new Read_Write();
-    static HighScore ScoreWindow = new HighScore();
     static FightClub fightWindow = new FightClub();
-    static Intro introWindow = new Intro();
     static CharacterSelect CSelectWindow = new CharacterSelect();
+    static HighScore ScoreWindow = new HighScore();
+    static Intro introWindow = new Intro();
 
 
     public static void main(String[] args) {
