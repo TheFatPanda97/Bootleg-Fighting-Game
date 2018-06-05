@@ -130,8 +130,8 @@ public class Kakashi extends Player {
         setKakaPics(whichPlayerNum, p);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
-        setMoveSpeed(13);
-        setProjectSpeed(30);
+        setMoveSpeed(d.get(0));
+        setProjectSpeed(d.get(3));
 
         stopAct(10, e -> {
 
@@ -220,7 +220,7 @@ public class Kakashi extends Player {
 
     void punch() {
 
-        if (!isAttacking() && !gameOver) {
+        if (!isAttacking() && !GameOver) {
 
             punchSetback();
             super.punch();
@@ -229,9 +229,29 @@ public class Kakashi extends Player {
 
     }
 
+    void kick() {
+
+        if (!isAttacking() && !atTop && !GameOver) {
+
+            super.kick();
+
+        }
+
+    }
+
+    void shoot() {
+
+        if (!isAttacking() && !isBlocking() && !GameOver) {
+
+            super.shoot();
+
+        }
+
+    }
+
     void superPower() {
 
-        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !gameOver) {
+        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver) {
 
             super.superPower();
             superSetback();
@@ -260,7 +280,7 @@ public class Kakashi extends Player {
 
     }
 
-    void setInitLoc(int whichPlayerNum) {
+    public void setInitLoc(int whichPlayerNum) {
 
         if (whichPlayerNum == 1) {
 

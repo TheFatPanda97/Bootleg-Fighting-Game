@@ -433,7 +433,7 @@ public class FightClub extends AllWindows {
 
     void endGame(String name) {
 
-        Player.gameOver = true;
+        Player.setGameOver(true);
         lblWin.setVisible(true);
         lblKO.setVisible(true);
         btnMain.setVisible(true);

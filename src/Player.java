@@ -7,18 +7,18 @@ import java.util.ArrayList;
 public class Player extends JLabel {
 
 
-    static boolean gameOver = false;
-    boolean atTop = false;
-    boolean emergencyStop = false;
-    boolean beingHit = false;
-    boolean beingSuped = false;
-    boolean[][] allBoolMove = new boolean[2][6];
-    boolean[] whichCharacter = new boolean[3];
-    boolean chidori = false;
+    protected static boolean GameOver = false;
+    protected boolean atTop = false;
+    protected boolean emergencyStop = false;
+    protected boolean beingSuped = false;
+    protected boolean[][] allBoolMove = new boolean[2][6];
+    protected boolean[] whichCharacter = new boolean[3];
+    public boolean chidori;
+    public boolean beingHit;
 
-    ImageIcon[][] allPic = new ImageIcon[4][6];
+    protected ImageIcon[][] allPic = new ImageIcon[4][6];
 
-    ArrayList<Projectile> allBulltes = new ArrayList<>();
+    protected ArrayList<Projectile> allBulltes = new ArrayList<>();
 
     Timer movementTimer;
     Timer jumpTimer;
@@ -26,46 +26,46 @@ public class Player extends JLabel {
     Timer bulletTimer;
     Timer hitTimer;
 
-    final int COMMON_FLOOR = 80;
+    protected final int COMMON_FLOOR = 80;
 
-    static final int PROJECTTILE_DMG = 14;
-    static final int PUNCH_DMG = 12;
-    static final int SUPER_DMG = 140;
+    public static final int PROJECTTILE_DMG = 14;
+    public static final int PUNCH_DMG = 12;
+    public static final int SUPER_DMG = 140;
 
-    final int PROJECTILE_MGI = 25;
-    final int SUPER_MGI = 200;
+    protected final int PROJECTILE_MGI = 25;
+    protected final int SUPER_MGI = 200;
 
-    final int INITAL_WIDTH = 40;
-    final int INITAL_HEIGHT = 300;
+    protected final int INITAL_WIDTH = 40;
+    protected final int INITAL_HEIGHT = 300;
 
-    int jumpHeight;
-    int jumpSpeed = 5;
-    int moveSpeed;
-    int count = 0;
+    protected int jumpHeight;
+    protected int jumpSpeed = 5;
+    protected int moveSpeed;
+    protected int count = 0;
 
-    int spinDown = 80;
-    int lightUp = 60;
+    protected int spinDown = 80;
+    protected int lightUp = 60;
 
-    int RobKickDistance = 100;
-    int RobPunchDistance = 100;
-    int RobShootDistance = 100;
+    protected int RobKickDistance = 100;
+    protected int RobPunchDistance = 100;
+    protected int RobShootDistance = 100;
 
-    int WizPunchDistance = 60;
-    int WizShootDistance = 20;
+    protected int WizPunchDistance = 60;
+    protected int WizShootDistance = 20;
 
-    int KakaPunchDistance = 60;
-    int KakaSuperDistance = 26;
+    protected int KakaPunchDistance = 60;
+    protected int KakaSuperDistance = 26;
 
-    int projectSpeed;
-    int projectStart = 0;
-    int facing = 0;
+    protected int projectSpeed;
+    protected int projectStart = 0;
+    protected int facing = 0;
 
-    int whichPlayerNum = 0;
+    protected int whichPlayerNum = 0;
 
-    final int JUMP_HEIGHT = 55;
-    final int ROB_SHOOT = -40;
+    protected final int JUMP_HEIGHT = 55;
+    protected final int ROB_SHOOT = -40;
 
-    Bar hpMagic;
+    protected Bar hpMagic;
 
 
     Player() {
@@ -180,7 +180,7 @@ public class Player extends JLabel {
 
     }
 
-    boolean facingLeft() {
+    protected boolean facingLeft() {
 
         if (facing == 2) {
 
@@ -192,7 +192,7 @@ public class Player extends JLabel {
 
     }
 
-    boolean facingRight() {
+    protected boolean facingRight() {
 
         if (facing == 0) {
 
@@ -204,7 +204,7 @@ public class Player extends JLabel {
 
     }
 
-    void setWhichPlayer(int whichPlayerNum, JComponent RootPane) {
+    protected void setWhichPlayer(int whichPlayerNum, JComponent RootPane) {
 
 
         if (whichPlayerNum == 1) {
@@ -223,20 +223,20 @@ public class Player extends JLabel {
     }
 
     //sets the movementTimer speed
-    void setMoveSpeed(int s) {
+    protected void setMoveSpeed(int s) {
 
         moveSpeed = s;
 
     }
 
     //sets the movementTimer speed
-    void setProjectSpeed(int s) {
+    protected void setProjectSpeed(int s) {
 
         projectSpeed = s;
 
     }
 
-    void set(int w, int h) {
+    protected void set(int w, int h) {
 
         allBoolMove[w][h] = true;
 
@@ -255,7 +255,7 @@ public class Player extends JLabel {
 
     }
 
-    void reset(int w, int h) {
+    protected void reset(int w, int h) {
 
         allBoolMove[w][h] = false;
         count = 0;
@@ -269,7 +269,6 @@ public class Player extends JLabel {
             Main.fightWindow.P1.beingHit = false;
 
         }
-
 
         allPic[w + facing][h].getImage().flush();
 
@@ -297,13 +296,13 @@ public class Player extends JLabel {
 
     }
 
-    void setLocGround() {
+    protected void setLocGround() {
 
         setLocation(getX(), FightClub.height - allPic[0][0].getIconHeight() - COMMON_FLOOR);
 
     }
 
-    void setBack(int a) {
+    protected void setBack(int a) {
 
         if (facing == 2) {
 
@@ -317,7 +316,7 @@ public class Player extends JLabel {
 
     }
 
-    void setInitLoc(int whichPlayerNum) {
+    protected void setInitLoc(int whichPlayerNum) {
 
         if (whichPlayerNum == 1) {
 
@@ -334,7 +333,7 @@ public class Player extends JLabel {
 
 
     //sets all the keybinders for player 1
-    void setKeyBindingP1(JComponent RootPane) {
+    protected void setKeyBindingP1(JComponent RootPane) {
 
         //sets the movement block
         addKeyBinder(RootPane, KeyEvent.VK_S, "P1Block", e -> PBlock(), e -> RBlock());
@@ -358,13 +357,13 @@ public class Player extends JLabel {
         addKeyBinder(RootPane, KeyEvent.VK_H, "P1Shoot", e -> shoot());
 
         //sets the movement super
-        addKeyBinder(RootPane, KeyEvent.VK_R, "P1Super", e -> superPower());
+        addKeyBinder(RootPane, KeyEvent.VK_T, "P1Super", e -> superPower());
 
 
     }
 
     //sets all the keybinders for player 2
-    void setKeyBindingP2(JComponent RootPane) {
+    protected void setKeyBindingP2(JComponent RootPane) {
 
 
         //sets the movement block
@@ -429,7 +428,7 @@ public class Player extends JLabel {
         });
 
         //sets the movement super
-        addKeyBinder(RootPane, KeyEvent.VK_U, "P2Super", e -> {
+        addKeyBinder(RootPane, KeyEvent.VK_I, "P2Super", e -> {
 
             superPower();
 
@@ -439,14 +438,14 @@ public class Player extends JLabel {
     }
 
     //makes player move horizontally
-    void moveHorizontal(int m) {
+    protected void moveHorizontal(int m) {
 
         setLocation(getX() + m, getY());
 
     }
 
     //makes player move horizontally
-    void moveVertical(int m) {
+    protected void moveVertical(int m) {
 
         setLocation(getX(), getY() + m);
 
@@ -454,7 +453,7 @@ public class Player extends JLabel {
 
     void PBlock() {
 
-        if (!isAttacking() && !isJumping() && !beingSuped && !gameOver) {
+        if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
             stopMoving();
             set(1, 1);
@@ -466,7 +465,7 @@ public class Player extends JLabel {
 
     void RBlock() {
 
-        if (!isAttacking() && !isJumping() && !beingSuped && !gameOver) {
+        if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
             //      hpMagic.magicTimer.stop();
             reset(1, 1);
@@ -477,7 +476,7 @@ public class Player extends JLabel {
 
     void PLeft() {
 
-        if (!isAttacking() && !isBlocking() && !gameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver) {
 
             set(1, 0);
 
@@ -487,7 +486,7 @@ public class Player extends JLabel {
 
     void PRight() {
 
-        if (!isAttacking() && !isBlocking() && !gameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver) {
 
             set(1, 2);
 
@@ -497,7 +496,7 @@ public class Player extends JLabel {
 
     void RLeft() {
 
-        if (!isAttacking() && !isBlocking() && !gameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver) {
 
             reset(1, 0);
 
@@ -507,7 +506,7 @@ public class Player extends JLabel {
 
     void RRight() {
 
-        if (!isAttacking() && !isBlocking() && !gameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver) {
 
             reset(1, 2);
 
@@ -517,7 +516,7 @@ public class Player extends JLabel {
 
     void jump() {
 
-        if (!isAttacking() && !isJumping() && !beingSuped && !gameOver) {
+        if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
             set(0, 1);
             jumpHeight = JUMP_HEIGHT;
@@ -544,10 +543,7 @@ public class Player extends JLabel {
     void shoot() {
 
         stopMoving();
-        hpMagic.decMagic(PROJECTILE_MGI);
         set(1, 5);
-        bulletCreation();
-        bulletTimer.start();
         stopTimer.start();
 
     }
@@ -770,6 +766,18 @@ public class Player extends JLabel {
         }
 
         return true;
+
+    }
+
+    static boolean getGameOver() {
+
+        return GameOver;
+
+    }
+
+    static void setGameOver(boolean g) {
+
+        GameOver = g;
 
     }
 

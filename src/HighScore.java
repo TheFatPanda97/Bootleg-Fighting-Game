@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class HighScore extends AllWindows {
 
-    JList List;
-    JScrollPane ScrollView = new JScrollPane();
-    ArrayList<String> items = new ArrayList<>();
-    ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
-    JLabel lblBackground = new JLabel();
-    Button btnInfo = new Button(2);
-    final int SIDE_LENGTH = 20;
+    private JList List;
+    private JScrollPane ScrollView = new JScrollPane();
+    private ArrayList<String> items = new ArrayList<>();
+    private ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
+    private JLabel lblBackground = new JLabel();
+    private Button btnInfo = new Button(2);
+    private final int SIDE_LENGTH = 20;
 
 
     HighScore() {
@@ -51,9 +51,6 @@ public class HighScore extends AllWindows {
         lblBackground.setBounds(0, 0, width, height);
         lblBackground.setIcon(imgRescaler(IntroScreen, width, height));
 
-        //List = new JList(items.toArray());
-
-        //ScrollView.setViewportView(List);
         ScrollView.setBounds(SIDE_LENGTH, SIDE_LENGTH, 100, 450);
 
         add(btnInfo);
@@ -72,11 +69,6 @@ public class HighScore extends AllWindows {
 
         }
 
-//        for (String x : items) {
-//
-//            System.out.println(x);
-//
-//        }
 
         List = new JList(items.toArray());
         ScrollView.setViewportView(List);
@@ -95,7 +87,7 @@ public class HighScore extends AllWindows {
     void updateScore() {
 
         Main.rw.readFile();
-        setScore(Main.rw.stackInfo);
+        setScore(Main.rw.getStackInfo());
 
 
     }

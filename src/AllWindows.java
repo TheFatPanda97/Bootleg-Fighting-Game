@@ -10,10 +10,9 @@ public class AllWindows extends JFrame {
     final int DX = 5000;
     final int DY = 5000;
 
+    protected JLabel background = new JLabel();
 
-    JLabel background = new JLabel();
-
-    public AllWindows() {
+    AllWindows() {
 
         setSize(width, height);
         setLayout(null);
@@ -23,14 +22,14 @@ public class AllWindows extends JFrame {
     }
 
     //resize images to correct size
-    ImageIcon imgRescaler(ImageIcon img, int w, int h) {
+    protected ImageIcon imgRescaler(ImageIcon img, int w, int h) {
 
         //complete magic here
         return new ImageIcon(img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT));
 
     }
 
-    void centerSetter(JLabel a, JLabel b) {
+    protected void centerSetter(JLabel a, JLabel b) {
 
         a.setLocation(b.getX() + (b.getWidth()) / 2 - (a.getWidth() / 2), b.getY() - a.getHeight() - 10);
 

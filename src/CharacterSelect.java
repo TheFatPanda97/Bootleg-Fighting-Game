@@ -18,72 +18,72 @@ import java.util.Scanner;
 
 public class CharacterSelect extends AllWindows {
 
-    boolean firstDownload;
+    private boolean firstDownload;
 
-    ImageIcon CSelect = new ImageIcon("src/Resource/Screen_Background/player selection.jpg");
-    ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
+    private ImageIcon CSelect = new ImageIcon("src/Resource/Screen_Background/player selection.jpg");
+    private ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
-    ImageIcon WizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
-    ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
-    ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
+    private ImageIcon WizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
+    private ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
+    private ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
 
-    ImageIcon P1Select = new ImageIcon("src/Resource/Hexagon/P1.png");
-    ImageIcon P2Select = new ImageIcon("src/Resource/Hexagon/P2.png");
-    ImageIcon Together = new ImageIcon("src/Resource/Hexagon/Together.png");
+    private ImageIcon P1Select = new ImageIcon("src/Resource/Hexagon/P1.png");
+    private ImageIcon P2Select = new ImageIcon("src/Resource/Hexagon/P2.png");
+    private ImageIcon Together = new ImageIcon("src/Resource/Hexagon/Together.png");
 
-    ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
-    ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
+    private ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
+    private ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
 
-    ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
-    ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
+    private ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
+    private ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
 
-    ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
-    ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
+    private ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
+    private ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
 
-    ImageIcon Fire = new ImageIcon("src/Resource/Decoration/Fire.gif");
+    private ImageIcon Fire = new ImageIcon("src/Resource/Decoration/Fire.gif");
 
-    ImageIcon FJap = new ImageIcon("src/Resource/Fighting_Background/Japan.gif");
-    ImageIcon FCad = new ImageIcon("src/Resource/Fighting_Background/Canada.gif");
-    ImageIcon FIdk = new ImageIcon("src/Resource/Fighting_Background/IDK.gif");
-    ImageIcon FChi = new ImageIcon("src/Resource/Fighting_Background/China.gif");
-    ImageIcon FFra = new ImageIcon("src/Resource/Fighting_Background/France.gif");
-    ImageIcon FUSA = new ImageIcon("src/Resource/Fighting_Background/USA.gif");
+    private ImageIcon FJap = new ImageIcon("src/Resource/Fighting_Background/Japan.gif");
+    private ImageIcon FCad = new ImageIcon("src/Resource/Fighting_Background/Canada.gif");
+    private ImageIcon FIdk = new ImageIcon("src/Resource/Fighting_Background/IDK.gif");
+    private ImageIcon FChi = new ImageIcon("src/Resource/Fighting_Background/China.gif");
+    private ImageIcon FFra = new ImageIcon("src/Resource/Fighting_Background/France.gif");
+    private ImageIcon FUSA = new ImageIcon("src/Resource/Fighting_Background/USA.gif");
 
-    JLabel[] allCharacter = new JLabel[3];
-    ImageIcon[] P1allCharacter = new ImageIcon[3];
-    ImageIcon[] P2allCharacter = new ImageIcon[3];
+    private JLabel[] allCharacter = new JLabel[3];
+    private ImageIcon[] P1allCharacter = new ImageIcon[3];
+    private ImageIcon[] P2allCharacter = new ImageIcon[3];
 
-    ImageIcon[][] allKakaImg = new ImageIcon[4][6];
-    ArrayList<Integer> allKakaData = new ArrayList<>();
+    private ImageIcon[][] allKakaImg = new ImageIcon[4][6];
+    private ArrayList<Integer> allKakaData = new ArrayList<>();
 
-    JLabel lblHighlight = new JLabel();
-    JLabel lblKaka = new JLabel();
-    JLabel lblWiz = new JLabel();
-    JLabel lblRob = new JLabel();
-    JLabel lblP1 = new JLabel();
-    JLabel lblP2 = new JLabel();
-    JLabel lblBigP1 = new JLabel();
-    JLabel lblBigP2 = new JLabel();
-    JLabel lblmapSelect = new JLabel();
+    private JLabel lblHighlight = new JLabel();
+    private JLabel lblKaka = new JLabel();
+    private JLabel lblWiz = new JLabel();
+    private JLabel lblRob = new JLabel();
+    private JLabel lblP1 = new JLabel();
+    private JLabel lblP2 = new JLabel();
+    private JLabel lblBigP1 = new JLabel();
+    private JLabel lblBigP2 = new JLabel();
+    private JLabel lblmapSelect = new JLabel();
 
-    JTextField P1Name, P2Name;
+    private JTextField P1Name, P2Name;
 
-    JLabel[] allFire = new JLabel[6];
+    private JLabel[] allFire = new JLabel[6];
 
-    JLabel lblMapArea = new JLabel();
+    private JLabel lblMapArea = new JLabel();
 
-    ImageIcon[] allMaps = new ImageIcon[]{FCad, FUSA, FIdk, FFra, FChi, FJap};
+    private ImageIcon[] allMaps = new ImageIcon[]{FCad, FUSA, FIdk, FFra, FChi, FJap};
 
-    Button btnMain = new Button(2);
-    Button btnStart = new Button(0);
+    private Button btnMain = new Button(2);
+    private Button btnStart = new Button(0);
 
-    int P1At = 0;
-    int P2At = 2;
-    final int CORNER_DIS = 20;
-    final int TEXT_WIDTH = 200;
-    final int TEXT_HEIGHT = 40;
+    private int P1At = 0;
+    private int P2At = 2;
+    private final int CORNER_DIS = 20;
+    private final int TEXT_WIDTH = 200;
+    private final int TEXT_HEIGHT = 40;
 
-    boolean downloadSuccess;
+    private boolean downloadSuccess;
 
 
     CharacterSelect() {
@@ -493,7 +493,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void setAllFires() {
+    private void setAllFires() {
 
         for (int i = 0; i < allFire.length; i++) {
 
@@ -513,7 +513,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void setAllCharacter() {
+    private void setAllCharacter() {
 
         allCharacter[0] = lblWiz;
         allCharacter[1] = lblKaka;
@@ -529,7 +529,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void addLabel(JLabel a, ImageIcon b, int x, int y) {
+    private void addLabel(JLabel a, ImageIcon b, int x, int y) {
 
 
         a.setIcon(b);
@@ -541,7 +541,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void addLabel(JLabel a, ImageIcon b, int x, int y, boolean f) {
+    private void addLabel(JLabel a, ImageIcon b, int x, int y, boolean f) {
 
 
         a.setIcon(b);
@@ -553,13 +553,13 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void setAt(JLabel a, int b) {
+    private void setAt(JLabel a, int b) {
 
         a.setLocation(allCharacter[b].getX(), allCharacter[b].getY());
 
     }
 
-    void setBig(JLabel a, ImageIcon[] b, int c) {
+    private void setBig(JLabel a, ImageIcon[] b, int c) {
 
         if (b[c] != null) {
 
@@ -570,7 +570,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void setTogether() {
+    private void setTogether() {
 
         if (lblP1.getX() == lblP2.getX()) {
 
@@ -583,13 +583,13 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void remove(JLabel a) {
+    private void remove(JLabel a) {
 
         a.setLocation(DX, DY);
 
     }
 
-    void startGame() {
+    private void startGame() {
 
         if (startGameCondition()) {
 
@@ -602,13 +602,13 @@ public class CharacterSelect extends AllWindows {
             setVisible(false);
             Main.fightWindow.setVisible(true);
             Main.fightWindow.countDownTimer.start();
-            Player.gameOver = false;
+            Player.setGameOver(false);
 
         }
 
     }
 
-    boolean startGameCondition() {
+    private boolean startGameCondition() {
 
         if (P1Name.getText().equals("") || P2Name.getText().equals("")) {
 
@@ -639,7 +639,7 @@ public class CharacterSelect extends AllWindows {
 
         } else if (P1At == 1 || P2At == 1) {
 
-            if (!Main.rw.DLC) {
+            if (!Main.rw.getDLC()) {
 
                 String code = JOptionPane.showInputDialog(null, "Kakashi is a DLC \nWhisper into Shawn's ears: \"SHAWN SO SMART O GOD\" and he will tell you the DLC code\nDeen you are not allowed");
 
@@ -774,7 +774,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void selectMap(int i) {
+    private void selectMap(int i) {
 
         lblmapSelect.setLocation(allFire[i].getX(), allFire[i].getY());
         Main.fightWindow.background.setIcon(imgRescaler(allMaps[i], width, height));
@@ -782,14 +782,14 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void previewmap(ImageIcon a) {
+    private void previewmap(ImageIcon a) {
 
         lblMapArea.setIcon(imgRescaler(a, lblMapArea.getWidth(), lblMapArea.getHeight()));
 
 
     }
 
-    boolean isNumber(String s) {
+    private boolean isNumber(String s) {
 
         try {
 
@@ -803,7 +803,7 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void selectionSort(ArrayList<Integer> arr) {
+    private void selectionSort(ArrayList<Integer> arr) {
 
         for (int i = 0; i < arr.size() - 1; i++) {
 
@@ -821,11 +821,17 @@ public class CharacterSelect extends AllWindows {
 
     }
 
-    void switchNums(int i, int index, ArrayList<Integer> a) {
+    private void switchNums(int i, int index, ArrayList<Integer> a) {
 
         int temp = a.get(i);
         a.set(i, a.get(index));
         a.set(index, temp);
+
+    }
+
+    boolean getdownloadSucces() {
+
+        return downloadSuccess;
 
     }
 

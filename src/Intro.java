@@ -106,9 +106,9 @@ public class Intro extends AllWindows {
             public void mousePressed(MouseEvent e) {
 
 
-                if (Main.CSelectWindow.downloadSuccess) {
+                if (Main.CSelectWindow.getdownloadSucces()) {
 
-                    Main.rw.DLC = true;
+                    Main.rw.setDLC(true);
                     Main.rw.writeMessage("SHAWN SO SMART O GOD");
 
                 }

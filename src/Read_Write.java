@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Read_Write {
 
-    String highFileName = "High Score.txt";
-    String DLCFileName = "DLC.txt";
-    String KakaFileName = "KakaData.txt";
-    String path = "/src/Resource/All_Data/";
-    boolean DLC = false;
-    int currentHighScore = 0;
-    Stack stackInfo = new Stack();
+    private String highFileName = "High Score.txt";
+    private String DLCFileName = "DLC.txt";
+    private String KakaFileName = "KakaData.txt";
+    private String path = "/src/Resource/All_Data/";
+    private boolean DLC = false;
+    private int currentHighScore = 0;
+    private Stack stackInfo = new Stack();
 
     void readFile() {
 
@@ -120,39 +120,6 @@ public class Read_Write {
 
     }
 
-//    void writeMessage(String s, boolean success) {
-//
-//        try {
-//
-//            PrintWriter outputStream = new PrintWriter(System.getProperty("user.dir") + path + DLCFileName);
-//            System.out.print("File found during writing...");
-//
-//
-//            if (success) {
-//
-//                outputStream.println(s);
-//
-//            }
-//
-//            if(!DLC) {
-//
-//                outputStream.println("NO DLC YET");
-//
-//            }
-//
-//            outputStream.close();
-//
-//            System.out.println("File written successfully!!");
-//
-//
-//        } catch (FileNotFoundException e) {
-//
-//            System.out.println("Could not find file!!");
-//
-//        }
-//
-//    }
-
     void writeMessage(Node n) {
 
         try {
@@ -230,6 +197,24 @@ public class Read_Write {
         int temp = a.get(i);
         a.set(i, a.get(index));
         a.set(index, temp);
+
+    }
+
+    boolean getDLC() {
+
+        return DLC;
+
+    }
+
+    void setDLC(boolean d) {
+
+        DLC = d;
+
+    }
+
+    Stack getStackInfo() {
+
+        return stackInfo;
 
     }
 
