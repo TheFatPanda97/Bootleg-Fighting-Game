@@ -4,18 +4,18 @@ import java.awt.event.MouseListener;
 
 public class Button extends JLabel {
 
-    ImageIcon[][] allButtonImg = new ImageIcon[4][2];
-    ImageIcon SStart = new ImageIcon("src/Resource/Buttons/SStart.png");
-    ImageIcon HStart = new ImageIcon("src/Resource/Buttons/HStart.png");
-    ImageIcon SExit = new ImageIcon("src/Resource/Buttons/SExit.png");
-    ImageIcon HExit = new ImageIcon("src/Resource/Buttons/HExit.png");
-    ImageIcon SMain = new ImageIcon("src/Resource/Buttons/SMain.png");
-    ImageIcon HMain = new ImageIcon("src/Resource/Buttons/HMain.png");
-    ImageIcon SHigh = new ImageIcon("src/Resource/Buttons/SHigh.png");
-    ImageIcon HHigh = new ImageIcon("src/Resource/Buttons/HHigh.png");
+    private ImageIcon[][] allButtonImg = new ImageIcon[4][2];
+    private ImageIcon SStart = new ImageIcon("src/Resource/Buttons/SStart.png");
+    private ImageIcon HStart = new ImageIcon("src/Resource/Buttons/HStart.png");
+    private ImageIcon SExit = new ImageIcon("src/Resource/Buttons/SExit.png");
+    private ImageIcon HExit = new ImageIcon("src/Resource/Buttons/HExit.png");
+    private ImageIcon SMain = new ImageIcon("src/Resource/Buttons/SMain.png");
+    private ImageIcon HMain = new ImageIcon("src/Resource/Buttons/HMain.png");
+    private ImageIcon SHigh = new ImageIcon("src/Resource/Buttons/SHigh.png");
+    private ImageIcon HHigh = new ImageIcon("src/Resource/Buttons/HHigh.png");
 
 
-    Button(int set) {
+    public Button(int set) {
 
         setSize(250, 80);
         setAllButtonImg();
@@ -54,7 +54,7 @@ public class Button extends JLabel {
 
     }
 
-    void setAllButtonImg() {
+    private void setAllButtonImg() {
 
         allButtonImg[0][0] = SStart;
         allButtonImg[0][1] = HStart;

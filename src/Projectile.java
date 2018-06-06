@@ -3,24 +3,23 @@ import java.awt.event.ActionListener;
 
 public class Projectile extends JLabel {
 
-    ImageIcon RShot = new ImageIcon("src/Resource/Shot/RShot.gif");
-    ImageIcon LShot = new ImageIcon("src/Resource/Shot/LShot.gif");
-    ImageIcon RExplosion = new ImageIcon("src/Resource/Shot_Explosion/RExplosion.gif");
-    ImageIcon LExplosion = new ImageIcon("src/Resource/Shot_Explosion/LExplosion.gif");
-    ImageIcon RRobSuper = new ImageIcon("src/Resource/Shot/RRobSuper.gif");
-    ImageIcon LRobSuper = new ImageIcon("src/Resource/Shot/LRobSuper.gif");
+    private ImageIcon RShot = new ImageIcon("src/Resource/Shot/RShot.gif");
+    private ImageIcon LShot = new ImageIcon("src/Resource/Shot/LShot.gif");
+    private  ImageIcon RExplosion = new ImageIcon("src/Resource/Shot_Explosion/RExplosion.gif");
+    private  ImageIcon LExplosion = new ImageIcon("src/Resource/Shot_Explosion/LExplosion.gif");
+    private  ImageIcon RRobSuper = new ImageIcon("src/Resource/Shot/RRobSuper.gif");
+    private  ImageIcon LRobSuper = new ImageIcon("src/Resource/Shot/LRobSuper.gif");
 
+    private ImageIcon[][] allShot = new ImageIcon[3][4];
 
-    ImageIcon[][] allShot = new ImageIcon[3][4];
+    public int face = -1;
+    private int count;
 
-    int face = -1;
-    int count;
+    public boolean explode = false;
+    public boolean supsBullet = false;
 
-    boolean explode = false;
-    boolean supsBullet = false;
-
-    Timer explosionTimer;
-    Timer stopTimer;
+    public Timer explosionTimer;
+    private Timer stopTimer;
 
     public Projectile(JLabel icon, int facing, int WPN) {
 
@@ -111,13 +110,13 @@ public class Projectile extends JLabel {
 
     }
 
-    void moveHorizon(int m) {
+    public void moveHorizon(int m) {
 
         setLocation(getLocation().x + m, getY());
 
     }
 
-    void setExplosion() {
+    public void setExplosion() {
 
         if (face == 0) {
 
@@ -132,7 +131,7 @@ public class Projectile extends JLabel {
 
     }
 
-    void setShots() {
+    private void setShots() {
 
         allShot[0][0] = RShot;
         allShot[0][2] = LShot;
@@ -146,7 +145,7 @@ public class Projectile extends JLabel {
 
     }
 
-    void explosionAct(int delay, ActionListener actionListener) {
+    private void explosionAct(int delay, ActionListener actionListener) {
 
         explosionTimer = new Timer(delay, e -> {
 
@@ -156,7 +155,7 @@ public class Projectile extends JLabel {
 
     }
 
-    void stopAct(int delay, ActionListener actionListener) {
+    private void stopAct(int delay, ActionListener actionListener) {
 
         stopTimer = new Timer(delay, e -> {
 
@@ -166,7 +165,7 @@ public class Projectile extends JLabel {
 
     }
 
-    void remove() {
+    public void remove() {
 
         //   face = -2;
         setLocation(200, 2000);

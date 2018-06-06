@@ -2,25 +2,25 @@ import javax.swing.*;
 
 public class Robot extends Player {
 
-    ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
-    ImageIcon RNormRobWalk = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Walk_v2.gif");
-    ImageIcon RNormRobJump = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Jump_v1.gif");
-    ImageIcon RRobBlock = new ImageIcon("src/Resource/Robot/R_Rob_Block.gif");
-    ImageIcon RNormRobPunch = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Punch_v2.gif");
-    ImageIcon RNormRobShot = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Gun_v2.gif");
-    ImageIcon RNormRobKick = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Kick_v2.gif");
-    ImageIcon RNormRobSlam = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Ground_Slam_v2.gif");
+    private ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
+    private ImageIcon RNormRobWalk = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Walk_v2.gif");
+    private ImageIcon RNormRobJump = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Jump_v1.gif");
+    private ImageIcon RRobBlock = new ImageIcon("src/Resource/Robot/R_Rob_Block.gif");
+    private ImageIcon RNormRobPunch = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Punch_v2.gif");
+    private ImageIcon RNormRobShot = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Gun_v2.gif");
+    private ImageIcon RNormRobKick = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Kick_v2.gif");
+    private ImageIcon RNormRobSlam = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Ground_Slam_v2.gif");
 
-    ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
-    ImageIcon LNormRobWalk = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Walk_v2.gif");
-    ImageIcon LNormRobJump = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Jump_v1.gif");
-    ImageIcon LRobBlock = new ImageIcon("src/Resource/Robot/L_Rob_Block.gif");
-    ImageIcon LNormRobPunch = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Punch_v2.gif");
-    ImageIcon LNormRobShot = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Gun_v2.gif");
-    ImageIcon LNormRobKick = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Kick_v2.gif");
-    ImageIcon LNormRobSlam = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Ground_Slam_v2.gif");
+    private ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
+    private ImageIcon LNormRobWalk = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Walk_v2.gif");
+    private ImageIcon LNormRobJump = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Jump_v1.gif");
+    private ImageIcon LRobBlock = new ImageIcon("src/Resource/Robot/L_Rob_Block.gif");
+    private ImageIcon LNormRobPunch = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Punch_v2.gif");
+    private ImageIcon LNormRobShot = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Gun_v2.gif");
+    private ImageIcon LNormRobKick = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Kick_v2.gif");
+    private ImageIcon LNormRobSlam = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Ground_Slam_v2.gif");
 
-    Robot(JComponent RootPane, int WPN) {
+    public Robot(JComponent RootPane, int WPN) {
 
         super();
         whichPlayerNum = WPN;
@@ -94,7 +94,7 @@ public class Robot extends Player {
 
     }
 
-    void punch() {
+    public void punch() {
 
         if (!isAttacking() && !GameOver && !dontMove) {
 
@@ -105,7 +105,7 @@ public class Robot extends Player {
 
     }
 
-    void kick() {
+    public void kick() {
 
         if (!isAttacking() && !atTop && !GameOver && !dontMove) {
 
@@ -116,7 +116,7 @@ public class Robot extends Player {
 
     }
 
-    void shoot() {
+    public void shoot() {
 
         if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
@@ -130,7 +130,7 @@ public class Robot extends Player {
 
     }
 
-    void superPower() {
+    public void superPower() {
 
         if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
@@ -142,14 +142,14 @@ public class Robot extends Player {
 
     }
 
-    void bulletCreation() {
+    public void bulletCreation() {
 
         allBulltes.add(new Projectile(this, facing, ROB_SHOOT, 1));
         super.bulletCreation();
 
     }
 
-    void bulletCreation(boolean sups) {
+    private void bulletCreation(boolean sups) {
 
         allBulltes.add(new Projectile(this, facing, 1, whichPlayerNum, sups));
         super.bulletCreation();
@@ -173,7 +173,7 @@ public class Robot extends Player {
 
     }
 
-    void kickSetback() {
+    private void kickSetback() {
 
         if (facingLeft()) {
 
@@ -183,7 +183,7 @@ public class Robot extends Player {
 
     }
 
-    void shootSetback() {
+    private void shootSetback() {
 
         if (facingLeft()) {
 
@@ -194,7 +194,7 @@ public class Robot extends Player {
 
     }
 
-    void punchSetback() {
+    private void punchSetback() {
 
         if (facingLeft()) {
 
@@ -204,7 +204,7 @@ public class Robot extends Player {
 
     }
 
-    void setRobPics(int whichPlayerNum) {
+    private void setRobPics(int whichPlayerNum) {
 
         allPic[0][0] = RNormRobStat;
         allPic[0][1] = RNormRobJump;

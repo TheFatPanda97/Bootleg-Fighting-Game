@@ -2,25 +2,25 @@ import javax.swing.*;
 
 public class Wizard extends Player {
 
-    ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
-    ImageIcon RNormWizWalk = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Walk_v1.gif");
-    ImageIcon RNormWizBlock = new ImageIcon("src/Resource/Wizard/R_Wiz_Block.gif");
-    ImageIcon RNormWizJump = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Jump_v2.gif");
-    ImageIcon RNormWizPunch = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Punch_v3.gif");
-    ImageIcon RNormWizShot = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Shot_v1.gif");
-    ImageIcon RNormWizSpin = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_SPin_v1.gif");
-    ImageIcon RNormWizLight = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Lightning_v4.gif");
+    private ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
+    private ImageIcon RNormWizWalk = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Walk_v1.gif");
+    private ImageIcon RNormWizBlock = new ImageIcon("src/Resource/Wizard/R_Wiz_Block.gif");
+    private ImageIcon RNormWizJump = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Jump_v2.gif");
+    private ImageIcon RNormWizPunch = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Punch_v3.gif");
+    private ImageIcon RNormWizShot = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Shot_v1.gif");
+    private ImageIcon RNormWizSpin = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_SPin_v1.gif");
+    private ImageIcon RNormWizLight = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Lightning_v4.gif");
 
-    ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
-    ImageIcon LNormWizWalk = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Walk_v1.gif");
-    ImageIcon LNormWizBlock = new ImageIcon("src/Resource/Wizard/L_Wiz_Block.gif");
-    ImageIcon LNormWizJump = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Jump_v2.gif");
-    ImageIcon LNormWizPunch = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Punch_v3.gif");
-    ImageIcon LNormWizShot = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Shot_v1.gif");
-    ImageIcon LNormWizSpin = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_SPin_v1.gif");
-    ImageIcon LNormWizLight = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Lightning_v4.gif");
+    private ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
+    private ImageIcon LNormWizWalk = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Walk_v1.gif");
+    private ImageIcon LNormWizBlock = new ImageIcon("src/Resource/Wizard/L_Wiz_Block.gif");
+    private ImageIcon LNormWizJump = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Jump_v2.gif");
+    private ImageIcon LNormWizPunch = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Punch_v3.gif");
+    private ImageIcon LNormWizShot = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Shot_v1.gif");
+    private ImageIcon LNormWizSpin = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_SPin_v1.gif");
+    private ImageIcon LNormWizLight = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Lightning_v4.gif");
 
-    Wizard(JComponent RootPane, int WPN) {
+    public Wizard(JComponent RootPane, int WPN) {
 
         super();
         whichPlayerNum = WPN;
@@ -104,7 +104,7 @@ public class Wizard extends Player {
 
     }
 
-    void punch() {
+    public void punch() {
 
         if (!isAttacking() && !GameOver && !dontMove) {
 
@@ -115,7 +115,7 @@ public class Wizard extends Player {
 
     }
 
-    void kick() {
+    public void kick() {
 
         if (!isAttacking() && !atTop && !GameOver && !dontMove) {
 
@@ -126,7 +126,7 @@ public class Wizard extends Player {
 
     }
 
-    void shoot() {
+    public void shoot() {
 
         if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
@@ -140,7 +140,7 @@ public class Wizard extends Player {
 
     }
 
-    void superPower() {
+    public void superPower() {
 
         if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
@@ -152,20 +152,20 @@ public class Wizard extends Player {
 
     }
 
-    void bulletCreation() {
+    public void bulletCreation() {
 
         allBulltes.add(new Projectile(this, facing, 0));
         super.bulletCreation();
 
     }
 
-    void kickSetback() {
+    private void kickSetback() {
 
         setLocation(getX(), getY() + spinDown);
 
     }
 
-    void shootSetback() {
+    private void shootSetback() {
 
         if (facingLeft()) {
 
@@ -175,7 +175,7 @@ public class Wizard extends Player {
 
     }
 
-    void punchSetback() {
+    private void punchSetback() {
 
         if (facingLeft()) {
 
@@ -186,7 +186,7 @@ public class Wizard extends Player {
     }
 
     //setup pics
-    void setWizPics(int whichPlayerNum) {
+    private void setWizPics(int whichPlayerNum) {
 
         //setting pics
         allPic[0][0] = RNormWizStat;

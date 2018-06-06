@@ -4,17 +4,17 @@ import java.awt.event.MouseListener;
 
 public class Intro extends AllWindows {
 
-    ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
-    ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
+    private ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
+    private ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
-    JLabel lblHighlight = new JLabel();
-    Button btnStart = new Button(0);
-    Button btnExit = new Button(1);
-    Button btnHigh = new Button(3);
+    private JLabel lblHighlight = new JLabel();
+    private Button btnStart = new Button(0);
+    private Button btnExit = new Button(1);
+    private  Button btnHigh = new Button(3);
 
-    final int DISTANCE = 30;
+    private final int DISTANCE = 30;
 
-    Intro() {
+    public Intro() {
 
         Main.rw.readFile();
 
@@ -145,7 +145,7 @@ public class Intro extends AllWindows {
 
     }
 
-    void remove(JLabel a) {
+    private void remove(JLabel a) {
 
         a.setLocation(DX, DY);
 

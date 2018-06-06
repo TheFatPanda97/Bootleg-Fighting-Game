@@ -15,7 +15,7 @@ public class HighScore extends AllWindows {
     private final int SIDE_LENGTH = 20;
 
 
-    HighScore() {
+    public HighScore() {
 
         btnInfo.setLocation(width - SIDE_LENGTH - btnInfo.getWidth(), SIDE_LENGTH);
         btnInfo.addMouseListener(new MouseListener() {
@@ -59,7 +59,7 @@ public class HighScore extends AllWindows {
 
     }
 
-    void setScore(Stack a) {
+    private void setScore(Stack a) {
 
         items.clear();
 
@@ -75,16 +75,7 @@ public class HighScore extends AllWindows {
 
     }
 
-
-//    //resize images to correct size
-//    ImageIcon imgRescaler(ImageIcon img, int w, int h) {
-//
-//        //complete magic here
-//        return new ImageIcon(img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT));
-//
-//    }
-
-    void updateScore() {
+    public void updateScore() {
 
         Main.rw.readFile();
         setScore(Main.rw.getStackInfo());

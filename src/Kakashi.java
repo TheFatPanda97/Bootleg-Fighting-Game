@@ -6,37 +6,37 @@ import java.util.ArrayList;
 
 public class Kakashi extends Player {
 
-    ImageIcon RKakaStat;
-    ImageIcon RKakaWalk;
-    ImageIcon RKakaBlock;
-    ImageIcon RKakaJump;
-    ImageIcon RKakaPunch;
-    ImageIcon RKakaKick;
-    ImageIcon RKakaTele;
-    ImageIcon RKakaChi;
-    ImageIcon RKakaSummon;
+    private ImageIcon RKakaStat;
+    private ImageIcon RKakaWalk;
+    private ImageIcon RKakaBlock;
+    private ImageIcon RKakaJump;
+    private ImageIcon RKakaPunch;
+    private ImageIcon RKakaKick;
+    private ImageIcon RKakaTele;
+    private ImageIcon RKakaChi;
+    private ImageIcon RKakaSummon;
 
-    ImageIcon LKakaStat;
-    ImageIcon LKakaWalk;
-    ImageIcon LKakaBlock;
-    ImageIcon LKakaJump;
-    ImageIcon LKakaPunch;
-    ImageIcon LKakaKick;
-    ImageIcon LKakaTele;
-    ImageIcon LKakaChi;
-    ImageIcon LKakaSummon;
+    private ImageIcon LKakaStat;
+    private ImageIcon LKakaWalk;
+    private ImageIcon LKakaBlock;
+    private ImageIcon LKakaJump;
+    private ImageIcon LKakaPunch;
+    private ImageIcon LKakaKick;
+    private ImageIcon LKakaTele;
+    private ImageIcon LKakaChi;
+    private ImageIcon LKakaSummon;
 
-    ImageIcon Genjutsu = new ImageIcon("src/Resource/Kakashi/Genjutsu.gif");
-    ImageIcon temp;
+    private ImageIcon Genjutsu = new ImageIcon("src/Resource/Kakashi/Genjutsu.gif");
+    private ImageIcon temp;
 
-    int superFacing = 0;
-    int countUp = 0;
+    private int superFacing = 0;
+    private int countUp = 0;
 
-    Timer pauseTimer;
+    private Timer pauseTimer;
 
-    ArrayList<Integer> allkakaData;
+    private ArrayList<Integer> allkakaData;
 
-    Kakashi(JComponent RootPane, int WPN) {
+    public Kakashi(JComponent RootPane, int WPN) {
 
         super();
 
@@ -44,7 +44,7 @@ public class Kakashi extends Player {
 
         whichPlayerNum = WPN;
 
-        setKakaIntState(RootPane);
+        setKakaIntState();
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
@@ -55,14 +55,14 @@ public class Kakashi extends Player {
 
     }
 
-    Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
+    public Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
 
         super();
 
         whichPlayerNum = WPN;
         allkakaData = d;
 
-        setKakaIntState(RootPane);
+        setKakaIntState();
         setKakaPics(whichPlayerNum, p);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
@@ -73,7 +73,7 @@ public class Kakashi extends Player {
 
     }
 
-    void stopAct() {
+    private void stopAct() {
 
         stopTimer = new Timer(10, e -> {
 
@@ -111,7 +111,7 @@ public class Kakashi extends Player {
                 chidori = true;
 
                 //super continued
-            } else if (allBoolMove[0][4] && count ==  allkakaData.get(4)) {
+            } else if (allBoolMove[0][4] && count == allkakaData.get(4)) {
 
                 if (whichPlayerNum == 1 && !Main.fightWindow.P2.isBlocking()) {
 
@@ -119,7 +119,7 @@ public class Kakashi extends Player {
                     temp = (ImageIcon) Main.fightWindow.background.getIcon();
                     Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, AllWindows.width, AllWindows.height));
 
-                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()){
+                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()) {
 
                     Main.fightWindow.P1.dontMove = true;
                     temp = (ImageIcon) Main.fightWindow.background.getIcon();
@@ -179,7 +179,7 @@ public class Kakashi extends Player {
 
     }
 
-    void pauseAct() {
+    private void pauseAct() {
 
         pauseTimer = new Timer(1000, e -> {
 
@@ -187,7 +187,7 @@ public class Kakashi extends Player {
 
                 pauseTimer.stop();
 
-            } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.dontMove){
+            } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.dontMove) {
 
                 pauseTimer.stop();
 
@@ -199,7 +199,7 @@ public class Kakashi extends Player {
 
                     Main.fightWindow.P2.dontMove = false;
 
-                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()){
+                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()) {
 
                     Main.fightWindow.P1.dontMove = false;
 
@@ -216,7 +216,7 @@ public class Kakashi extends Player {
         });
     }
 
-    void summon() {
+    private void summon() {
 
         if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !atTop && !GameOver) {
 
@@ -229,7 +229,7 @@ public class Kakashi extends Player {
 
     }
 
-    void punch() {
+    public void punch() {
 
         if (!isAttacking() && !GameOver) {
 
@@ -240,7 +240,7 @@ public class Kakashi extends Player {
 
     }
 
-    void kick() {
+    public void kick() {
 
         if (!isAttacking() && !atTop && !GameOver) {
 
@@ -250,7 +250,7 @@ public class Kakashi extends Player {
 
     }
 
-    void shoot() {
+    public void shoot() {
 
         if (!isAttacking() && !isBlocking() && !GameOver) {
 
@@ -260,7 +260,7 @@ public class Kakashi extends Player {
 
     }
 
-    void superPower() {
+    public void superPower() {
 
         if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver) {
 
@@ -272,11 +272,11 @@ public class Kakashi extends Player {
 
     }
 
-    void bulletCreation() {
+    public void bulletCreation() {
 
     }
 
-    void punchSetback() {
+    private void punchSetback() {
 
         if (facingLeft()) {
 
@@ -286,21 +286,21 @@ public class Kakashi extends Player {
 
     }
 
-    void superSetback() {
+    private void superSetback() {
 
         moveVertical(KakaSuperDistance);
 
     }
 
-    void setKakaIntState(JComponent RootPane) {
+    private void setKakaIntState() {
 
         if (whichPlayerNum == 1) {
 
-            addKeyBinder(RootPane, KeyEvent.VK_T, "P1Summon", e -> summon());
+            addKeyBinder(KeyEvent.VK_T, "P1Summon", e -> summon());
 
         } else {
 
-            addKeyBinder(RootPane, KeyEvent.VK_I, "P2Summon", e -> summon());
+            addKeyBinder(KeyEvent.VK_I, "P2Summon", e -> summon());
 
         }
 
@@ -327,7 +327,7 @@ public class Kakashi extends Player {
     }
 
     //setup pics
-    void setKakaPics(int whichPlayerNum) {
+    private void setKakaPics(int whichPlayerNum) {
 
         RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
         RKakaWalk = new ImageIcon("src/Resource/Kakashi/DLC/RKakaWalk.gif");
@@ -384,7 +384,7 @@ public class Kakashi extends Player {
 
     //setup pics
 
-    void setKakaPics(int whichPlayerNum, ImageIcon[][] p) {
+    private void setKakaPics(int whichPlayerNum, ImageIcon[][] p) {
 
         allPic = p;
 
@@ -400,7 +400,7 @@ public class Kakashi extends Player {
 
     }
 
-    void teleport() {
+    private void teleport() {
 
         if (facingRight()) {
 
@@ -414,7 +414,7 @@ public class Kakashi extends Player {
 
     }
 
-    void teleport(int face) {
+    private void teleport(int face) {
 
         if (face == 0) {
 
@@ -430,7 +430,7 @@ public class Kakashi extends Player {
 
     //resize images to correct size
 
-    protected ImageIcon imgRescaler(ImageIcon img, int w, int h) {
+    private ImageIcon imgRescaler(ImageIcon img, int w, int h) {
 
         //complete magic here
         return new ImageIcon(img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT));

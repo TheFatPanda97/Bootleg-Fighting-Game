@@ -1,16 +1,15 @@
 public class Stack {
 
-    int size = 0;
-    Node top;
+    private int size = 0;
+    public Node top;
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
 
         return top == null;
 
     }
 
-
-    void push(String n, int s) {
+    public void push(String n, int s) {
 
         size++;
         Node node = new Node(n, s, top);
@@ -18,15 +17,7 @@ public class Stack {
 
     }
 
-//    void push(Node node) {
-//
-//        size++;
-//        node.next = top;
-//        top = node;
-//
-//    }
-
-    void clear() {
+    public void clear() {
 
         for (int i = size; i > 0; i--) {
 
@@ -36,7 +27,7 @@ public class Stack {
 
     }
 
-    void pop() {
+    private void pop() {
 
         if (!isEmpty()) {
 
@@ -46,18 +37,5 @@ public class Stack {
         }
 
     }
-
-//    String peep() {
-//
-//        if (!isEmpty()) {
-//
-//            return top.cargo;
-//
-//
-//        }
-//
-//        return null;
-//
-//    }
 
 }

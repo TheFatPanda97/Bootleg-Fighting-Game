@@ -74,7 +74,7 @@ public class Player extends JLabel {
     protected boolean dontMove;
 
 
-    Player() {
+    public Player() {
 
         for (int i = 0; i < whichCharacter.length; i++) {
 
@@ -221,12 +221,12 @@ public class Player extends JLabel {
         if (whichPlayerNum == 1) {
 
             facing = 0;
-            setKeyBindingP1(RootPane);
+            setKeyBindingP1();
 
         } else if (whichPlayerNum == 2) {
 
             facing = 2;
-            setKeyBindingP2(RootPane);
+            setKeyBindingP2();
 
         }
 
@@ -345,41 +345,41 @@ public class Player extends JLabel {
 
 
     //sets all the keybinders for player 1
-    protected void setKeyBindingP1(JComponent RootPane) {
+    protected void setKeyBindingP1() {
 
         //sets the movement block
-        addKeyBinder(RootPane, KeyEvent.VK_S, "P1Block", e -> PBlock(), e -> RBlock());
+        addKeyBinder(KeyEvent.VK_S, "P1Block", e -> PBlock(), e -> RBlock());
 
         //sets the movement right
-        addKeyBinder(RootPane, KeyEvent.VK_D, "P1Right", e -> PRight(), e -> RRight());
+        addKeyBinder(KeyEvent.VK_D, "P1Right", e -> PRight(), e -> RRight());
 
         //sets the movement left
-        addKeyBinder(RootPane, KeyEvent.VK_A, "P1Left", e -> PLeft(), e -> RLeft());
+        addKeyBinder(KeyEvent.VK_A, "P1Left", e -> PLeft(), e -> RLeft());
 
         //sets the movement up
-        addKeyBinder(RootPane, KeyEvent.VK_W, "P1Jump", e -> jump());
+        addKeyBinder(KeyEvent.VK_W, "P1Jump", e -> jump());
 
         //sets the movement hit
-        addKeyBinder(RootPane, KeyEvent.VK_F, "P1Hit", e -> punch());
+        addKeyBinder(KeyEvent.VK_F, "P1Hit", e -> punch());
 
         //sets the movement kick
-        addKeyBinder(RootPane, KeyEvent.VK_G, "P1Kick", e -> kick());
+        addKeyBinder(KeyEvent.VK_G, "P1Kick", e -> kick());
 
         //sets the movement shoot
-        addKeyBinder(RootPane, KeyEvent.VK_H, "P1Shoot", e -> shoot());
+        addKeyBinder(KeyEvent.VK_H, "P1Shoot", e -> shoot());
 
         //sets the movement super
-        addKeyBinder(RootPane, KeyEvent.VK_R, "P1Super", e -> superPower());
+        addKeyBinder(KeyEvent.VK_R, "P1Super", e -> superPower());
 
 
     }
 
     //sets all the keybinders for player 2
-    protected void setKeyBindingP2(JComponent RootPane) {
+    protected void setKeyBindingP2() {
 
 
         //sets the movement block
-        addKeyBinder(RootPane, KeyEvent.VK_DOWN, "P2Block", e -> {
+        addKeyBinder(KeyEvent.VK_DOWN, "P2Block", e -> {
 
             PBlock();
 
@@ -390,7 +390,7 @@ public class Player extends JLabel {
         });
 
         //sets the movement right
-        addKeyBinder(RootPane, KeyEvent.VK_RIGHT, "P2Right", e -> {
+        addKeyBinder(KeyEvent.VK_RIGHT, "P2Right", e -> {
 
             PRight();
 
@@ -401,7 +401,7 @@ public class Player extends JLabel {
         });
 
         //sets the movement left
-        addKeyBinder(RootPane, KeyEvent.VK_LEFT, "P2Left", e -> {
+        addKeyBinder(KeyEvent.VK_LEFT, "P2Left", e -> {
 
             PLeft();
 
@@ -412,35 +412,35 @@ public class Player extends JLabel {
         });
 
         //sets the movement up
-        addKeyBinder(RootPane, KeyEvent.VK_UP, "P2Jump", e -> {
+        addKeyBinder(KeyEvent.VK_UP, "P2Jump", e -> {
 
             jump();
 
         });
 
         //sets the movement hit
-        addKeyBinder(RootPane, KeyEvent.VK_J, "P2Hit", e -> {
+        addKeyBinder(KeyEvent.VK_J, "P2Hit", e -> {
 
             punch();
 
         });
 
         //sets the movement kick
-        addKeyBinder(RootPane, KeyEvent.VK_K, "P2Kick", e -> {
+        addKeyBinder(KeyEvent.VK_K, "P2Kick", e -> {
 
             kick();
 
         });
 
         //sets the movement shoot
-        addKeyBinder(RootPane, KeyEvent.VK_L, "P2Shoot", e -> {
+        addKeyBinder(KeyEvent.VK_L, "P2Shoot", e -> {
 
             shoot();
 
         });
 
         //sets the movement super
-        addKeyBinder(RootPane, KeyEvent.VK_U, "P2Super", e -> {
+        addKeyBinder(KeyEvent.VK_U, "P2Super", e -> {
 
             superPower();
 
@@ -463,7 +463,7 @@ public class Player extends JLabel {
 
     }
 
-    void PBlock() {
+    private void PBlock() {
 
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
@@ -475,7 +475,7 @@ public class Player extends JLabel {
 
     }
 
-    void RBlock() {
+    private void RBlock() {
 
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
@@ -486,7 +486,7 @@ public class Player extends JLabel {
 
     }
 
-    void PLeft() {
+    private  void PLeft() {
 
         if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
@@ -496,7 +496,7 @@ public class Player extends JLabel {
 
     }
 
-    void PRight() {
+    private  void PRight() {
 
         if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
@@ -506,7 +506,7 @@ public class Player extends JLabel {
 
     }
 
-    void RLeft() {
+    private  void RLeft() {
 
         if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
@@ -516,7 +516,7 @@ public class Player extends JLabel {
 
     }
 
-    void RRight() {
+    private  void RRight() {
 
         if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
@@ -526,7 +526,7 @@ public class Player extends JLabel {
 
     }
 
-    void jump() {
+    private  void jump() {
 
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver && !dontMove) {
 
@@ -538,21 +538,21 @@ public class Player extends JLabel {
 
     }
 
-    void punch() {
+    protected void punch() {
 
         set(1, 3);
         stopTimer.start();
 
     }
 
-    void kick() {
+    protected void kick() {
 
         set(1, 4);
         stopTimer.start();
 
     }
 
-    void shoot() {
+    protected void shoot() {
 
         stopMoving();
         set(1, 5);
@@ -560,7 +560,7 @@ public class Player extends JLabel {
 
     }
 
-    void superPower() {
+    protected void superPower() {
 
         stopMoving();
         set(0, 3);
@@ -570,10 +570,7 @@ public class Player extends JLabel {
     }
 
 
-    void addKeyBinder(JComponent comp, int KeyCode, String id, ActionListener actionListener) {
-
-        //   InputMap im = comp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        // ActionMap ap = comp.getActionMap();
+    protected void addKeyBinder(int KeyCode, String id, ActionListener actionListener) {
 
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, false), "Pressed Once " + id);
 
@@ -587,10 +584,7 @@ public class Player extends JLabel {
 
     }
 
-    void addKeyBinder(JComponent comp, int KeyCode, String id, ActionListener actionListenerP, ActionListener actionListenerR) {
-
-//        InputMap im = comp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-//        ActionMap ap = comp.getActionMap();
+    private void addKeyBinder(int KeyCode, String id, ActionListener actionListenerP, ActionListener actionListenerR) {
 
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, false), "Pressed " + id);
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, true), "Released " + id);
@@ -609,10 +603,9 @@ public class Player extends JLabel {
             }
         });
 
-
     }
 
-    void removeKakaKeyBinder() {
+    protected void removeKakaKeyBinder() {
 
 //        System.out.println(Main.fightWindow.P1.whichCharacter[2]);
 //        System.out.println(Main.fightWindow.P2.whichCharacter[2]);
@@ -630,7 +623,7 @@ public class Player extends JLabel {
     }
 
 
-    void moveAct(int delay, ActionListener actionListener) {
+    private void moveAct(int delay, ActionListener actionListener) {
 
         movementTimer = new Timer(delay, e -> {
 
@@ -639,7 +632,7 @@ public class Player extends JLabel {
         });
     }
 
-    void jumpAct(int delay, ActionListener actionListener) {
+    private void jumpAct(int delay, ActionListener actionListener) {
 
         jumpTimer = new Timer(delay, e -> {
 
@@ -649,7 +642,7 @@ public class Player extends JLabel {
 
     }
 
-    void stopAct(ActionListener actionListener) {
+    protected void stopAct(ActionListener actionListener) {
 
         stopTimer = new Timer(10, e -> {
 
@@ -659,7 +652,7 @@ public class Player extends JLabel {
 
     }
 
-    void bulletAct(int delay, ActionListener actionListener) {
+    private void bulletAct(int delay, ActionListener actionListener) {
 
         bulletTimer = new Timer(delay, e -> {
 
@@ -669,7 +662,7 @@ public class Player extends JLabel {
 
     }
 
-    void hitAct(int delay, ActionListener actionListener) {
+    private void hitAct(int delay, ActionListener actionListener) {
 
         hitTimer = new Timer(delay, e -> {
 
@@ -680,7 +673,7 @@ public class Player extends JLabel {
     }
 
 
-    void outOfBounds() {
+    private  void outOfBounds() {
 
         if (getX() + getWidth() >= FightClub.width) {
 
@@ -694,7 +687,7 @@ public class Player extends JLabel {
 
     }
 
-    void stopMoving() {
+    protected void stopMoving() {
 
         //boolean for recording which button is pressed
         for (int i = 0; i < 2; i++) {
@@ -710,14 +703,14 @@ public class Player extends JLabel {
 
     }
 
-    void bulletCreation() {
+    protected void bulletCreation() {
 
         Main.fightWindow.add(allBulltes.get(projectStart), 0);
         ++projectStart;
 
     }
 
-    boolean isAllBoolFalse(boolean[][] t) {
+    private boolean isAllBoolFalse(boolean[][] t) {
 
         for (boolean[] a : t) {
 
@@ -737,7 +730,7 @@ public class Player extends JLabel {
 
     }
 
-    boolean isAttacking() {
+    public boolean isAttacking() {
 
         if (allBoolMove[0][3]) {
 
@@ -773,43 +766,25 @@ public class Player extends JLabel {
 
     }
 
-    boolean isJumping() {
+    private boolean isJumping() {
 
         return allBoolMove[0][1];
 
     }
 
-    boolean isSuper() {
+    protected boolean isSuper() {
 
         return allBoolMove[0][3];
 
     }
 
-    boolean isBlocking() {
+    protected boolean isBlocking() {
 
         return allBoolMove[1][1];
 
     }
 
-    boolean isWalking() {
-
-        if (!allBoolMove[1][0] && !allBoolMove[1][2]) {
-
-            return false;
-
-        }
-
-        return true;
-
-    }
-
-    static boolean getGameOver() {
-
-        return GameOver;
-
-    }
-
-    static void setGameOver(boolean g) {
+    public static void setGameOver(boolean g) {
 
         GameOver = g;
 
