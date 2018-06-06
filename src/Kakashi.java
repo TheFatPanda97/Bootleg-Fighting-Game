@@ -12,6 +12,7 @@ public class Kakashi extends Player {
     ImageIcon RKakaKick;
     ImageIcon RKakaTele;
     ImageIcon RKakaChi;
+    ImageIcon RKakaSummon;
 
     ImageIcon LKakaStat;
     ImageIcon LKakaWalk;
@@ -21,6 +22,7 @@ public class Kakashi extends Player {
     ImageIcon LKakaKick;
     ImageIcon LKakaTele;
     ImageIcon LKakaChi;
+    ImageIcon LKakaSummon;
 
     int superFacing = 0;
 
@@ -33,7 +35,12 @@ public class Kakashi extends Player {
 
         whichPlayerNum = WPN;
 
-        addKeyBinder(RootPane,KeyEvent.VK_Q,"exit",e-> System.out.println("dong"));
+        addKeyBinder(RootPane,KeyEvent.VK_Q,"exit",e-> {
+
+            set(0,4);
+
+        });
+
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
@@ -313,6 +320,7 @@ public class Kakashi extends Player {
         RKakaKick = new ImageIcon("src/Resource/Kakashi/DLC/RKakaKick.gif");
         RKakaTele = new ImageIcon("src/Resource/Kakashi/DLC/RKakaTeleport.gif");
         RKakaChi = new ImageIcon("src/Resource/Kakashi/DLC/RKakaSuper.gif");
+        RKakaSummon = new ImageIcon("src/Resource/Kakashi/DLC/RKakaSummon.gif");
 
         LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
         LKakaWalk = new ImageIcon("src/Resource/Kakashi/DLC/LKakaWalk.gif");
@@ -322,24 +330,28 @@ public class Kakashi extends Player {
         LKakaKick = new ImageIcon("src/Resource/Kakashi/DLC/LKakaKick.gif");
         LKakaTele = new ImageIcon("src/Resource/Kakashi/DLC/RKakaTeleport.gif");
         LKakaChi = new ImageIcon("src/Resource/Kakashi/DLC/LKakaSuper.gif");
+        LKakaSummon = new ImageIcon("src/Resource/Kakashi/DLC/LKakaSummon.gif");
 
         //setting pics
         allPic[0][0] = RKakaStat;
         allPic[0][1] = RKakaJump;
+        allPic[0][3] = RKakaChi;
+        allPic[0][4] = RKakaSummon;
         allPic[1][0] = LKakaWalk;
         allPic[1][1] = RKakaBlock;
         allPic[1][2] = RKakaWalk;
-        allPic[0][3] = RKakaChi;
         allPic[1][3] = RKakaPunch;
         allPic[1][4] = RKakaKick;
         allPic[1][5] = RKakaTele;
 
+
         allPic[2][0] = LKakaStat;
         allPic[2][1] = LKakaJump;
+        allPic[2][3] = LKakaChi;
+        allPic[2][4] = LKakaSummon;
         allPic[3][0] = LKakaWalk;
         allPic[3][1] = LKakaBlock;
         allPic[3][2] = RKakaWalk;
-        allPic[2][3] = LKakaChi;
         allPic[3][3] = LKakaPunch;
         allPic[3][4] = LKakaKick;
         allPic[3][5] = LKakaTele;

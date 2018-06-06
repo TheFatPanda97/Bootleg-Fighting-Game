@@ -367,7 +367,7 @@ public class Player extends JLabel {
         addKeyBinder(RootPane, KeyEvent.VK_H, "P1Shoot", e -> shoot());
 
         //sets the movement super
-        addKeyBinder(RootPane, KeyEvent.VK_T, "P1Super", e -> superPower());
+        addKeyBinder(RootPane, KeyEvent.VK_R, "P1Super", e -> superPower());
 
 
     }
@@ -438,7 +438,7 @@ public class Player extends JLabel {
         });
 
         //sets the movement super
-        addKeyBinder(RootPane, KeyEvent.VK_I, "P2Super", e -> {
+        addKeyBinder(RootPane, KeyEvent.VK_U, "P2Super", e -> {
 
             superPower();
 

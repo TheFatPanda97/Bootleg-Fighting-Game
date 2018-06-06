@@ -3,21 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="89c730e4-f1e9-4b90-9b16-2b04326604f2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Bar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Bar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/FightClub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/FightClub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/HighScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/HighScore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Kakashi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Kakashi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Wizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Wizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FightClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FightClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Madara/Genjitsu.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Madara/Long Mokuton.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kakashi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kakashi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resource/Madara/Genjitsu.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resource/Madara/Long Mokuton.gif" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +25,8 @@
       <file leaf-file-name="CharacterSelect.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CharacterSelect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1136">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="85">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#3734#13352#0" />
                 <element signature="class#5707:6189" />
@@ -127,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/AllWindows.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding>
                 <element signature="method#centerSetter#0;class#AllWindows#0" />
               </folding>
@@ -138,76 +131,76 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="272" lean-forward="true" selection-start-line="272" selection-end-line="272" />
+            <state relative-caret-position="136">
+              <caret line="258" selection-start-line="258" selection-end-line="258" />
               <folding>
-                <element signature="e#1876#3956#0" />
-                <element signature="e#1932#2359#0" />
-                <element signature="e#2383#3199#0" />
-                <element signature="e#3225#3905#0" />
-                <element signature="e#3928#3946#0" />
-                <element signature="e#3962#4089#0" />
-                <element signature="e#4095#4223#0" />
-                <element signature="e#4229#4528#0" />
-                <element signature="e#4534#4636#0" />
-                <element signature="e#4642#4750#0" />
-                <element signature="e#4756#5166#0" />
-                <element signature="e#6033#6165#0" />
-                <element signature="e#6171#6348#0" />
-                <element signature="e#6354#6743#0" />
-                <element signature="e#6750#7747#0" />
-                <element signature="e#7753#9059#0" />
-                <element signature="e#7946#7986#0" />
-                <element signature="e#7988#8028#0" />
-                <element signature="e#8127#8167#0" />
-                <element signature="e#8169#8209#0" />
-                <element signature="e#8305#8344#0" />
-                <element signature="e#8346#8385#0" />
-                <element signature="e#8477#8515#0" />
-                <element signature="e#8606#8645#0" />
-                <element signature="e#8738#8776#0" />
-                <element signature="e#8871#8910#0" />
-                <element signature="e#9005#9049#0" />
-                <element signature="e#9065#9189#0" />
-                <element signature="e#9195#9317#0" />
-                <element signature="e#9323#9482#0" />
-                <element signature="e#9488#9669#0" />
-                <element signature="e#9675#9792#0" />
-                <element signature="e#9798#9916#0" />
-                <element signature="e#9922#10041#0" />
-                <element signature="e#10047#10167#0" />
-                <element signature="e#10173#10372#0" />
-                <element signature="e#10378#10446#0" />
-                <element signature="e#10452#10519#0" />
-                <element signature="e#10525#10615#0" />
-                <element signature="e#10621#10753#0" />
-                <element signature="e#10760#11278#0" />
-                <element signature="e#11022#11093#0" />
-                <element signature="e#11284#12117#0" />
-                <element signature="e#11410#11486#0" />
-                <element signature="e#12320#12454#0" />
-                <element signature="e#12463#12531#0" />
-                <element signature="e#12124#12296#0" />
-                <element signature="e#12223#12288#0" />
-                <element signature="e#12302#12471#0" />
-                <element signature="e#12397#12462#0" />
-                <element signature="e#12477#12646#0" />
-                <element signature="e#12572#12637#0" />
-                <element signature="e#12652#12825#0" />
-                <element signature="e#12751#12816#0" />
-                <element signature="e#12831#12998#0" />
-                <element signature="e#12924#12989#0" />
-                <element signature="e#13005#13234#0" />
-                <element signature="e#13240#13475#0" />
-                <element signature="e#13481#13599#0" />
-                <element signature="e#13605#13847#0" />
-                <element signature="e#13853#14190#0" />
-                <element signature="e#14196#14259#0" />
-                <element signature="e#14265#14326#0" />
-                <element signature="e#14332#14396#0" />
-                <element signature="e#14402#14547#0" />
-                <element signature="e#14553#14616#0" />
-                <element signature="e#14622#14688#0" />
+                <element signature="e#2066#4255#0" />
+                <element signature="e#2231#2658#0" />
+                <element signature="e#2682#3498#0" />
+                <element signature="e#3524#4204#0" />
+                <element signature="e#4227#4245#0" />
+                <element signature="e#4261#4388#0" />
+                <element signature="e#4394#4522#0" />
+                <element signature="e#4528#4827#0" />
+                <element signature="e#4833#4935#0" />
+                <element signature="e#4941#5049#0" />
+                <element signature="e#5471#6367#0" />
+                <element signature="e#6373#6505#0" />
+                <element signature="e#6511#6688#0" />
+                <element signature="e#6694#7083#0" />
+                <element signature="e#7090#8087#0" />
+                <element signature="e#8093#9399#0" />
+                <element signature="e#8286#8326#0" />
+                <element signature="e#8328#8368#0" />
+                <element signature="e#8467#8507#0" />
+                <element signature="e#8509#8549#0" />
+                <element signature="e#8645#8684#0" />
+                <element signature="e#8686#8725#0" />
+                <element signature="e#8817#8855#0" />
+                <element signature="e#8946#8985#0" />
+                <element signature="e#9078#9116#0" />
+                <element signature="e#9211#9250#0" />
+                <element signature="e#9345#9389#0" />
+                <element signature="e#9405#9529#0" />
+                <element signature="e#9535#9657#0" />
+                <element signature="e#9663#9822#0" />
+                <element signature="e#9828#10009#0" />
+                <element signature="e#10015#10132#0" />
+                <element signature="e#10138#10256#0" />
+                <element signature="e#10262#10381#0" />
+                <element signature="e#10387#10507#0" />
+                <element signature="e#10513#10712#0" />
+                <element signature="e#10718#10786#0" />
+                <element signature="e#10792#10859#0" />
+                <element signature="e#10865#10955#0" />
+                <element signature="e#10961#11093#0" />
+                <element signature="e#11100#11626#0" />
+                <element signature="e#11201#11272#0" />
+                <element signature="e#11632#12468#0" />
+                <element signature="e#11758#11834#0" />
+                <element signature="e#12474#12861#0" />
+                <element signature="e#12504#12572#0" />
+                <element signature="e#12868#13040#0" />
+                <element signature="e#12967#13032#0" />
+                <element signature="e#13046#13215#0" />
+                <element signature="e#13141#13206#0" />
+                <element signature="e#13221#13390#0" />
+                <element signature="e#13316#13381#0" />
+                <element signature="e#13396#13569#0" />
+                <element signature="e#13495#13560#0" />
+                <element signature="e#13575#13742#0" />
+                <element signature="e#13668#13733#0" />
+                <element signature="e#13749#13978#0" />
+                <element signature="e#13984#14219#0" />
+                <element signature="e#14225#14343#0" />
+                <element signature="e#14349#14591#0" />
+                <element signature="e#14597#14934#0" />
+                <element signature="e#14940#15003#0" />
+                <element signature="e#15009#15070#0" />
+                <element signature="e#15076#15140#0" />
+                <element signature="e#15146#15291#0" />
+                <element signature="e#15297#15360#0" />
+                <element signature="e#15366#15432#0" />
               </folding>
             </state>
           </provider>
@@ -216,7 +209,7 @@
       <file leaf-file-name="Bar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="544">
               <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="method#Bar#0;class#Bar#0" />
@@ -236,7 +229,7 @@
       <file leaf-file-name="Robot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Robot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
+            <state relative-caret-position="459">
               <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding>
                 <element signature="e#1771#2863#0" />
@@ -259,11 +252,12 @@
       <file leaf-file-name="Kakashi.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Kakashi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="391">
+              <caret line="342" column="34" lean-forward="true" selection-start-line="342" selection-start-column="34" selection-end-line="342" selection-end-column="34" />
               <folding>
+                <element signature="e#1036#3031#0" />
                 <element signature="method#Kakashi#1;class#Kakashi#0" />
-                <element signature="e#3325#5308#0" />
+                <element signature="e#3411#5394#0" />
                 <element signature="method#punch#0;class#Kakashi#0" />
                 <element signature="method#kick#0;class#Kakashi#0" />
                 <element signature="method#shoot#0;class#Kakashi#0" />
@@ -272,7 +266,6 @@
                 <element signature="method#punchSetback#0;class#Kakashi#0" />
                 <element signature="method#superSetback#0;class#Kakashi#0" />
                 <element signature="method#setInitLoc#0;class#Kakashi#0" />
-                <element signature="method#setKakaPics#0;class#Kakashi#0" />
                 <element signature="method#setKakaPics#1;class#Kakashi#0" />
                 <element signature="method#teleport#0;class#Kakashi#0" />
                 <element signature="method#teleport#1;class#Kakashi#0" />
@@ -285,7 +278,7 @@
         <entry file="file://$PROJECT_DIR$/src/HighScore.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="952">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="method#setScore#0;class#HighScore#0" />
                 <element signature="method#updateScore#0;class#HighScore#0" />
@@ -297,7 +290,7 @@
       <file leaf-file-name="FightClub.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FightClub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="1445">
               <caret line="279" column="33" selection-start-line="279" selection-start-column="33" selection-end-line="279" selection-end-column="33" />
               <folding>
                 <element signature="method#FightClub#0;class#FightClub#0" />
@@ -325,7 +318,7 @@
       <file leaf-file-name="Read_Write.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="2975">
               <caret line="176" column="47" selection-start-line="176" selection-start-column="47" selection-end-line="176" selection-end-column="47" />
             </state>
           </provider>
@@ -334,10 +327,9 @@
       <file leaf-file-name="Wizard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wizard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="459">
               <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding>
-                <element signature="e#1811#2922#0" />
                 <element signature="method#setInitLoc#0;class#Wizard#0" />
                 <element signature="method#punch#0;class#Wizard#0" />
                 <element signature="method#kick#0;class#Wizard#0" />
@@ -423,7 +415,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1536" />
@@ -504,16 +496,16 @@
       <workItem from="1528074945952" duration="2212000" />
       <workItem from="1528077235905" duration="247000" />
       <workItem from="1528214290283" duration="6752000" />
-      <workItem from="1528236090772" duration="4508000" />
+      <workItem from="1528236090772" duration="4589000" />
+      <workItem from="1528250073190" duration="767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26192000" />
+    <option name="totallyTimeSpent" value="27040000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="TODO" order="13" />
@@ -525,12 +517,13 @@
       <window_info anchor="right" id="Maven Projects" order="14" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="16" weight="0.6724387" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.3267974" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.32547864" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info id="Capture Tool" order="9" />
       <window_info id="Designer" order="7" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.25268096" />
       <window_info anchor="right" id="Database" order="12" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32547864" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="10" />
@@ -540,10 +533,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Learn" order="3" weight="0.32930514" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32756132" />
-      <window_info id="Learn" order="3" weight="0.32930514" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -785,7 +777,6 @@
         <state relative-caret-position="425">
           <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
           <folding>
-            <element signature="e#1811#2922#0" />
             <element signature="method#setInitLoc#0;class#Wizard#0" />
             <element signature="method#punch#0;class#Wizard#0" />
             <element signature="method#kick#0;class#Wizard#0" />
@@ -844,8 +835,9 @@
         <state relative-caret-position="510">
           <caret line="231" column="22" selection-start-line="231" selection-start-column="22" selection-end-line="231" selection-end-column="22" />
           <folding>
+            <element signature="e#1036#3031#0" />
             <element signature="method#Kakashi#1;class#Kakashi#0" />
-            <element signature="e#3325#5308#0" />
+            <element signature="e#3411#5394#0" />
             <element signature="method#punch#0;class#Kakashi#0" />
             <element signature="method#kick#0;class#Kakashi#0" />
             <element signature="method#shoot#0;class#Kakashi#0" />
@@ -854,7 +846,6 @@
             <element signature="method#punchSetback#0;class#Kakashi#0" />
             <element signature="method#superSetback#0;class#Kakashi#0" />
             <element signature="method#setInitLoc#0;class#Kakashi#0" />
-            <element signature="method#setKakaPics#0;class#Kakashi#0" />
             <element signature="method#setKakaPics#1;class#Kakashi#0" />
             <element signature="method#teleport#0;class#Kakashi#0" />
             <element signature="method#teleport#1;class#Kakashi#0" />
@@ -921,8 +912,9 @@
         <state relative-caret-position="527">
           <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
+            <element signature="e#1036#3031#0" />
             <element signature="method#Kakashi#1;class#Kakashi#0" />
-            <element signature="e#3325#5308#0" />
+            <element signature="e#3411#5394#0" />
             <element signature="method#punch#0;class#Kakashi#0" />
             <element signature="method#kick#0;class#Kakashi#0" />
             <element signature="method#shoot#0;class#Kakashi#0" />
@@ -931,7 +923,6 @@
             <element signature="method#punchSetback#0;class#Kakashi#0" />
             <element signature="method#superSetback#0;class#Kakashi#0" />
             <element signature="method#setInitLoc#0;class#Kakashi#0" />
-            <element signature="method#setKakaPics#0;class#Kakashi#0" />
             <element signature="method#setKakaPics#1;class#Kakashi#0" />
             <element signature="method#teleport#0;class#Kakashi#0" />
             <element signature="method#teleport#1;class#Kakashi#0" />
@@ -1013,29 +1004,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding>
-            <element signature="method#mouseClicked#0;class#901:1565" />
-            <element signature="method#mousePressed#0;class#901:1565" />
-            <element signature="method#mouseReleased#0;class#901:1565" />
-            <element signature="method#mouseExited#0;class#901:1565" />
-            <element signature="class#1697:2406" />
-            <element signature="method#mouseClicked#0;class#1697:2406" />
-            <element signature="method#mousePressed#0;class#1697:2406" />
-            <element signature="method#mouseReleased#0;class#1697:2406" />
-            <element signature="method#mouseEntered#0;class#1697:2406" />
-            <element signature="method#mouseExited#0;class#1697:2406" />
-            <element signature="method#mouseClicked#0;class#2536:3328" />
-            <element signature="method#mouseReleased#0;class#2536:3328" />
-            <element signature="method#mouseEntered#0;class#2536:3328" />
-            <element signature="method#mouseExited#0;class#2536:3328" />
-            <element signature="method#remove#0;class#Intro#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="2975">
           <caret line="176" column="47" selection-start-line="176" selection-start-column="47" selection-end-line="176" selection-end-column="47" />
         </state>
       </provider>
@@ -1043,7 +1017,7 @@
     <entry file="file://$PROJECT_DIR$/src/AllWindows.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding>
             <element signature="method#centerSetter#0;class#AllWindows#0" />
           </folding>
@@ -1052,10 +1026,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wizard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="459">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
-            <element signature="e#1811#2922#0" />
             <element signature="method#setInitLoc#0;class#Wizard#0" />
             <element signature="method#punch#0;class#Wizard#0" />
             <element signature="method#kick#0;class#Wizard#0" />
@@ -1072,8 +1045,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CharacterSelect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1136">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="85">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#3734#13352#0" />
             <element signature="class#5707:6189" />
@@ -1164,7 +1137,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Robot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
+        <state relative-caret-position="459">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
             <element signature="e#1771#2863#0" />
@@ -1185,7 +1158,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="544">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="method#Bar#0;class#Bar#0" />
@@ -1201,86 +1174,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="272" lean-forward="true" selection-start-line="272" selection-end-line="272" />
-          <folding>
-            <element signature="e#1876#3956#0" />
-            <element signature="e#1932#2359#0" />
-            <element signature="e#2383#3199#0" />
-            <element signature="e#3225#3905#0" />
-            <element signature="e#3928#3946#0" />
-            <element signature="e#3962#4089#0" />
-            <element signature="e#4095#4223#0" />
-            <element signature="e#4229#4528#0" />
-            <element signature="e#4534#4636#0" />
-            <element signature="e#4642#4750#0" />
-            <element signature="e#4756#5166#0" />
-            <element signature="e#6033#6165#0" />
-            <element signature="e#6171#6348#0" />
-            <element signature="e#6354#6743#0" />
-            <element signature="e#6750#7747#0" />
-            <element signature="e#7753#9059#0" />
-            <element signature="e#7946#7986#0" />
-            <element signature="e#7988#8028#0" />
-            <element signature="e#8127#8167#0" />
-            <element signature="e#8169#8209#0" />
-            <element signature="e#8305#8344#0" />
-            <element signature="e#8346#8385#0" />
-            <element signature="e#8477#8515#0" />
-            <element signature="e#8606#8645#0" />
-            <element signature="e#8738#8776#0" />
-            <element signature="e#8871#8910#0" />
-            <element signature="e#9005#9049#0" />
-            <element signature="e#9065#9189#0" />
-            <element signature="e#9195#9317#0" />
-            <element signature="e#9323#9482#0" />
-            <element signature="e#9488#9669#0" />
-            <element signature="e#9675#9792#0" />
-            <element signature="e#9798#9916#0" />
-            <element signature="e#9922#10041#0" />
-            <element signature="e#10047#10167#0" />
-            <element signature="e#10173#10372#0" />
-            <element signature="e#10378#10446#0" />
-            <element signature="e#10452#10519#0" />
-            <element signature="e#10525#10615#0" />
-            <element signature="e#10621#10753#0" />
-            <element signature="e#10760#11278#0" />
-            <element signature="e#11022#11093#0" />
-            <element signature="e#11284#12117#0" />
-            <element signature="e#11410#11486#0" />
-            <element signature="e#12320#12454#0" />
-            <element signature="e#12463#12531#0" />
-            <element signature="e#12124#12296#0" />
-            <element signature="e#12223#12288#0" />
-            <element signature="e#12302#12471#0" />
-            <element signature="e#12397#12462#0" />
-            <element signature="e#12477#12646#0" />
-            <element signature="e#12572#12637#0" />
-            <element signature="e#12652#12825#0" />
-            <element signature="e#12751#12816#0" />
-            <element signature="e#12831#12998#0" />
-            <element signature="e#12924#12989#0" />
-            <element signature="e#13005#13234#0" />
-            <element signature="e#13240#13475#0" />
-            <element signature="e#13481#13599#0" />
-            <element signature="e#13605#13847#0" />
-            <element signature="e#13853#14190#0" />
-            <element signature="e#14196#14259#0" />
-            <element signature="e#14265#14326#0" />
-            <element signature="e#14332#14396#0" />
-            <element signature="e#14402#14547#0" />
-            <element signature="e#14553#14616#0" />
-            <element signature="e#14622#14688#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HighScore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="method#setScore#0;class#HighScore#0" />
             <element signature="method#updateScore#0;class#HighScore#0" />
@@ -1290,7 +1187,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FightClub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="1445">
           <caret line="279" column="33" selection-start-line="279" selection-start-column="33" selection-end-line="279" selection-end-column="33" />
           <folding>
             <element signature="method#FightClub#0;class#FightClub#0" />
@@ -1314,13 +1211,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+          <folding>
+            <element signature="e#2066#4255#0" />
+            <element signature="e#2231#2658#0" />
+            <element signature="e#2682#3498#0" />
+            <element signature="e#3524#4204#0" />
+            <element signature="e#4227#4245#0" />
+            <element signature="e#4261#4388#0" />
+            <element signature="e#4394#4522#0" />
+            <element signature="e#4528#4827#0" />
+            <element signature="e#4833#4935#0" />
+            <element signature="e#4941#5049#0" />
+            <element signature="e#5471#6367#0" />
+            <element signature="e#6373#6505#0" />
+            <element signature="e#6511#6688#0" />
+            <element signature="e#6694#7083#0" />
+            <element signature="e#7090#8087#0" />
+            <element signature="e#8093#9399#0" />
+            <element signature="e#8286#8326#0" />
+            <element signature="e#8328#8368#0" />
+            <element signature="e#8467#8507#0" />
+            <element signature="e#8509#8549#0" />
+            <element signature="e#8645#8684#0" />
+            <element signature="e#8686#8725#0" />
+            <element signature="e#8817#8855#0" />
+            <element signature="e#8946#8985#0" />
+            <element signature="e#9078#9116#0" />
+            <element signature="e#9211#9250#0" />
+            <element signature="e#9345#9389#0" />
+            <element signature="e#9405#9529#0" />
+            <element signature="e#9535#9657#0" />
+            <element signature="e#9663#9822#0" />
+            <element signature="e#9828#10009#0" />
+            <element signature="e#10015#10132#0" />
+            <element signature="e#10138#10256#0" />
+            <element signature="e#10262#10381#0" />
+            <element signature="e#10387#10507#0" />
+            <element signature="e#10513#10712#0" />
+            <element signature="e#10718#10786#0" />
+            <element signature="e#10792#10859#0" />
+            <element signature="e#10865#10955#0" />
+            <element signature="e#10961#11093#0" />
+            <element signature="e#11100#11626#0" />
+            <element signature="e#11201#11272#0" />
+            <element signature="e#11632#12468#0" />
+            <element signature="e#11758#11834#0" />
+            <element signature="e#12474#12861#0" />
+            <element signature="e#12504#12572#0" />
+            <element signature="e#12868#13040#0" />
+            <element signature="e#12967#13032#0" />
+            <element signature="e#13046#13215#0" />
+            <element signature="e#13141#13206#0" />
+            <element signature="e#13221#13390#0" />
+            <element signature="e#13316#13381#0" />
+            <element signature="e#13396#13569#0" />
+            <element signature="e#13495#13560#0" />
+            <element signature="e#13575#13742#0" />
+            <element signature="e#13668#13733#0" />
+            <element signature="e#13749#13978#0" />
+            <element signature="e#13984#14219#0" />
+            <element signature="e#14225#14343#0" />
+            <element signature="e#14349#14591#0" />
+            <element signature="e#14597#14934#0" />
+            <element signature="e#14940#15003#0" />
+            <element signature="e#15009#15070#0" />
+            <element signature="e#15076#15140#0" />
+            <element signature="e#15146#15291#0" />
+            <element signature="e#15297#15360#0" />
+            <element signature="e#15366#15432#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Kakashi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+        <state relative-caret-position="391">
+          <caret line="342" column="34" lean-forward="true" selection-start-line="342" selection-start-column="34" selection-end-line="342" selection-end-column="34" />
           <folding>
+            <element signature="e#1036#3031#0" />
             <element signature="method#Kakashi#1;class#Kakashi#0" />
-            <element signature="e#3325#5308#0" />
+            <element signature="e#3411#5394#0" />
             <element signature="method#punch#0;class#Kakashi#0" />
             <element signature="method#kick#0;class#Kakashi#0" />
             <element signature="method#shoot#0;class#Kakashi#0" />
@@ -1329,7 +1303,6 @@
             <element signature="method#punchSetback#0;class#Kakashi#0" />
             <element signature="method#superSetback#0;class#Kakashi#0" />
             <element signature="method#setInitLoc#0;class#Kakashi#0" />
-            <element signature="method#setKakaPics#0;class#Kakashi#0" />
             <element signature="method#setKakaPics#1;class#Kakashi#0" />
             <element signature="method#teleport#0;class#Kakashi#0" />
             <element signature="method#teleport#1;class#Kakashi#0" />
