@@ -76,13 +76,13 @@ public class HighScore extends AllWindows {
     }
 
 
-    //resize images to correct size
-    ImageIcon imgRescaler(ImageIcon img, int w, int h) {
-
-        //complete magic here
-        return new ImageIcon(img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT));
-
-    }
+//    //resize images to correct size
+//    ImageIcon imgRescaler(ImageIcon img, int w, int h) {
+//
+//        //complete magic here
+//        return new ImageIcon(img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT));
+//
+//    }
 
     void updateScore() {
 

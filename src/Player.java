@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.security.Key;
 import java.util.ArrayList;
 
 public class Player extends JLabel {
@@ -15,6 +16,9 @@ public class Player extends JLabel {
     protected boolean[] whichCharacter = new boolean[3];
     public boolean chidori;
     public boolean beingHit;
+
+    InputMap im = Main.fightWindow.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+    ActionMap ap = Main.fightWindow.getRootPane().getActionMap();
 
     protected ImageIcon[][] allPic = new ImageIcon[4][6];
 
@@ -70,6 +74,11 @@ public class Player extends JLabel {
 
     Player() {
 
+        for (int i = 0; i < whichCharacter.length; i++) {
+
+            whichCharacter[i] = false;
+
+        }
 
         stopMoving();
 
@@ -271,6 +280,7 @@ public class Player extends JLabel {
         }
 
         allPic[w + facing][h].getImage().flush();
+        allPic[w][h].getImage().flush();
 
         if (isAllBoolFalse(allBoolMove)) {
 
@@ -560,8 +570,8 @@ public class Player extends JLabel {
 
     void addKeyBinder(JComponent comp, int KeyCode, String id, ActionListener actionListener) {
 
-        InputMap im = comp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        ActionMap ap = comp.getActionMap();
+        //   InputMap im = comp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        // ActionMap ap = comp.getActionMap();
 
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, false), "Pressed Once " + id);
 
@@ -577,9 +587,8 @@ public class Player extends JLabel {
 
     void addKeyBinder(JComponent comp, int KeyCode, String id, ActionListener actionListenerP, ActionListener actionListenerR) {
 
-        InputMap im = comp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        ActionMap ap = comp.getActionMap();
-
+//        InputMap im = comp.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+//        ActionMap ap = comp.getActionMap();
 
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, false), "Pressed " + id);
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, true), "Released " + id);
@@ -598,6 +607,20 @@ public class Player extends JLabel {
             }
         });
 
+
+    }
+
+    void removeKakaKeyBinder() {
+
+//        System.out.println(Main.fightWindow.P1.whichCharacter[2]);
+//        System.out.println(Main.fightWindow.P2.whichCharacter[2]);
+
+        if (!Main.fightWindow.P1.whichCharacter[2] && !Main.fightWindow.P2.whichCharacter[2]) {
+
+            im.remove(KeyStroke.getKeyStroke("Q"));
+            ap.remove(KeyStroke.getKeyStroke("Q"));
+
+        }
 
     }
 

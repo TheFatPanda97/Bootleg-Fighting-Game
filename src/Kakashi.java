@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Kakashi extends Player {
@@ -25,11 +26,14 @@ public class Kakashi extends Player {
 
     public Kakashi(JComponent RootPane, int WPN) {
 
+        super();
+
         ArrayList<Integer> allkakaData = Main.rw.readKakaData();
 
 
         whichPlayerNum = WPN;
 
+        addKeyBinder(RootPane,KeyEvent.VK_Q,"exit",e-> System.out.println("dong"));
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
@@ -45,7 +49,7 @@ public class Kakashi extends Player {
 
                 if (facingLeft()) {
 
-                    setLocation(getLocation().x + WizPunchDistance, getY());
+                    moveHorizontal(KakaPunchDistance);
 
                 }
                 stopMoving();
@@ -70,8 +74,7 @@ public class Kakashi extends Player {
                 //super
             } else if (allBoolMove[0][3] && count == allkakaData.get(4)) {
 
-                superFacing = facing;
-                teleport();
+                teleport(superFacing);
                 chidori = true;
 
                 //super continued
@@ -98,6 +101,7 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
             }
+
 
             if (allBoolMove[0][3] && count >= allkakaData.get(4)) {
 
@@ -255,6 +259,7 @@ public class Kakashi extends Player {
 
             super.superPower();
             superSetback();
+            superFacing = facing;
 
         }
 
@@ -368,6 +373,20 @@ public class Kakashi extends Player {
     void teleport() {
 
         if (facingRight()) {
+
+            setLocation(AllWindows.width - RKakaChi.getIconWidth(), getY());
+
+        } else {
+
+            setLocation(0, getY());
+
+        }
+
+    }
+
+    void teleport(int face) {
+
+        if (face == 0) {
 
             setLocation(AllWindows.width - RKakaChi.getIconWidth(), getY());
 

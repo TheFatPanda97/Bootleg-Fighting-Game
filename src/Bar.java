@@ -33,8 +33,6 @@ public class Bar extends JLabel {
     JLabel hp = new JLabel();
     JLabel magic = new JLabel();
 
-    //  Timer magicTimer;
-
 
     Bar(int WPN, boolean[] whichPlayer) {
 

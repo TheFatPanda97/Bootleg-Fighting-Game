@@ -22,6 +22,7 @@ public class Wizard extends Player {
 
     Wizard(JComponent RootPane, int WPN) {
 
+        super();
         whichPlayerNum = WPN;
 
         setWizPics(whichPlayerNum);
@@ -86,7 +87,7 @@ public class Wizard extends Player {
 
     }
 
-    void setInitLoc(int whichPlayerNum) {
+    public void setInitLoc(int whichPlayerNum) {
 
         if (whichPlayerNum == 1) {
 

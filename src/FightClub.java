@@ -276,6 +276,8 @@ public class FightClub extends AllWindows {
         add(P1);
         add(P2);
         add(background);
+        P1.removeKakaKeyBinder();
+        P2.removeKakaKeyBinder();
         collisionTimer.start();
         directionTimer.start();
     }
