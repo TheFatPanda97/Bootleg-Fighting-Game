@@ -10,7 +10,12 @@ public class HighScore extends AllWindows {
     private JScrollPane ScrollView = new JScrollPane();
     private ArrayList<String> items = new ArrayList<>();
     private ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
+    private ImageIcon imgPlay = new ImageIcon("src/Resource/Decoration/Game Play.gif");
+
+
     private JLabel lblBackground = new JLabel();
+    private JLabel lblGamePlay = new JLabel();
+
     private Button btnInfo = new Button(2);
     private final int SIDE_LENGTH = 20;
 
@@ -48,13 +53,18 @@ public class HighScore extends AllWindows {
             }
         });
 
+
         lblBackground.setBounds(0, 0, width, height);
         lblBackground.setIcon(imgRescaler(IntroScreen, width, height));
 
         ScrollView.setBounds(SIDE_LENGTH, SIDE_LENGTH, 100, 450);
 
+        lblGamePlay.setBounds(ScrollView.getX() + ScrollView.getWidth() + 20, ScrollView.getY(), 870, ScrollView.getHeight());
+        lblGamePlay.setIcon(imgRescaler(imgPlay, lblGamePlay.getWidth(), lblGamePlay.getHeight()));
+
         add(btnInfo);
         add(ScrollView);
+        add(lblGamePlay);
         add(lblBackground);
 
     }
