@@ -4,37 +4,37 @@ import java.awt.event.ActionListener;
 
 public class Bar extends JLabel {
 
-    final int RHP_XMOVE = 6;
-    final int LHP_XMOVE = 7;
-    final int HP_Y = 16;
-    final int HP_WIDTH = 300;
-    final int HP_HEIGHT = 35;
+    private final int RHP_XMOVE = 6;
+    private final int LHP_XMOVE = 7;
+    private final int HP_Y = 16;
+    private final int HP_WIDTH = 300;
+    private final int HP_HEIGHT = 35;
 
-    final int RMGC_XMOVE = 4;
-    final int LMGC_XMOVE = 109;
-    final int MGC_Y = 16;
-    final int MGC_WIDTH = 200;
-    final int MGC_HEIGHT = 25;
+    private final int RMGC_XMOVE = 4;
+    private final int LMGC_XMOVE = 109;
+    private final int MGC_Y = 16;
+    private final int MGC_WIDTH = 200;
+    private final int MGC_HEIGHT = 25;
 
-    static final int MGC_ADD = 20;
+    public static final int MGC_ADD = 20;
 
-    int whichPlayerNum;
+    private int whichPlayerNum;
 
-    ImageIcon RBar = new ImageIcon("src/Resource/Status/RBar.png");
-    ImageIcon LBar = new ImageIcon("src/Resource/Status/LBar.png");
+    private ImageIcon RBar = new ImageIcon("src/Resource/Status/RBar.png");
+    private ImageIcon LBar = new ImageIcon("src/Resource/Status/LBar.png");
 
-    ImageIcon RWizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
-    ImageIcon LWizFace = new ImageIcon("src/Resource/Mugshots/LWizFace.png");
+    private ImageIcon RWizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
+    private ImageIcon LWizFace = new ImageIcon("src/Resource/Mugshots/LWizFace.png");
 
-    ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
-    ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
+    private ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
+    private ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
 
-    JLabel mugshot = new JLabel();
-    JLabel hp = new JLabel();
-    JLabel magic = new JLabel();
+    private JLabel mugshot = new JLabel();
+    public JLabel hp = new JLabel();
+    private JLabel magic = new JLabel();
 
 
-    Bar(int WPN, boolean[] whichPlayer) {
+    public Bar(int WPN, boolean[] whichPlayer) {
 
         whichPlayerNum = WPN;
         setOpaque(false);
@@ -117,14 +117,14 @@ public class Bar extends JLabel {
 
     }
 
-    boolean dead() {
+    public boolean dead() {
 
         return hp.getWidth() <= 0;
 
 
     }
 
-    void decHP(int deduct, boolean isBlocking) {
+    public void decHP(int deduct, boolean isBlocking) {
 
         if (!isBlocking) {
 
@@ -150,7 +150,7 @@ public class Bar extends JLabel {
 
     }
 
-    void decMagic(int deduct) {
+    public void decMagic(int deduct) {
 
         if (magic.getWidth() - deduct <= 0) {
 
@@ -179,7 +179,7 @@ public class Bar extends JLabel {
 
     }
 
-    void addMagic() {
+    public void addMagic() {
 
         if (magic.getWidth() + MGC_ADD >= MGC_WIDTH) {
 
@@ -208,7 +208,7 @@ public class Bar extends JLabel {
 
     }
 
-    void addMagic(int a) {
+    public void addMagic(int a) {
 
         if (magic.getWidth() + a >= MGC_WIDTH) {
 
@@ -237,7 +237,7 @@ public class Bar extends JLabel {
 
     }
 
-    void firstBlood() {
+    public void firstBlood() {
 
         magic.setSize(magic.getWidth() + MGC_ADD * 2, MGC_HEIGHT);
 
@@ -249,13 +249,7 @@ public class Bar extends JLabel {
 
     }
 
-    boolean maxMagic() {
-
-        return magic.getWidth() >= MGC_WIDTH;
-
-    }
-
-    boolean hasMagic(int enough) {
+    public boolean hasMagic(int enough) {
 
         if (magic.getWidth() >= enough) {
 

@@ -7,44 +7,44 @@ import java.util.ArrayList;
 
 public class FightClub extends AllWindows {
 
-    final int NORMAL_HITBACK = 100;
-    final int SUPER_HITBACK = 300;
-    final int CONT_HITBACK = 10;
+    private final int NORMAL_HITBACK = 100;
+    private final int SUPER_HITBACK = 300;
+    private final int CONT_HITBACK = 10;
 
-    final int SUP_LOS_HP = 4;
+    private final int SUP_LOS_HP = 4;
 
 
-    final int NORMP_LOS_MGC = 15;
-    final int SUP_LOS_MGC = 2;
+    private final int NORMP_LOS_MGC = 15;
+    private final int SUP_LOS_MGC = 2;
 
-    final int SUP_DILUTE = 100;
+    private final int SUP_DILUTE = 100;
 
-    final int REAL_COUNT = 90;
-    int count = REAL_COUNT;
+    private final int REAL_COUNT = 90;
+    private int count = REAL_COUNT;
 
-    boolean firstBlood = false;
+    private boolean firstBlood = false;
 
-    String P1Name, P2Name;
+    private String P1Name, P2Name;
 
-    ImageIcon countDown = new ImageIcon("src/Resource/Hexagon/Count Down.png");
-    ImageIcon over = new ImageIcon("src/Resource/Decoration/GameOver.gif");
+    private ImageIcon countDown = new ImageIcon("src/Resource/Hexagon/Count Down.png");
+    private ImageIcon over = new ImageIcon("src/Resource/Decoration/GameOver.gif");
 
-    JLabel background = new JLabel();
-    JLabel lblCountBackground = new JLabel();
-    JLabel lblRealCount = new JLabel(count + "", SwingConstants.CENTER);
-    JLabel lblKO = new JLabel();
-    JLabel lblWin = new JLabel("", SwingConstants.CENTER);
+    public JLabel background = new JLabel();
+    private JLabel lblCountBackground = new JLabel();
+    private JLabel lblRealCount = new JLabel(count + "", SwingConstants.CENTER);
+    private JLabel lblKO = new JLabel();
+    private JLabel lblWin = new JLabel("", SwingConstants.CENTER);
 
-    Timer directionTimer;
-    Timer collisionTimer;
-    Timer countDownTimer;
+    private Timer directionTimer;
+    private Timer collisionTimer;
+    public Timer countDownTimer;
 
-    Player P1;
-    Player P2;
+    public Player P1;
+    public Player P2;
 
-    Button btnMain = new Button(2);
+    private Button btnMain = new Button(2);
 
-    FightClub() {
+    public FightClub() {
 
         lblCountBackground.setIcon(countDown);
         lblCountBackground.setSize(countDown.getIconWidth(), countDown.getIconHeight());
@@ -181,25 +181,25 @@ public class FightClub extends AllWindows {
 
             if (P1.whichCharacter[2] && P1.isSuper() && hitEachOther(P1, P2) && P1.chidori) {
 
-                P2.beingHit = false;
-//                System.out.println(P2.facing);
-                P2.beingSuped = true;
-                P2.hpMagic.decHP(SUP_LOS_HP, P2.isBlocking());
-                P2.hpMagic.decMagic(SUP_LOS_MGC);
-
-                P2.setLocation(P1.getX() + P1.getWidth() / 6, P1.getY());
+                gettingChidori(P1, P2);
+//                P2.beingHit = false;
+//                P2.beingSuped = true;
+//                P2.hpMagic.decHP(SUP_LOS_HP, P2.isBlocking());
+//                P2.hpMagic.decMagic(SUP_LOS_MGC);
+//
+//                P2.setLocation(P1.getX() + P1.getWidth() / 6, P1.getY());
 
             }
 
             if (P2.whichCharacter[2] && P2.isSuper() && hitEachOther(P2, P1) && P2.chidori) {
 
-                P1.beingHit = false;
-//                System.out.println(P2.facing);
-                P1.beingSuped = true;
-                P1.hpMagic.decHP(SUP_LOS_HP, P1.isBlocking());
-                P1.hpMagic.decMagic(SUP_LOS_MGC);
-
-                P1.setLocation(P2.getX() + P2.getWidth() / 6, P2.getY());
+                gettingChidori(P2, P1);
+//                P1.beingHit = false;
+//                P1.beingSuped = true;
+//                P1.hpMagic.decHP(SUP_LOS_HP, P1.isBlocking());
+//                P1.hpMagic.decMagic(SUP_LOS_MGC);
+//
+//                P1.setLocation(P2.getX() + P2.getWidth() / 6, P2.getY());
 
             }
 
@@ -235,7 +235,7 @@ public class FightClub extends AllWindows {
 
     }
 
-    void setPLayer(int P1At, int P2At, String P1N, String P2N) {
+    public void setPLayer(int P1At, int P2At, String P1N, String P2N) {
 
         lblRealCount.setText(count + "");
         P1Name = P1N;
@@ -281,7 +281,7 @@ public class FightClub extends AllWindows {
         directionTimer.start();
     }
 
-    void setPLayer(int P1At, int P2At, String P1N, String P2N, ImageIcon[][] p, ArrayList<Integer> d) {
+    public void setPLayer(int P1At, int P2At, String P1N, String P2N, ImageIcon[][] p, ArrayList<Integer> d) {
 
         lblRealCount.setText(count + "");
         P1Name = P1N;
@@ -325,7 +325,7 @@ public class FightClub extends AllWindows {
         directionTimer.start();
     }
 
-    boolean hitProjectile(Player a, Player b) {
+    private boolean hitProjectile(Player a, Player b) {
 
         for (Projectile x : a.allBulltes) {
 
@@ -351,7 +351,7 @@ public class FightClub extends AllWindows {
 
     }
 
-    boolean superProjectile(Player a, Player b) {
+    private boolean superProjectile(Player a, Player b) {
 
         for (Projectile x : a.allBulltes) {
 
@@ -374,13 +374,13 @@ public class FightClub extends AllWindows {
 
     }
 
-    boolean hitEachOther(JLabel a, JLabel b) {
+    private boolean hitEachOther(JLabel a, JLabel b) {
 
         return a.getBounds().intersects(b.getBounds());
 
     }
 
-    void dmgSet(Player a, Player b) {
+    private void dmgSet(Player a, Player b) {
 
         if (!firstBlood) {
 
@@ -418,7 +418,18 @@ public class FightClub extends AllWindows {
 
     }
 
-    void restart() {
+    private void gettingChidori(Player a, Player b) {
+
+        b.beingHit = false;
+        b.beingSuped = true;
+        b.hpMagic.decHP(SUP_LOS_HP, b.isBlocking());
+        b.hpMagic.decMagic(SUP_LOS_MGC);
+
+        b.setLocation(a.getX() + b.getWidth() / 6, a.getY());
+
+    }
+
+    private void restart() {
 
         remove(P1);
         remove(P2);
@@ -432,7 +443,7 @@ public class FightClub extends AllWindows {
 
     }
 
-    void endGame(String name) {
+    private void endGame(String name) {
 
         Player.setGameOver(true);
         lblWin.setVisible(true);

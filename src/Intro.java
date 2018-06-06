@@ -6,11 +6,13 @@ public class Intro extends AllWindows {
 
     private ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
     private ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
+    private ImageIcon imgTitle = new ImageIcon("src/Resource/Decoration/Title.png");
 
+    private JLabel lblTitle = new JLabel();
     private JLabel lblHighlight = new JLabel();
     private Button btnStart = new Button(0);
     private Button btnExit = new Button(1);
-    private  Button btnHigh = new Button(3);
+    private Button btnHigh = new Button(3);
 
     private final int DISTANCE = 30;
 
@@ -20,6 +22,9 @@ public class Intro extends AllWindows {
 
         background.setBounds(0, 0, width, height);
         background.setIcon(imgRescaler(IntroScreen, width, height));
+
+        lblTitle.setSize(imgTitle.getIconWidth(), imgTitle.getIconHeight());
+        lblTitle.setIcon(imgTitle);
 
         lblHighlight.setIcon(imgHighlight);
         lblHighlight.setBounds(DX, DY, imgHighlight.getIconWidth(), imgHighlight.getIconHeight());
@@ -136,11 +141,13 @@ public class Intro extends AllWindows {
             }
         });
 
+        centerSetter(lblTitle,btnHigh);
 
         add(lblHighlight);
         add(btnStart);
         add(btnExit);
         add(btnHigh);
+        add(lblTitle);
         add(background);
 
     }

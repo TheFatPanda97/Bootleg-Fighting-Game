@@ -12,7 +12,7 @@ public class Read_Write {
     private int currentHighScore = 0;
     private Stack stackInfo = new Stack();
 
-    void readFile() {
+    public void readFile() {
 
         try {
 
@@ -67,7 +67,7 @@ public class Read_Write {
 
     }
 
-    ArrayList<Integer> readKakaData() {
+    public ArrayList<Integer> readKakaData() {
 
         ArrayList<Integer> tempArray = new ArrayList<>();
         try {
@@ -98,7 +98,7 @@ public class Read_Write {
 
     }
 
-    void writeMessage(String s) {
+    public void writeMessage(String s) {
 
         try {
 
@@ -120,7 +120,7 @@ public class Read_Write {
 
     }
 
-    void writeMessage(Node n) {
+    private void writeMessage(Node n) {
 
         try {
 
@@ -148,7 +148,7 @@ public class Read_Write {
 
     }
 
-    boolean newHighScore(String name, int s) {
+    public boolean newHighScore(String name, int s) {
 
         if (!stackInfo.isEmpty()) {
 
@@ -174,7 +174,7 @@ public class Read_Write {
 
     }
 
-    void selectionSort(ArrayList<Integer> arr) {
+    private void selectionSort(ArrayList<Integer> arr) {
 
         for (int i = 0; i < arr.size() - 1; i++) {
 
@@ -192,7 +192,7 @@ public class Read_Write {
 
     }
 
-    void switchNums(int i, int index, ArrayList<Integer> a) {
+    private void switchNums(int i, int index, ArrayList<Integer> a) {
 
         int temp = a.get(i);
         a.set(i, a.get(index));
@@ -200,19 +200,19 @@ public class Read_Write {
 
     }
 
-    boolean getDLC() {
+    public boolean getDLC() {
 
         return DLC;
 
     }
 
-    void setDLC(boolean d) {
+    public void setDLC(boolean d) {
 
         DLC = d;
 
     }
 
-    Stack getStackInfo() {
+    public Stack getStackInfo() {
 
         return stackInfo;
 
