@@ -488,7 +488,7 @@ public class Player extends JLabel {
 
     void PLeft() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
             set(1, 0);
 
@@ -498,7 +498,7 @@ public class Player extends JLabel {
 
     void PRight() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
             set(1, 2);
 
@@ -508,7 +508,7 @@ public class Player extends JLabel {
 
     void RLeft() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
             reset(1, 0);
 
@@ -518,7 +518,7 @@ public class Player extends JLabel {
 
     void RRight() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
 
             reset(1, 2);
 
@@ -528,7 +528,7 @@ public class Player extends JLabel {
 
     void jump() {
 
-        if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
+        if (!isAttacking() && !isJumping() && !beingSuped && !GameOver && !dontMove) {
 
             set(0, 1);
             jumpHeight = JUMP_HEIGHT;
@@ -649,9 +649,9 @@ public class Player extends JLabel {
 
     }
 
-    void stopAct(int delay, ActionListener actionListener) {
+    void stopAct(ActionListener actionListener) {
 
-        stopTimer = new Timer(delay, e -> {
+        stopTimer = new Timer(10, e -> {
 
             actionListener.actionPerformed(e);
 

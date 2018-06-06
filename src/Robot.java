@@ -31,7 +31,7 @@ public class Robot extends Player {
         setMoveSpeed(11);
         setProjectSpeed(20);
 
-        stopAct(10, e -> {
+        stopAct(e -> {
 
             //punch
             if (allBoolMove[1][3] && count == 18) {
@@ -96,7 +96,7 @@ public class Robot extends Player {
 
     void punch() {
 
-        if (!isAttacking() && !GameOver) {
+        if (!isAttacking() && !GameOver && !dontMove) {
 
             punchSetback();
             super.punch();
@@ -107,7 +107,7 @@ public class Robot extends Player {
 
     void kick() {
 
-        if (!isAttacking() && !atTop && !GameOver) {
+        if (!isAttacking() && !atTop && !GameOver && !dontMove) {
 
             kickSetback();
             super.kick();
@@ -118,7 +118,7 @@ public class Robot extends Player {
 
     void shoot() {
 
-        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !GameOver) {
+        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
             hpMagic.decMagic(PROJECTILE_MGI);
             bulletCreation();
@@ -132,7 +132,7 @@ public class Robot extends Player {
 
     void superPower() {
 
-        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver) {
+        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
             super.superPower();
             bulletCreation(true);

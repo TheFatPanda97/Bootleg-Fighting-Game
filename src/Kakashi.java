@@ -34,34 +34,47 @@ public class Kakashi extends Player {
 
     Timer pauseTimer;
 
+    ArrayList<Integer> allkakaData;
+
     public Kakashi(JComponent RootPane, int WPN) {
 
         super();
 
-        ArrayList<Integer> allkakaData = Main.rw.readKakaData();
-
+        allkakaData = Main.rw.readKakaData();
 
         whichPlayerNum = WPN;
 
-        if (WPN == 1) {
-
-            addKeyBinder(RootPane, KeyEvent.VK_T, "P1Summon", e -> summon());
-
-        } else {
-
-            addKeyBinder(RootPane, KeyEvent.VK_I, "P2Summon", e -> summon());
-
-        }
-
+        setKakaIntState(RootPane);
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum, RootPane);
         setMoveSpeed(allkakaData.get(0));
         setProjectSpeed(allkakaData.get(3));
 
+        movementTimer.start();
 
-        stopAct(10, e -> {
+    }
 
+    Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
+
+        super();
+
+        whichPlayerNum = WPN;
+
+        setKakaIntState(RootPane);
+        setKakaPics(whichPlayerNum, p);
+        setInitLoc(whichPlayerNum);
+        setWhichPlayer(whichPlayerNum, RootPane);
+        setMoveSpeed(d.get(0));
+        setProjectSpeed(d.get(3));
+
+        movementTimer.start();
+
+    }
+
+    void stopAct() {
+
+        stopTimer = new Timer(10, e -> {
 
             //punch
             if (allBoolMove[1][3] && count == allkakaData.get(1)) {
@@ -97,10 +110,25 @@ public class Kakashi extends Player {
                 chidori = true;
 
                 //super continued
-            } else if (allBoolMove[0][4] && count == 80) {
+            } else if (allBoolMove[0][4] && count == 50) {
+
+                if (whichPlayerNum == 1 && !Main.fightWindow.P2.isBlocking()) {
+
+                    Main.fightWindow.P2.dontMove = true;
+                    temp = (ImageIcon) Main.fightWindow.background.getIcon();
+                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, AllWindows.width, AllWindows.height));
+
+                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()){
+
+                    Main.fightWindow.P1.dontMove = true;
+                    temp = (ImageIcon) Main.fightWindow.background.getIcon();
+                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, AllWindows.width, AllWindows.height));
+
+                }
 
                 reset(0, 4);
                 stopTimer.stop();
+                pauseTimer.start();
 
 
                 //super continued
@@ -148,11 +176,34 @@ public class Kakashi extends Player {
 
         });
 
-        pauseAct(1000, e -> {
+    }
+
+    void pauseAct() {
+
+        pauseTimer = new Timer(1000, e -> {
+
+            if (whichPlayerNum == 1 && !Main.fightWindow.P2.dontMove) {
+
+                pauseTimer.stop();
+
+            } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.dontMove){
+
+                pauseTimer.stop();
+
+            }
 
             if (countUp == 3) {
 
-                dontMove = false;
+                if (whichPlayerNum == 1) {
+
+                    Main.fightWindow.P2.dontMove = false;
+
+                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()){
+
+                    Main.fightWindow.P1.dontMove = false;
+
+                }
+                
                 Main.fightWindow.background.setIcon(temp);
                 countUp = 0;
                 pauseTimer.stop();
@@ -162,135 +213,13 @@ public class Kakashi extends Player {
             countUp++;
 
         });
-
-
-        movementTimer.start();
-
-    }
-
-    public Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
-
-        whichPlayerNum = WPN;
-
-        setKakaPics(whichPlayerNum, p);
-        setInitLoc(whichPlayerNum);
-        setWhichPlayer(whichPlayerNum, RootPane);
-        setMoveSpeed(d.get(0));
-        setProjectSpeed(d.get(3));
-
-        stopAct(10, e -> {
-
-
-            //punch
-            if (allBoolMove[1][3] && count == d.get(1)) {
-
-                if (facingLeft()) {
-
-                    setLocation(getLocation().x + WizPunchDistance, getY());
-
-                }
-                stopMoving();
-                reset(1, 3);
-                stopTimer.stop();
-
-                //kick
-            } else if (allBoolMove[1][4] && count == d.get(1)) {
-
-                stopMoving();
-                reset(1, 4);
-                stopTimer.stop();
-
-                //shoot
-            } else if (allBoolMove[1][5] && count == d.get(2)) {
-
-                teleport();
-                stopMoving();
-                reset(1, 5);
-                stopTimer.stop();
-
-                //super
-            } else if (allBoolMove[0][3] && count == d.get(4)) {
-
-                superFacing = facing;
-                teleport();
-                chidori = true;
-
-                //super continued
-            } else if (allBoolMove[0][3] && count == d.get(5)) {
-
-                chidori = false;
-                stopMoving();
-                moveVertical(-KakaSuperDistance);
-                reset(0, 3);
-
-                if (whichPlayerNum == 1) {
-
-                    Main.fightWindow.P2.reset(1, 1);
-                    Main.fightWindow.P2.beingSuped = false;
-                    Main.fightWindow.P2.setLocation(Main.fightWindow.P2.getX(), getY());
-
-                } else {
-
-                    Main.fightWindow.P1.reset(1, 1);
-                    Main.fightWindow.P1.beingSuped = false;
-                    Main.fightWindow.P1.setLocation(Main.fightWindow.P1.getX(), getY());
-
-                }
-                stopTimer.stop();
-
-            }
-
-            if (allBoolMove[0][3] && count >= d.get(4)) {
-
-                if (superFacing == 0) {
-
-                    moveHorizontal(-moveSpeed * 2);
-
-                } else {
-
-                    moveHorizontal(moveSpeed * 2);
-
-                }
-
-
-            }
-
-            count++;
-
-        });
-
-        movementTimer.start();
-
-    }
-
-    void pauseAct(int delay, ActionListener actionListener) {
-
-        pauseTimer = new Timer(delay, e -> {
-
-            actionListener.actionPerformed(e);
-
-        });
     }
 
     void summon() {
 
         if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !atTop && !GameOver) {
 
-            if (whichPlayerNum == 1) {
-
-                Main.fightWindow.P2.stopMoving();
-
-            } else {
-
-                Main.fightWindow.P1.stopMoving();
-
-            }
-
-            dontMove = true;
-            temp = (ImageIcon) Main.fightWindow.background.getIcon();
-            Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, AllWindows.width, AllWindows.height));
             hpMagic.decMagic(SUPER_MGI);
-            pauseTimer.start();
             stopMoving();
             set(0, 4);
             stopTimer.start();
@@ -362,6 +291,23 @@ public class Kakashi extends Player {
 
     }
 
+    void setKakaIntState(JComponent RootPane) {
+
+        if (whichPlayerNum == 1) {
+
+            addKeyBinder(RootPane, KeyEvent.VK_T, "P1Summon", e -> summon());
+
+        } else {
+
+            addKeyBinder(RootPane, KeyEvent.VK_I, "P2Summon", e -> summon());
+
+        }
+
+        stopAct();
+        pauseAct();
+
+    }
+
     public void setInitLoc(int whichPlayerNum) {
 
         if (whichPlayerNum == 1) {
@@ -378,8 +324,8 @@ public class Kakashi extends Player {
         }
 
     }
-    //setup pics
 
+    //setup pics
     void setKakaPics(int whichPlayerNum) {
 
         RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
@@ -434,6 +380,7 @@ public class Kakashi extends Player {
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
+
     //setup pics
 
     void setKakaPics(int whichPlayerNum, ImageIcon[][] p) {
@@ -479,6 +426,7 @@ public class Kakashi extends Player {
         }
 
     }
+
     //resize images to correct size
 
     protected ImageIcon imgRescaler(ImageIcon img, int w, int h) {

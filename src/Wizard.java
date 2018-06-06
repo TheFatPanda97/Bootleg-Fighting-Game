@@ -32,7 +32,7 @@ public class Wizard extends Player {
         setProjectSpeed(30);
 
 
-        stopAct(10, e -> {
+        stopAct(e -> {
 
             //punch
             if (allBoolMove[1][3] && count == 18) {
@@ -106,7 +106,7 @@ public class Wizard extends Player {
 
     void punch() {
 
-        if (!isAttacking() && !GameOver) {
+        if (!isAttacking() && !GameOver && !dontMove) {
 
             punchSetback();
             super.punch();
@@ -117,7 +117,7 @@ public class Wizard extends Player {
 
     void kick() {
 
-        if (!isAttacking() && !atTop && !GameOver) {
+        if (!isAttacking() && !atTop && !GameOver && !dontMove) {
 
             kickSetback();
             super.kick();
@@ -128,7 +128,7 @@ public class Wizard extends Player {
 
     void shoot() {
 
-        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !GameOver) {
+        if (!isAttacking() && hpMagic.hasMagic(PROJECTILE_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
             hpMagic.decMagic(PROJECTILE_MGI);
             bulletCreation();
@@ -142,7 +142,7 @@ public class Wizard extends Player {
 
     void superPower() {
 
-        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver) {
+        if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver && !dontMove) {
 
             super.superPower();
             emergencyStop = true;
