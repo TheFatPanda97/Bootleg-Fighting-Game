@@ -139,6 +139,15 @@ public class FightClub extends AllWindows {
 
             }
 
+            if (P1.dontMove) {
+
+                P2.stopMoving();
+
+            } else if (P2.dontMove) {
+
+                P1.stopMoving();
+
+            }
 
             if (hitProjectile(P1, P2)) {
 
