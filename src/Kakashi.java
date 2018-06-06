@@ -26,7 +26,7 @@ public class Kakashi extends Player {
     ImageIcon LKakaChi;
     ImageIcon LKakaSummon;
 
-    ImageIcon Genjutsu = new ImageIcon("src/Resource/Kakashi/DLC/Genjutsu.gif");
+    ImageIcon Genjutsu = new ImageIcon("src/Resource/Kakashi/Genjutsu.gif");
     ImageIcon temp;
 
     int superFacing = 0;
@@ -36,7 +36,7 @@ public class Kakashi extends Player {
 
     ArrayList<Integer> allkakaData;
 
-    public Kakashi(JComponent RootPane, int WPN) {
+    Kakashi(JComponent RootPane, int WPN) {
 
         super();
 
@@ -60,6 +60,7 @@ public class Kakashi extends Player {
         super();
 
         whichPlayerNum = WPN;
+        allkakaData = d;
 
         setKakaIntState(RootPane);
         setKakaPics(whichPlayerNum, p);
@@ -104,13 +105,13 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //super
-            } else if (allBoolMove[0][3] && count == allkakaData.get(4)) {
+            } else if (allBoolMove[0][3] && count == allkakaData.get(5)) {
 
                 teleport(superFacing);
                 chidori = true;
 
                 //super continued
-            } else if (allBoolMove[0][4] && count == 50) {
+            } else if (allBoolMove[0][4] && count ==  allkakaData.get(4)) {
 
                 if (whichPlayerNum == 1 && !Main.fightWindow.P2.isBlocking()) {
 
@@ -132,7 +133,7 @@ public class Kakashi extends Player {
 
 
                 //super continued
-            } else if (allBoolMove[0][3] && count == allkakaData.get(5)) {
+            } else if (allBoolMove[0][3] && count == allkakaData.get(6)) {
 
                 chidori = false;
                 stopMoving();
@@ -157,7 +158,7 @@ public class Kakashi extends Player {
             }
 
 
-            if (allBoolMove[0][3] && count >= allkakaData.get(4)) {
+            if (allBoolMove[0][3] && count >= allkakaData.get(5)) {
 
                 if (superFacing == 0) {
 
@@ -192,7 +193,7 @@ public class Kakashi extends Player {
 
             }
 
-            if (countUp == 3) {
+            if (countUp == 2) {
 
                 if (whichPlayerNum == 1) {
 
@@ -203,7 +204,7 @@ public class Kakashi extends Player {
                     Main.fightWindow.P1.dontMove = false;
 
                 }
-                
+
                 Main.fightWindow.background.setIcon(temp);
                 countUp = 0;
                 pauseTimer.stop();
