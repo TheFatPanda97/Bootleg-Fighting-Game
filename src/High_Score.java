@@ -1,10 +1,9 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-public class HighScore extends AllWindows {
+public class High_Score extends All_Windows {
 
     private JList List;
     private JScrollPane ScrollView = new JScrollPane();
@@ -20,7 +19,7 @@ public class HighScore extends AllWindows {
     private final int SIDE_LENGTH = 20;
 
 
-    public HighScore() {
+    public High_Score() {
 
         btnInfo.setLocation(width - SIDE_LENGTH - btnInfo.getWidth(), SIDE_LENGTH);
         btnInfo.addMouseListener(new MouseListener() {

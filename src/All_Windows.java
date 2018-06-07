@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class AllWindows extends JFrame {
+public class All_Windows extends JFrame {
 
     public static int width = 1300;
     public static int height = 700;
@@ -23,7 +23,7 @@ public class AllWindows extends JFrame {
 
     protected JLabel background = new JLabel();
 
-    public AllWindows() {
+    public All_Windows() {
 
         setSize(width, height);
         setLayout(null);

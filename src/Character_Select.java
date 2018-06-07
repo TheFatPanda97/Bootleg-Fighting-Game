@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CharacterSelect extends AllWindows {
+public class Character_Select extends All_Windows {
 
     private boolean firstDownload;
 
@@ -106,7 +106,7 @@ public class CharacterSelect extends AllWindows {
     private Color transparent = new Color(0, 0, 0, 0);
 
 
-    public CharacterSelect() {
+    public Character_Select() {
 
         setAllCharacter();
         setAllFires();

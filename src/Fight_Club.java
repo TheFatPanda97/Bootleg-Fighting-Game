@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 
-public class FightClub extends AllWindows {
+public class Fight_Club extends All_Windows {
 
     private final int NORMAL_HITBACK = 100;
     private final int SUPER_HITBACK = 300;
@@ -44,7 +44,7 @@ public class FightClub extends AllWindows {
 
     private Button btnMain = new Button(2);
 
-    public FightClub() {
+    public Fight_Club() {
 
         lblCountBackground.setIcon(countDown);
         lblCountBackground.setSize(countDown.getIconWidth(), countDown.getIconHeight());
