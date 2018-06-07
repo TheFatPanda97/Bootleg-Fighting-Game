@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -117,13 +116,13 @@ public class Kakashi extends Player {
 
                     Main.fightWindow.P2.dontMove = true;
                     temp = (ImageIcon) Main.fightWindow.background.getIcon();
-                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, AllWindows.width, AllWindows.height));
+                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, All_Windows.width, All_Windows.height));
 
                 } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()) {
 
                     Main.fightWindow.P1.dontMove = true;
                     temp = (ImageIcon) Main.fightWindow.background.getIcon();
-                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, AllWindows.width, AllWindows.height));
+                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, All_Windows.width, All_Windows.height));
 
                 }
 
@@ -314,13 +313,13 @@ public class Kakashi extends Player {
         if (whichPlayerNum == 1) {
 
             setIcon(RKakaStat);
-            setBounds(0, FightClub.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
+            setBounds(0, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
 
         } else if (whichPlayerNum == 2) {
 
             setIcon(LKakaStat);
-            setBounds(FightClub.width - LKakaStat.getIconWidth() - 30, FightClub.height - LKakaStat.getIconHeight() - COMMON_FLOOR, LKakaStat.getIconWidth(), LKakaStat.getIconHeight());
+            setBounds(Fight_Club.width - LKakaStat.getIconWidth() - 30, Fight_Club.height - LKakaStat.getIconHeight() - COMMON_FLOOR, LKakaStat.getIconWidth(), LKakaStat.getIconHeight());
 
         }
 
@@ -375,7 +374,7 @@ public class Kakashi extends Player {
 
 
         setIcon(RKakaStat);
-        setBounds(0, FightClub.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
+        setBounds(0, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
         whichCharacter[2] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
@@ -393,7 +392,7 @@ public class Kakashi extends Player {
         RKakaChi = allPic[0][3];
 
         setIcon(RKakaStat);
-        setBounds(0, FightClub.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
+        setBounds(0, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
         whichCharacter[2] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
@@ -404,7 +403,7 @@ public class Kakashi extends Player {
 
         if (facingRight()) {
 
-            setLocation(AllWindows.width - RKakaChi.getIconWidth(), getY());
+            setLocation(All_Windows.width - RKakaChi.getIconWidth(), getY());
 
         } else {
 
@@ -418,7 +417,7 @@ public class Kakashi extends Player {
 
         if (face == 0) {
 
-            setLocation(AllWindows.width - RKakaChi.getIconWidth(), getY());
+            setLocation(All_Windows.width - RKakaChi.getIconWidth(), getY());
 
         } else {
 

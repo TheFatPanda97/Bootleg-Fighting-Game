@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.security.Key;
 import java.util.ArrayList;
 
 public class Player extends JLabel {
@@ -138,7 +137,7 @@ public class Player extends JLabel {
 
             }
 
-            if (getLocation().y >= FightClub.height - getHeight() - COMMON_FLOOR) {
+            if (getLocation().y >= Fight_Club.height - getHeight() - COMMON_FLOOR) {
 
                 atTop = false;
                 reset(0, 1);
@@ -172,7 +171,7 @@ public class Player extends JLabel {
                 }
 
 
-                if (allBulltes.get(i).getX() >= FightClub.width || allBulltes.get(i).getX() <= -allBulltes.get(i).getWidth()) {
+                if (allBulltes.get(i).getX() >= Fight_Club.width || allBulltes.get(i).getX() <= -allBulltes.get(i).getWidth()) {
 
                     allBulltes.get(i).remove();
 
@@ -310,7 +309,7 @@ public class Player extends JLabel {
 
     protected void setLocGround() {
 
-        setLocation(getX(), FightClub.height - allPic[0][0].getIconHeight() - COMMON_FLOOR);
+        setLocation(getX(), Fight_Club.height - allPic[0][0].getIconHeight() - COMMON_FLOOR);
 
     }
 
@@ -332,12 +331,12 @@ public class Player extends JLabel {
 
         if (whichPlayerNum == 1) {
 
-            setBounds(0, FightClub.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
+            setBounds(0, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
 
 
         } else if (whichPlayerNum == 2) {
 
-            setBounds(FightClub.width - INITAL_WIDTH - 30, FightClub.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
+            setBounds(Fight_Club.width - INITAL_WIDTH - 30, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
 
         }
 
@@ -675,9 +674,9 @@ public class Player extends JLabel {
 
     private  void outOfBounds() {
 
-        if (getX() + getWidth() >= FightClub.width) {
+        if (getX() + getWidth() >= Fight_Club.width) {
 
-            setLocation(FightClub.width - getWidth(), getY());
+            setLocation(Fight_Club.width - getWidth(), getY());
 
         } else if (getX() <= 0) {
 

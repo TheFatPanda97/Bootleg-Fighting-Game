@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class Bar extends JLabel {
 
@@ -94,7 +93,7 @@ public class Bar extends JLabel {
 
         } else if (whichPlayerNum == PNUM2) {
 
-            setBounds(FightClub.width - LBar.getIconWidth(), INTY, LBar.getIconWidth(), LBar.getIconHeight());
+            setBounds(Fight_Club.width - LBar.getIconWidth(), INTY, LBar.getIconWidth(), LBar.getIconHeight());
             setIcon(LBar);
 
             if (whichPlayer[WIZARD]) {

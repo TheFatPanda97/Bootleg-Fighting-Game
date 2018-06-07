@@ -161,13 +161,13 @@ public class Robot extends Player {
         if (whichPlayerNum == 1) {
 
             setIcon(RNormRobStat);
-            setBounds(0, FightClub.height - RNormRobStat.getIconHeight() - COMMON_FLOOR, RNormRobStat.getIconWidth(), RNormRobStat.getIconHeight());
+            setBounds(0, Fight_Club.height - RNormRobStat.getIconHeight() - COMMON_FLOOR, RNormRobStat.getIconWidth(), RNormRobStat.getIconHeight());
 
 
         } else if (whichPlayerNum == 2) {
 
             setIcon(LNormRobStat);
-            setBounds(FightClub.width - LNormRobStat.getIconWidth() - 30, FightClub.height - LNormRobStat.getIconHeight() - COMMON_FLOOR, LNormRobStat.getIconWidth(), LNormRobStat.getIconHeight());
+            setBounds(Fight_Club.width - LNormRobStat.getIconWidth() - 30, Fight_Club.height - LNormRobStat.getIconHeight() - COMMON_FLOOR, LNormRobStat.getIconWidth(), LNormRobStat.getIconHeight());
 
         }
 

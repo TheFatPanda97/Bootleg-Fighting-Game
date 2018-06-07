@@ -92,13 +92,13 @@ public class Wizard extends Player {
         if (whichPlayerNum == 1) {
 
             setIcon(RNormWizStat);
-            setBounds(0, FightClub.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
+            setBounds(0, Fight_Club.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
 
 
         } else if (whichPlayerNum == 2) {
 
             setIcon(LNormWizStat);
-            setBounds(FightClub.width - LNormWizStat.getIconWidth() - 30, FightClub.height - LNormWizStat.getIconHeight() - COMMON_FLOOR, LNormWizStat.getIconWidth(), LNormWizStat.getIconHeight());
+            setBounds(Fight_Club.width - LNormWizStat.getIconWidth() - 30, Fight_Club.height - LNormWizStat.getIconHeight() - COMMON_FLOOR, LNormWizStat.getIconWidth(), LNormWizStat.getIconHeight());
 
         }
 
@@ -146,7 +146,7 @@ public class Wizard extends Player {
 
             super.superPower();
             emergencyStop = true;
-            setLocation(getX(), FightClub.height - allPic[0][3].getIconHeight() + lightUp);
+            setLocation(getX(), Fight_Club.height - allPic[0][3].getIconHeight() + lightUp);
 
         }
 
@@ -211,7 +211,7 @@ public class Wizard extends Player {
 
 
         setIcon(RNormWizStat);
-        setBounds(0, FightClub.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
+        setBounds(0, Fight_Club.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
 
         whichCharacter[0] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);

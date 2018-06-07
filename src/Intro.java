@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class Intro extends AllWindows {
+public class Intro extends All_Windows {
 
     private ImageIcon IntroScreen = new ImageIcon("src/Resource/Screen_Background/Intro Screen.gif");
     private ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
