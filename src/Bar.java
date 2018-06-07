@@ -10,11 +10,28 @@ public class Bar extends JLabel {
     private final int HP_WIDTH = 300;
     private final int HP_HEIGHT = 35;
 
+    private final int INTX = 0;
+    private final int INTY = 0;
+    private final int INT_WIDTH = 0;
+
+    private final int DOUBLE_MGC = 2;
+    private final int HALF_MGC = 2;
+
+    private final int Y_OFFSET = 50;
+
     private final int RMGC_XMOVE = 4;
     private final int LMGC_XMOVE = 109;
     private final int MGC_Y = 16;
     private final int MGC_WIDTH = 200;
     private final int MGC_HEIGHT = 25;
+
+    private final int PNUM1 = 1;
+    private final int PNUM2 = 2;
+
+    private final int WIZARD = 0;
+    private final int ROBOT = 1;
+    private final int KAKASHI = 2;
+
 
     public static final int MGC_ADD = 20;
 
@@ -40,28 +57,28 @@ public class Bar extends JLabel {
         setOpaque(false);
 
 
-        if (whichPlayerNum == 1) {
+        if (whichPlayerNum == PNUM1) {
 
-            setBounds(0, 0, RBar.getIconWidth(), RBar.getIconHeight());
+            setBounds(INTX, INTY, RBar.getIconWidth(), RBar.getIconHeight());
             setIcon(RBar);
 
 
-            if (whichPlayer[0]) {
+            if (whichPlayer[WIZARD]) {
 
-                mugshot.setBounds(0, 0, RWizFace.getIconWidth(), RWizFace.getIconHeight());
+                mugshot.setBounds(INTX, INTY, RWizFace.getIconWidth(), RWizFace.getIconHeight());
                 mugshot.setIcon(RWizFace);
 
 
-            } else if (whichPlayer[1]) {
+            } else if (whichPlayer[ROBOT]) {
 
 
-                mugshot.setBounds(0, 0, RobFace.getIconWidth(), RobFace.getIconHeight());
+                mugshot.setBounds(INTX, INTY, RobFace.getIconWidth(), RobFace.getIconHeight());
                 mugshot.setIcon(RobFace);
 
-            } else if (whichPlayer[2]) {
+            } else if (whichPlayer[KAKASHI]) {
 
 
-                mugshot.setBounds(0, 0, KakaFace.getIconWidth(), KakaFace.getIconHeight());
+                mugshot.setBounds(INTX, INTY, KakaFace.getIconWidth(), KakaFace.getIconHeight());
                 mugshot.setIcon(KakaFace);
 
             }
@@ -71,31 +88,31 @@ public class Bar extends JLabel {
             hp.setOpaque(true);
 
             magic.setBackground(Color.cyan);
-            magic.setBounds(mugshot.getWidth() + RMGC_XMOVE, MGC_Y + 50, 0, MGC_HEIGHT);
+            magic.setBounds(mugshot.getWidth() + RMGC_XMOVE, MGC_Y + Y_OFFSET, INT_WIDTH, MGC_HEIGHT);
             magic.setOpaque(true);
 
 
-        } else if (whichPlayerNum == 2) {
+        } else if (whichPlayerNum == PNUM2) {
 
-            setBounds(FightClub.width - LBar.getIconWidth(), 0, LBar.getIconWidth(), LBar.getIconHeight());
+            setBounds(FightClub.width - LBar.getIconWidth(), INTY, LBar.getIconWidth(), LBar.getIconHeight());
             setIcon(LBar);
 
-            if (whichPlayer[0]) {
+            if (whichPlayer[WIZARD]) {
 
-                mugshot.setBounds(getWidth() - RobFace.getIconWidth(), 0, LWizFace.getIconWidth(), LWizFace.getIconHeight());
+                mugshot.setBounds(getWidth() - RobFace.getIconWidth(), INTY, LWizFace.getIconWidth(), LWizFace.getIconHeight());
                 mugshot.setIcon(LWizFace);
 
 
-            } else if (whichPlayer[1]) {
+            } else if (whichPlayer[ROBOT]) {
 
 
-                mugshot.setBounds(getWidth() - RobFace.getIconWidth(), 0, RobFace.getIconWidth(), RobFace.getIconHeight());
+                mugshot.setBounds(getWidth() - RobFace.getIconWidth(), INTY, RobFace.getIconWidth(), RobFace.getIconHeight());
                 mugshot.setIcon(RobFace);
 
-            } else if (whichPlayer[2]) {
+            } else if (whichPlayer[KAKASHI]) {
 
 
-                mugshot.setBounds(getWidth() - KakaFace.getIconWidth(), 0, KakaFace.getIconWidth(), KakaFace.getIconHeight());
+                mugshot.setBounds(getWidth() - KakaFace.getIconWidth(), INTY, KakaFace.getIconWidth(), KakaFace.getIconHeight());
                 mugshot.setIcon(KakaFace);
 
             }
@@ -106,7 +123,7 @@ public class Bar extends JLabel {
             hp.setOpaque(true);
 
             magic.setBackground(Color.cyan);
-            magic.setBounds(LMGC_XMOVE + MGC_WIDTH, MGC_Y + 50, 0, MGC_HEIGHT);
+            magic.setBounds(LMGC_XMOVE + MGC_WIDTH, MGC_Y + Y_OFFSET, INT_WIDTH, MGC_HEIGHT);
             magic.setOpaque(true);
 
         }
@@ -119,7 +136,7 @@ public class Bar extends JLabel {
 
     public boolean dead() {
 
-        return hp.getWidth() <= 0;
+        return hp.getWidth() <= INT_WIDTH;
 
 
     }
@@ -130,7 +147,7 @@ public class Bar extends JLabel {
 
             hp.setSize(hp.getWidth() - deduct, hp.getHeight());
 
-            if (whichPlayerNum == 2) {
+            if (whichPlayerNum == PNUM2) {
 
                 hp.setLocation(hp.getLocation().x + deduct, hp.getY());
 
@@ -138,11 +155,11 @@ public class Bar extends JLabel {
 
         } else {
 
-            hp.setSize(hp.getWidth() - deduct / 2, hp.getHeight());
+            hp.setSize(hp.getWidth() - deduct / HALF_MGC, hp.getHeight());
 
-            if (whichPlayerNum == 2) {
+            if (whichPlayerNum == PNUM2) {
 
-                hp.setLocation(hp.getLocation().x + deduct / 2, hp.getY());
+                hp.setLocation(hp.getLocation().x + deduct / HALF_MGC, hp.getY());
 
             }
 
@@ -152,9 +169,9 @@ public class Bar extends JLabel {
 
     public void decMagic(int deduct) {
 
-        if (magic.getWidth() - deduct <= 0) {
+        if (magic.getWidth() - deduct <= INT_WIDTH) {
 
-            magic.setSize(0, MGC_HEIGHT);
+            magic.setSize(INT_WIDTH, MGC_HEIGHT);
 
         } else {
 
@@ -163,9 +180,9 @@ public class Bar extends JLabel {
         }
 
 
-        if (whichPlayerNum == 2) {
+        if (whichPlayerNum == PNUM2) {
 
-            if (magic.getWidth() <= 0) {
+            if (magic.getWidth() <= INT_WIDTH) {
 
                 magic.setLocation(LMGC_XMOVE + MGC_WIDTH, magic.getY());
 
@@ -192,7 +209,7 @@ public class Bar extends JLabel {
         }
 
 
-        if (whichPlayerNum == 2) {
+        if (whichPlayerNum == PNUM2) {
 
             if (magic.getWidth() >= MGC_WIDTH) {
 
@@ -239,11 +256,11 @@ public class Bar extends JLabel {
 
     public void firstBlood() {
 
-        magic.setSize(magic.getWidth() + MGC_ADD * 2, MGC_HEIGHT);
+        magic.setSize(magic.getWidth() + MGC_ADD * DOUBLE_MGC, MGC_HEIGHT);
 
-        if (whichPlayerNum == 2) {
+        if (whichPlayerNum == PNUM2) {
 
-            magic.setLocation(magic.getLocation().x - MGC_ADD * 2, magic.getY());
+            magic.setLocation(magic.getLocation().x - MGC_ADD * DOUBLE_MGC, magic.getY());
 
         }
 
