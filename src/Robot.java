@@ -20,13 +20,13 @@ public class Robot extends Player {
     private ImageIcon LNormRobKick = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Kick_v2.gif");
     private ImageIcon LNormRobSlam = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Ground_Slam_v2.gif");
 
-    public Robot(JComponent RootPane, int WPN) {
+    public Robot(int WPN) {
 
         super();
         whichPlayerNum = WPN;
 
         setRobPics(whichPlayerNum);
-        setWhichPlayer(whichPlayerNum, RootPane);
+        setWhichPlayer(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setMoveSpeed(11);
         setProjectSpeed(20);

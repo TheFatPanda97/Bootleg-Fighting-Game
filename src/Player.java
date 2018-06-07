@@ -87,7 +87,7 @@ public class Player extends JLabel {
 
             outOfBounds();
             //if pressed D
-            if (allBoolMove[1][2]) {
+            if (allBoolMove[1][2] && !dontMove) {
 
                 //move right
                 moveHorizontal(moveSpeed);
@@ -96,7 +96,7 @@ public class Player extends JLabel {
             }
 
             //if press A
-            if (allBoolMove[1][0]) {
+            if (allBoolMove[1][0] && !dontMove) {
 
                 //move left
                 moveHorizontal(-moveSpeed);
@@ -214,7 +214,7 @@ public class Player extends JLabel {
 
     }
 
-    protected void setWhichPlayer(int whichPlayerNum, JComponent RootPane) {
+    protected void setWhichPlayer(int whichPlayerNum) {
 
 
         if (whichPlayerNum == 1) {

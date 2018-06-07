@@ -243,29 +243,29 @@ public class Fight_Club extends All_Windows {
 
         if (P1At == 0) {
 
-            P1 = new Wizard(getRootPane(), 1);
+            P1 = new Wizard(1);
 
         } else if (P1At == 1) {
 
-            P1 = new Kakashi(getRootPane(), 1);
+            P1 = new Kakashi(1);
 
         } else if (P1At == 2) {
 
-            P1 = new Robot(getRootPane(), 1);
+            P1 = new Robot(1);
 
         }
 
         if (P2At == 0) {
 
-            P2 = new Wizard(getRootPane(), 2);
+            P2 = new Wizard(2);
 
         } else if (P2At == 1) {
 
-            P2 = new Kakashi(getRootPane(), 2);
+            P2 = new Kakashi(2);
 
         } else if (P2At == 2) {
 
-            P2 = new Robot(getRootPane(), 2);
+            P2 = new Robot(2);
 
         }
 
@@ -289,29 +289,29 @@ public class Fight_Club extends All_Windows {
 
         if (P1At == 0) {
 
-            P1 = new Wizard(getRootPane(), 1);
+            P1 = new Wizard(1);
 
         } else if (P1At == 1) {
 
-            P1 = new Kakashi(getRootPane(), 1, p, d);
+            P1 = new Kakashi(1, p, d);
 
         } else if (P1At == 2) {
 
-            P1 = new Robot(getRootPane(), 1);
+            P1 = new Robot(1);
 
         }
 
         if (P2At == 0) {
 
-            P2 = new Wizard(getRootPane(), 2);
+            P2 = new Wizard(2);
 
         } else if (P2At == 1) {
 
-            P2 = new Kakashi(getRootPane(), 2, p, d);
+            P2 = new Kakashi(2, p, d);
 
         } else if (P2At == 2) {
 
-            P2 = new Robot(getRootPane(), 2);
+            P2 = new Robot(2);
 
         }
 

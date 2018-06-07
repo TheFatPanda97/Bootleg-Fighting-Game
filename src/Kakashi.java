@@ -35,7 +35,7 @@ public class Kakashi extends Player {
 
     private ArrayList<Integer> allkakaData;
 
-    public Kakashi(JComponent RootPane, int WPN) {
+    public Kakashi(int WPN) {
 
         super();
 
@@ -46,7 +46,7 @@ public class Kakashi extends Player {
         setKakaIntState();
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
-        setWhichPlayer(whichPlayerNum, RootPane);
+        setWhichPlayer(whichPlayerNum);
         setMoveSpeed(allkakaData.get(0));
         setProjectSpeed(allkakaData.get(3));
 
@@ -54,7 +54,7 @@ public class Kakashi extends Player {
 
     }
 
-    public Kakashi(JComponent RootPane, int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
+    public Kakashi(int WPN, ImageIcon[][] p, ArrayList<Integer> d) {
 
         super();
 
@@ -64,7 +64,7 @@ public class Kakashi extends Player {
         setKakaIntState();
         setKakaPics(whichPlayerNum, p);
         setInitLoc(whichPlayerNum);
-        setWhichPlayer(whichPlayerNum, RootPane);
+        setWhichPlayer(whichPlayerNum);
         setMoveSpeed(d.get(0));
         setProjectSpeed(d.get(3));
 
@@ -194,12 +194,14 @@ public class Kakashi extends Player {
 
             if (countUp == 2) {
 
-                if (whichPlayerNum == 1) {
+                if (whichPlayerNum == 1 && !Main.fightWindow.P2.isBlocking()) {
 
+                    Main.fightWindow.P2.stopMoving();
                     Main.fightWindow.P2.dontMove = false;
 
                 } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()) {
 
+                    Main.fightWindow.P1.stopMoving();
                     Main.fightWindow.P1.dontMove = false;
 
                 }
@@ -230,7 +232,7 @@ public class Kakashi extends Player {
 
     public void punch() {
 
-        if (!isAttacking() && !GameOver) {
+        if (!isAttacking() && !GameOver && !dontMove) {
 
             punchSetback();
             super.punch();
@@ -241,7 +243,7 @@ public class Kakashi extends Player {
 
     public void kick() {
 
-        if (!isAttacking() && !atTop && !GameOver) {
+        if (!isAttacking() && !atTop && !GameOver && !dontMove) {
 
             super.kick();
 
@@ -251,7 +253,7 @@ public class Kakashi extends Player {
 
     public void shoot() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver) {
+        if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
 
             super.shoot();
 

@@ -31,14 +31,14 @@ public class Character_Select extends All_Windows {
     private ImageIcon P2Select = new ImageIcon("src/Resource/Hexagon/P2.png");
     private ImageIcon Together = new ImageIcon("src/Resource/Hexagon/Together.png");
 
-    private ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
-    private ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
+    public ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
+    public ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
 
-    private ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
-    private ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
+    public ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
+    public ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
 
-    private ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
-    private ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
+    public ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
+    public ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
 
     private ImageIcon Fire = new ImageIcon("src/Resource/Decoration/Fire.gif");
 
@@ -743,6 +743,7 @@ public class Character_Select extends All_Windows {
                         Files.copy(LPunch.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaPunch.gif"));
                         Files.copy(LKick.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaKick.gif"));
                         Files.copy(LTele.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaTeleport.gif"));
+                        Files.copy(LSuper.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaSuper.gif"));
                         Files.copy(LSummon.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/Kakashi/DLC/LKakaSummon.gif"));
 
                         Files.copy(KakaData.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/All_Data/KakaData.txt"));

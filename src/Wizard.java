@@ -20,14 +20,14 @@ public class Wizard extends Player {
     private ImageIcon LNormWizSpin = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_SPin_v1.gif");
     private ImageIcon LNormWizLight = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Lightning_v4.gif");
 
-    public Wizard(JComponent RootPane, int WPN) {
+    public Wizard(int WPN) {
 
         super();
         whichPlayerNum = WPN;
 
         setWizPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
-        setWhichPlayer(whichPlayerNum, RootPane);
+        setWhichPlayer(whichPlayerNum);
         setMoveSpeed(8);
         setProjectSpeed(30);
 
