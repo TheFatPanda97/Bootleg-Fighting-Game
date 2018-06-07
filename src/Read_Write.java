@@ -174,7 +174,7 @@ public class Read_Write {
 
     }
 
-    private void selectionSort(ArrayList<Integer> arr) {
+    public void selectionSort(ArrayList<Integer> arr) {
 
         for (int i = 0; i < arr.size() - 1; i++) {
 

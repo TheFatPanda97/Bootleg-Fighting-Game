@@ -79,52 +79,71 @@ public class CharacterSelect extends AllWindows {
 
     private int P1At = 0;
     private int P2At = 2;
+
     private final int CORNER_DIS = 20;
     private final int TEXT_WIDTH = 200;
     private final int TEXT_HEIGHT = 40;
 
+    private final int ICON_SIZE = 100;
+    private final int FIRE_SIZE = 32;
+
+    private final int ICON_X = 600;
+    private final int ICON_Y =590;
+
+    private final int MAP_OFFSET = 162;
+    private final int MAP_WIDTH = 300;
+    private final int MAP_HEIGHT = 162;
+
+    private final int SELECT_LIMIT = 0;
+    private final int SELECT_KAKASHI = 1;
+
+    private final int NAME_LIMIT = 13;
+
+    private final Font NAME_FONT = new Font("Aerial", Font.BOLD, 30);
+
     private boolean downloadSuccess;
 
+    private Color transparent = new Color(0, 0, 0, 0);
 
-    CharacterSelect() {
+
+    public CharacterSelect() {
 
         setAllCharacter();
         setAllFires();
 
-
-        addLabel(background, imgRescaler(CSelect, width, height), 0, 0, false);
+        addLabel(background, imgRescaler(CSelect, width, height), INTX, INTY, false);
 
         P1Name = new JTextField();
         P1Name.setBounds(CORNER_DIS, height - TEXT_HEIGHT - CORNER_DIS, TEXT_WIDTH, TEXT_HEIGHT);
-        P1Name.setFont(new Font("Aerial", Font.BOLD, 30));
+        P1Name.setFont(NAME_FONT);
         P1Name.setForeground(Color.white);
         P1Name.setOpaque(false);
-        P1Name.setBackground(new Color(0, 0, 0, 0));
+        P1Name.setBackground(transparent);
         P1Name.setCaretColor(Color.WHITE);
         add(P1Name, 0);
 
         P2Name = new JTextField();
         P2Name.setBounds(width - TEXT_WIDTH - CORNER_DIS, height - TEXT_HEIGHT - CORNER_DIS, TEXT_WIDTH, TEXT_HEIGHT);
-        P2Name.setFont(new Font("Aerial", Font.BOLD, 30));
+        P2Name.setFont(NAME_FONT);
         P2Name.setForeground(Color.white);
-        P2Name.setBackground(new Color(0, 0, 0, 0));
+        P2Name.setBackground(transparent);
         P2Name.setOpaque(false);
         P2Name.setCaretColor(Color.WHITE);
         add(P2Name, 0);
 
-        addLabel(lblKaka, imgRescaler(KakaFace, 100, 100), 600, 590);
-        addLabel(lblWiz, imgRescaler(WizFace, 100, 100), lblKaka.getX() - lblKaka.getWidth(), 590);
-        addLabel(lblRob, imgRescaler(RobFace, 100, 100), lblKaka.getX() + lblKaka.getWidth(), 590);
+        addLabel(lblKaka, imgRescaler(KakaFace, ICON_SIZE, ICON_SIZE), ICON_X, ICON_Y);
+        addLabel(lblWiz, imgRescaler(WizFace, ICON_SIZE, ICON_SIZE), lblKaka.getX() - lblKaka.getWidth(), ICON_Y);
+        addLabel(lblRob, imgRescaler(RobFace, ICON_SIZE, ICON_SIZE), lblKaka.getX() + lblKaka.getWidth(), ICON_Y);
         addLabel(lblBigP1, RNormWizStat, CORNER_DIS, P1Name.getY() - RNormWizStat.getIconHeight() - CORNER_DIS);
         addLabel(lblBigP2, LNormRobStat, width - LNormRobStat.getIconWidth() - CORNER_DIS * 5, P2Name.getY() - LNormRobStat.getIconHeight() - CORNER_DIS);
-        addLabel(lblP1, imgRescaler(P1Select, 100, 100), lblWiz.getX(), lblWiz.getY());
-        addLabel(lblP2, imgRescaler(P2Select, 100, 100), lblRob.getX(), lblRob.getY());
-        addLabel(lblmapSelect, imgRescaler(Together, 32, 32), DX, DY);
+        addLabel(lblP1, imgRescaler(P1Select, ICON_SIZE, ICON_SIZE), lblWiz.getX(), lblWiz.getY());
+        addLabel(lblP2, imgRescaler(P2Select, ICON_SIZE, ICON_SIZE), lblRob.getX(), lblRob.getY());
+        addLabel(lblmapSelect, imgRescaler(Together, FIRE_SIZE, FIRE_SIZE), DX, DY);
 
 
         selectMap(5);
 
-        lblMapArea.setBounds(lblWiz.getX(), lblWiz.getY() - 162, 300, 162);
+        lblMapArea.setBounds(lblWiz.getX(), lblWiz.getY() - MAP_OFFSET, MAP_WIDTH, MAP_HEIGHT);
         lblMapArea.setIcon(imgRescaler(FJap, lblMapArea.getWidth(), lblMapArea.getHeight()));
         lblMapArea.addMouseListener(new MouseListener() {
             @Override
@@ -155,7 +174,7 @@ public class CharacterSelect extends AllWindows {
         });
 
         Main.fightWindow.background.setIcon(imgRescaler(FJap, width, height));
-        Main.fightWindow.background.setBounds(0, 0, width, height);
+        Main.fightWindow.background.setBounds(INTX, INTY, width, height);
 
         lblHighlight.setIcon(imgHighlight);
         lblHighlight.setBounds(DX, DY, imgHighlight.getIconWidth(), imgHighlight.getIconHeight());
@@ -455,7 +474,7 @@ public class CharacterSelect extends AllWindows {
                     setAt(lblP1, ++P1At);
                     setBig(lblBigP1, P1allCharacter, P1At);
 
-                } else if (e.getKeyCode() == KeyEvent.VK_A && P1At > 0) {
+                } else if (e.getKeyCode() == KeyEvent.VK_A && P1At > SELECT_LIMIT) {
 
                     setAt(lblP1, --P1At);
                     setBig(lblBigP1, P1allCharacter, P1At);
@@ -467,7 +486,7 @@ public class CharacterSelect extends AllWindows {
                     setAt(lblP2, ++P2At);
                     setBig(lblBigP2, P2allCharacter, P2At);
 
-                } else if (e.getKeyCode() == KeyEvent.VK_LEFT && P2At > 0) {
+                } else if (e.getKeyCode() == KeyEvent.VK_LEFT && P2At > SELECT_LIMIT) {
 
                     setAt(lblP2, --P2At);
                     setBig(lblBigP2, P2allCharacter, P2At);
@@ -498,7 +517,7 @@ public class CharacterSelect extends AllWindows {
         for (int i = 0; i < allFire.length; i++) {
 
             allFire[i] = new JLabel();
-            allFire[i].setSize(32, 32);
+            allFire[i].setSize(FIRE_SIZE, FIRE_SIZE);
             allFire[i].setIcon(imgRescaler(Fire, allFire[i].getWidth(), allFire[i].getHeight()));
             add(allFire[i], 0);
 
@@ -533,8 +552,6 @@ public class CharacterSelect extends AllWindows {
 
 
         a.setIcon(b);
-//        a.setSize(b.getIconWidth(), b.getIconHeight());
-//        a.setLocation(x, y);
         a.setBounds(x, y, b.getIconWidth(), b.getIconHeight());
         add(a, 0);
 
@@ -545,8 +562,6 @@ public class CharacterSelect extends AllWindows {
 
 
         a.setIcon(b);
-//        a.setSize(b.getIconWidth(), b.getIconHeight());
-//        a.setLocation(x, y);
         a.setBounds(x, y, b.getIconWidth(), b.getIconHeight());
         add(a);
 
@@ -574,11 +589,11 @@ public class CharacterSelect extends AllWindows {
 
         if (lblP1.getX() == lblP2.getX()) {
 
-            lblP2.setIcon(imgRescaler(Together, 100, 100));
+            lblP2.setIcon(imgRescaler(Together, ICON_SIZE, ICON_SIZE));
 
         } else {
 
-            lblP2.setIcon(imgRescaler(P2Select, 100, 100));
+            lblP2.setIcon(imgRescaler(P2Select, ICON_SIZE, ICON_SIZE));
         }
 
     }
@@ -616,7 +631,7 @@ public class CharacterSelect extends AllWindows {
             return false;
 
 
-        } else if (P1Name.getText().toCharArray().length > 13 || P2Name.getText().toCharArray().length > 13) {
+        } else if (P1Name.getText().toCharArray().length > NAME_LIMIT || P2Name.getText().toCharArray().length > NAME_LIMIT) {
 
             JOptionPane.showMessageDialog(null, "Name has to be shorter than 14 letters");
             return false;
@@ -637,7 +652,7 @@ public class CharacterSelect extends AllWindows {
             Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
             return true;
 
-        } else if (P1At == 1 || P2At == 1) {
+        } else if (P1At == SELECT_KAKASHI || P2At == SELECT_KAKASHI) {
 
             if (!Main.rw.getDLC()) {
 
@@ -683,7 +698,7 @@ public class CharacterSelect extends AllWindows {
 
                         }
 
-                        selectionSort(allKakaData);
+                        Main.rw.selectionSort(allKakaData);
 
                         //setting pics for the first time download
                         allKakaImg[0][0] = RKakaStat;
@@ -787,7 +802,7 @@ public class CharacterSelect extends AllWindows {
 
         lblmapSelect.setLocation(allFire[i].getX(), allFire[i].getY());
         Main.fightWindow.background.setIcon(imgRescaler(allMaps[i], width, height));
-        Main.fightWindow.background.setBounds(0, 0, width, height);
+        Main.fightWindow.background.setBounds(INTX, INTY, width, height);
 
     }
 
@@ -809,32 +824,6 @@ public class CharacterSelect extends AllWindows {
 
             return false;
         }
-
-    }
-
-    private void selectionSort(ArrayList<Integer> arr) {
-
-        for (int i = 0; i < arr.size() - 1; i++) {
-
-            int index = i;
-            for (int j = i + 1; j < arr.size(); j++) {
-
-                if (arr.get(j) < arr.get(index)) {
-                    index = j;
-                }
-
-            }
-
-            switchNums(i, index, arr);
-        }
-
-    }
-
-    private void switchNums(int i, int index, ArrayList<Integer> a) {
-
-        int temp = a.get(i);
-        a.set(i, a.get(index));
-        a.set(index, temp);
 
     }
 

@@ -5,14 +5,25 @@ import java.awt.*;
 
 public class AllWindows extends JFrame {
 
-    static int width = 1300;
-    static int height = 700;
-    final int DX = 5000;
-    final int DY = 5000;
+    public static int width = 1300;
+    public static int height = 700;
+
+    public final int DX = 5000;
+    public final int DY = 5000;
+
+    protected final int PNUM1 = 1;
+    protected final int PNUM2 = 2;
+
+    protected final int WIZARD = 0;
+    protected final int ROBOT = 1;
+    protected final int KAKASHI = 2;
+
+    protected final int INTX = 0;
+    protected final int INTY = 0;
 
     protected JLabel background = new JLabel();
 
-    AllWindows() {
+    public AllWindows() {
 
         setSize(width, height);
         setLayout(null);
