@@ -14,12 +14,18 @@ public class Button extends JLabel {
     private ImageIcon SHigh = new ImageIcon("src/Resource/Buttons/SHigh.png");
     private ImageIcon HHigh = new ImageIcon("src/Resource/Buttons/HHigh.png");
 
+    private final int INT_WIDTH = 250;
+    private final int INT_HEIGHT = 90;
+
+    private final int IMG_STATIC = 0;
+    private final int IMG_HIGH = 1;
+
 
     public Button(int set) {
 
-        setSize(250, 80);
+        setSize(INT_WIDTH, INT_HEIGHT);
         setAllButtonImg();
-        setIcon(allButtonImg[set][0]);
+        setIcon(allButtonImg[set][IMG_STATIC]);
 
         addMouseListener(new MouseListener() {
             @Override
@@ -40,14 +46,14 @@ public class Button extends JLabel {
             @Override
             public void mouseEntered(MouseEvent e) {
 
-                setIcon(allButtonImg[set][1]);
+                setIcon(allButtonImg[set][IMG_HIGH]);
 
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
 
-                setIcon(allButtonImg[set][0]);
+                setIcon(allButtonImg[set][IMG_STATIC]);
 
             }
         });
