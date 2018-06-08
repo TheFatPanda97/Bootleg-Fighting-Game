@@ -68,6 +68,7 @@ public class Player extends JLabel {
     protected final int ROB_SHOOT = -40;
 
     protected final int MOVE_TIMER = 10;
+    protected final int STOP_TIMER = 10;
     protected final int JUMP_TIMER = 20;
     protected final int BULLET_TIMER = 20;
 
@@ -83,6 +84,10 @@ public class Player extends JLabel {
     protected final int INTY = 0;
 
     protected final int INTX_OFFSET = 30;
+
+    protected final int WIZARD = 0;
+    protected final int ROBOT = 1;
+    protected final int KAKASHI = 2;
 
     protected Bar hpMagic;
     protected boolean dontMove;

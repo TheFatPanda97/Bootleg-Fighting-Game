@@ -35,6 +35,17 @@ public class Kakashi extends Player {
 
     private ArrayList<Integer> allkakaData;
 
+    private final int IMOVE_SPEED = 0;
+    private final int IPROJ_SPEED = 3;
+    private final int IPUNCH_KICK_SPEED = 1;
+    private final int ISHOOT_SPEED = 2;
+    private final int ISUPER_SPEED = 5;
+    private final int ISTOP_SPEED = 4;
+    private final int ISUPER_CONTI_SPEED = 6;
+
+    private final int PAUSE_TIMER = 1000;
+    private final int COUNT_LIMIT = 2;
+
     public Kakashi(int WPN) {
 
         super();
@@ -47,8 +58,8 @@ public class Kakashi extends Player {
         setKakaPics(whichPlayerNum);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum);
-        setMoveSpeed(allkakaData.get(0));
-        setProjectSpeed(allkakaData.get(3));
+        setMoveSpeed(allkakaData.get(IMOVE_SPEED));
+        setProjectSpeed(allkakaData.get(IPROJ_SPEED));
 
         movementTimer.start();
 
@@ -65,8 +76,8 @@ public class Kakashi extends Player {
         setKakaPics(whichPlayerNum, p);
         setInitLoc(whichPlayerNum);
         setWhichPlayer(whichPlayerNum);
-        setMoveSpeed(d.get(0));
-        setProjectSpeed(d.get(3));
+        setMoveSpeed(d.get(IMOVE_SPEED));
+        setProjectSpeed(d.get(IPROJ_SPEED));
 
         movementTimer.start();
 
@@ -74,10 +85,10 @@ public class Kakashi extends Player {
 
     private void stopAct() {
 
-        stopTimer = new Timer(10, e -> {
+        stopTimer = new Timer(STOP_TIMER, e -> {
 
             //punch
-            if (allBoolMove[1][3] && count == allkakaData.get(1)) {
+            if (allBoolMove[1][3] && count == allkakaData.get(IPUNCH_KICK_SPEED)) {
 
                 if (facingLeft()) {
 
@@ -89,14 +100,14 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //kick
-            } else if (allBoolMove[1][4] && count == allkakaData.get(1)) {
+            } else if (allBoolMove[1][4] && count == allkakaData.get(IPUNCH_KICK_SPEED)) {
 
                 stopMoving();
                 reset(1, 4);
                 stopTimer.stop();
 
                 //shoot
-            } else if (allBoolMove[1][5] && count == allkakaData.get(2)) {
+            } else if (allBoolMove[1][5] && count == allkakaData.get(ISHOOT_SPEED)) {
 
                 teleport();
                 stopMoving();
@@ -104,42 +115,40 @@ public class Kakashi extends Player {
                 stopTimer.stop();
 
                 //super
-            } else if (allBoolMove[0][3] && count == allkakaData.get(5)) {
+            } else if (allBoolMove[0][3] && count == allkakaData.get(ISUPER_SPEED)) {
 
                 teleport(superFacing);
                 chidori = true;
 
-                //super continued
-            } else if (allBoolMove[0][4] && count == allkakaData.get(4)) {
+                //genjitsu continued
+            } else if (allBoolMove[0][4] && count == allkakaData.get(ISTOP_SPEED)) {
 
-                if (whichPlayerNum == 1 && !Main.fightWindow.P2.isBlocking()) {
+                if (whichPlayerNum == PNUM1 && !Main.fightWindow.P2.isBlocking()) {
 
                     Main.fightWindow.P2.dontMove = true;
-                    temp = (ImageIcon) Main.fightWindow.background.getIcon();
-                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, All_Windows.width, All_Windows.height));
 
-                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()) {
+                } else if (whichPlayerNum == PNUM2 && !Main.fightWindow.P1.isBlocking()) {
 
                     Main.fightWindow.P1.dontMove = true;
-                    temp = (ImageIcon) Main.fightWindow.background.getIcon();
-                    Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, All_Windows.width, All_Windows.height));
 
                 }
 
+                temp = (ImageIcon) Main.fightWindow.background.getIcon();
+                Main.fightWindow.background.setIcon(imgRescaler(Genjutsu, All_Windows.width, All_Windows.height));
                 reset(0, 4);
                 stopTimer.stop();
                 pauseTimer.start();
 
 
                 //super continued
-            } else if (allBoolMove[0][3] && count == allkakaData.get(6)) {
+            } else if (allBoolMove[0][3] && count == allkakaData.get(ISUPER_CONTI_SPEED)) {
 
                 chidori = false;
                 stopMoving();
                 moveVertical(-KakaSuperDistance);
                 reset(0, 3);
 
-                if (whichPlayerNum == 1) {
+                if (whichPlayerNum == PNUM1) {
 
                     Main.fightWindow.P2.reset(1, 1);
                     Main.fightWindow.P2.beingSuped = false;
@@ -152,14 +161,15 @@ public class Kakashi extends Player {
                     Main.fightWindow.P1.setLocation(Main.fightWindow.P1.getX(), getY());
 
                 }
+
                 stopTimer.stop();
 
             }
 
 
-            if (allBoolMove[0][3] && count >= allkakaData.get(5)) {
+            if (allBoolMove[0][3] && count >= allkakaData.get(ISUPER_SPEED)) {
 
-                if (superFacing == 0) {
+                if (superFacing == RFACE) {
 
                     moveHorizontal(-moveSpeed * 2);
 
@@ -180,26 +190,26 @@ public class Kakashi extends Player {
 
     private void pauseAct() {
 
-        pauseTimer = new Timer(1000, e -> {
+        pauseTimer = new Timer(PAUSE_TIMER, e -> {
 
-            if (whichPlayerNum == 1 && !Main.fightWindow.P2.dontMove) {
+            if (whichPlayerNum == PNUM1 && !Main.fightWindow.P2.dontMove) {
 
                 pauseTimer.stop();
 
-            } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.dontMove) {
+            } else if (whichPlayerNum == PNUM2 && !Main.fightWindow.P1.dontMove) {
 
                 pauseTimer.stop();
 
             }
 
-            if (countUp == 2) {
+            if (countUp == COUNT_LIMIT) {
 
-                if (whichPlayerNum == 1 && !Main.fightWindow.P2.isBlocking()) {
+                if (whichPlayerNum == PNUM1 && !Main.fightWindow.P2.isBlocking()) {
 
                     Main.fightWindow.P2.stopMoving();
                     Main.fightWindow.P2.dontMove = false;
 
-                } else if (whichPlayerNum == 2 && !Main.fightWindow.P1.isBlocking()) {
+                } else if (whichPlayerNum == PNUM2 && !Main.fightWindow.P1.isBlocking()) {
 
                     Main.fightWindow.P1.stopMoving();
                     Main.fightWindow.P1.dontMove = false;
@@ -295,7 +305,7 @@ public class Kakashi extends Player {
 
     private void setKakaIntState() {
 
-        if (whichPlayerNum == 1) {
+        if (whichPlayerNum == PNUM1) {
 
             addKeyBinder(KeyEvent.VK_T, "P1Summon", e -> summon());
 
@@ -312,16 +322,16 @@ public class Kakashi extends Player {
 
     public void setInitLoc(int whichPlayerNum) {
 
-        if (whichPlayerNum == 1) {
+        if (whichPlayerNum == PNUM1) {
 
             setIcon(RKakaStat);
-            setBounds(0, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
+            setBounds(INTX, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
 
-        } else if (whichPlayerNum == 2) {
+        } else if (whichPlayerNum == PNUM2) {
 
             setIcon(LKakaStat);
-            setBounds(Fight_Club.width - LKakaStat.getIconWidth() - 30, Fight_Club.height - LKakaStat.getIconHeight() - COMMON_FLOOR, LKakaStat.getIconWidth(), LKakaStat.getIconHeight());
+            setBounds(Fight_Club.width - LKakaStat.getIconWidth() - INTX_OFFSET, Fight_Club.height - LKakaStat.getIconHeight() - COMMON_FLOOR, LKakaStat.getIconWidth(), LKakaStat.getIconHeight());
 
         }
 
@@ -376,9 +386,8 @@ public class Kakashi extends Player {
 
 
         setIcon(RKakaStat);
-        setBounds(0, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
+        setBounds(INTX, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
-        whichCharacter[2] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
@@ -394,9 +403,9 @@ public class Kakashi extends Player {
         RKakaChi = allPic[0][3];
 
         setIcon(RKakaStat);
-        setBounds(0, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
+        setBounds(INTX, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
-        whichCharacter[2] = true;
+        whichCharacter[KAKASHI] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
@@ -409,7 +418,7 @@ public class Kakashi extends Player {
 
         } else {
 
-            setLocation(0, getY());
+            setLocation(INTX, getY());
 
         }
 
@@ -423,7 +432,7 @@ public class Kakashi extends Player {
 
         } else {
 
-            setLocation(0, getY());
+            setLocation(INTX, getY());
 
         }
 
