@@ -10,9 +10,9 @@ public class Intro extends All_Windows {
 
     private JLabel lblTitle = new JLabel();
     private JLabel lblHighlight = new JLabel();
-    private Button btnStart = new Button(0);
-    private Button btnExit = new Button(1);
-    private Button btnHigh = new Button(3);
+    private Button btnStart = new Button(BTN_START);
+    private Button btnExit = new Button(BTN_EXIT);
+    private Button btnHigh = new Button(BTN_HIGH);
 
     private final int DISTANCE = 30;
     private final int BTN_Y = 450;

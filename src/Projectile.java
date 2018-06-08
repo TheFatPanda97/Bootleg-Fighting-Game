@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Projectile extends JLabel {
@@ -24,17 +25,33 @@ public class Projectile extends JLabel {
     private final int NORM_SHOT = 0;
     private final int SUPS_SHOT = 1;
 
+    private final int INTX_OFFSET = 30;
+
+    private final int EXPLOSION_TIMER = 40;
+    private final int STOP_TIMER = 20;
+
+    private final int COUNT_LIMIT = 4;
+    private final int SUPER_COUNT_LIMIT = 35;
+
+    private final int PNUM1 = 1;
+    private final int PNUM2 = 2;
+
+    private final int RFACE = 0;
+    private final int LFACE = 2;
+
+    private final Point REMOVE_TO = new Point(2000, 2000);
+
 
     public Projectile(JLabel icon, int facing) {
 
         setShots();
         setIcon(allShot[NORM_SHOT][facing]);
-        setBounds(icon.getX() + 30, Math.round(icon.getY() + icon.getHeight() / 2), allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
+        setBounds(icon.getX() + INTX_OFFSET, Math.round(icon.getY() + icon.getHeight() / 2), allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
         setOpaque(false);
 
-        explosionAct(40, e -> {
+        explosionAct(EXPLOSION_TIMER, e -> {
 
-            if (count == 4) {
+            if (count == COUNT_LIMIT) {
 
                 count = 0;
                 RExplosion.getImage().flush();
@@ -54,12 +71,12 @@ public class Projectile extends JLabel {
 
         setShots();
         setIcon(allShot[NORM_SHOT][facing]);
-        setBounds(icon.getX() + 30, Math.round(icon.getY() + icon.getHeight() / 2) + additionalHeight, allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
+        setBounds(icon.getX() + INTX_OFFSET, Math.round(icon.getY() + icon.getHeight() / 2) + additionalHeight, allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
         setOpaque(false);
 
-        explosionAct(20, e -> {
+        explosionAct(EXPLOSION_TIMER, e -> {
 
-            if (count == 4) {
+            if (count == COUNT_LIMIT) {
 
                 count = 0;
                 RExplosion.getImage().flush();
@@ -80,22 +97,22 @@ public class Projectile extends JLabel {
         supsBullet = sups;
         setShots();
         setIcon(allShot[SUPS_SHOT][facing + SUPS_SHOT]);
-        setBounds(icon.getX() + 30, icon.getY() + icon.getHeight() - allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconWidth(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight());
+        setBounds(icon.getX() + INTX_OFFSET, icon.getY() + icon.getHeight() - allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconWidth(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight());
         setOpaque(false);
 
-        stopAct(20, e -> {
+        stopAct(STOP_TIMER, e -> {
 
-            if (count == 35) {
+            if (count == SUPER_COUNT_LIMIT) {
 
                 count = 0;
                 allShot[SUPS_SHOT][facing + SUPS_SHOT].getImage().flush();
                 remove();
 
-                if (whichPlayerNum == 1) {
+                if (whichPlayerNum == PNUM1) {
 
                     Main.fightWindow.P2.beingSuped = false;
 
-                } else if (whichPlayerNum == 2) {
+                } else if (whichPlayerNum == PNUM2) {
 
                     Main.fightWindow.P1.beingSuped = false;
 
@@ -122,11 +139,11 @@ public class Projectile extends JLabel {
 
     public void setExplosion() {
 
-        if (face == 0) {
+        if (face == RFACE) {
 
             setIcon(RExplosion);
 
-        } else if (face == 2) {
+        } else if (face == LFACE) {
 
             setIcon(LExplosion);
 
@@ -171,8 +188,7 @@ public class Projectile extends JLabel {
 
     public void remove() {
 
-        //   face = -2;
-        setLocation(2000, 2000);
+        setLocation(REMOVE_TO);
 
     }
 
