@@ -22,6 +22,11 @@ public class Fight_Club extends All_Windows {
     private final int REAL_COUNT = 90;
     private int count = REAL_COUNT;
 
+    private final int Y_OFFSET = 30;
+    private final int WIDTH_OFFSET = 350;
+
+    private final int WIN_HEIGHT = 50;
+
     private boolean firstBlood = false;
 
     private String P1Name, P2Name;
@@ -46,8 +51,6 @@ public class Fight_Club extends All_Windows {
 
     private Font fttFont = new Font("Aerial", Font.BOLD, 40);
 
-    private final int Y_OFFSET = 30;
-    private final int WIDTH_OFFSET = 350;
 
 
     public Fight_Club() {
@@ -66,13 +69,13 @@ public class Fight_Club extends All_Windows {
         lblKO.setIcon(over);
         lblKO.setVisible(false);
 
-        lblWin.setSize(over.getIconWidth() + 350, 50);
+        lblWin.setSize(over.getIconWidth() + WIDTH_OFFSET, WIN_HEIGHT);
         lblWin.setLocation(width / 2 - lblWin.getWidth() / 2, lblKO.getY() + lblKO.getHeight());
         lblWin.setFont(fttFont);
         lblWin.setForeground(Color.white);
         lblWin.setVisible(false);
 
-        btnMain.setLocation(width / 2 - btnMain.getWidth() / 2, lblWin.getY() + lblWin.getHeight() + 30);
+        btnMain.setLocation(width / 2 - btnMain.getWidth() / 2, lblWin.getY() + lblWin.getHeight() + Y_OFFSET);
         btnMain.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
