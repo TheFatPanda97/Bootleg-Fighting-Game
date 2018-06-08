@@ -42,7 +42,13 @@ public class Fight_Club extends All_Windows {
     public Player P1;
     public Player P2;
 
-    private Button btnMain = new Button(2);
+    private Button btnMain = new Button(BTN_MAIN);
+
+    private Font fttFont = new Font("Aerial", Font.BOLD, 40);
+
+    private final int Y_OFFSET = 30;
+    private final int WIDTH_OFFSET = 350;
+
 
     public Fight_Club() {
 
@@ -53,7 +59,7 @@ public class Fight_Club extends All_Windows {
         lblRealCount.setSize(countDown.getIconWidth(), countDown.getIconHeight());
         lblRealCount.setForeground(Color.white);
         lblRealCount.setLocation(lblCountBackground.getX(), lblCountBackground.getY());
-        lblRealCount.setFont(new Font("Aerial", Font.BOLD, 40));
+        lblRealCount.setFont(fttFont);
 
         lblKO.setSize(over.getIconWidth(), over.getIconHeight());
         lblKO.setLocation(width / 2 - lblKO.getWidth() / 2, height / 2 - lblRealCount.getWidth() / 2);
@@ -62,7 +68,7 @@ public class Fight_Club extends All_Windows {
 
         lblWin.setSize(over.getIconWidth() + 350, 50);
         lblWin.setLocation(width / 2 - lblWin.getWidth() / 2, lblKO.getY() + lblKO.getHeight());
-        lblWin.setFont(new Font("Aerial", Font.BOLD, 40));
+        lblWin.setFont(fttFont);
         lblWin.setForeground(Color.white);
         lblWin.setVisible(false);
 

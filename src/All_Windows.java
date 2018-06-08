@@ -21,6 +21,11 @@ public class All_Windows extends JFrame {
     protected final int INTX = 0;
     protected final int INTY = 0;
 
+    protected final int BTN_START = 0;
+    protected final int BTN_EXIT = 1;
+    protected final int BTN_MAIN = 2;
+    protected final int BTN_HIGH = 3;
+
     protected JLabel background = new JLabel();
 
     public All_Windows() {
