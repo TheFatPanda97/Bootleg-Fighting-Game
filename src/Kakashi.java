@@ -61,6 +61,8 @@ public class Kakashi extends Player {
         setMoveSpeed(allkakaData.get(IMOVE_SPEED));
         setProjectSpeed(allkakaData.get(IPROJ_SPEED));
 
+        hpMagic = new Bar(whichPlayerNum, whichCharacter);
+
         movementTimer.start();
 
     }
@@ -78,6 +80,8 @@ public class Kakashi extends Player {
         setWhichPlayer(whichPlayerNum);
         setMoveSpeed(d.get(IMOVE_SPEED));
         setProjectSpeed(d.get(IPROJ_SPEED));
+
+        hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
         movementTimer.start();
 
@@ -369,9 +373,7 @@ public class Kakashi extends Player {
 
 
         setIcon(RKakaStat);
-
-        hpMagic = new Bar(whichPlayerNum, whichCharacter);
-
+        whichCharacter[KAKASHI] = true;
     }
 
     //setup pics
@@ -383,11 +385,9 @@ public class Kakashi extends Player {
         LKakaStat = allPic[2][0];
         RKakaChi = allPic[0][3];
 
+
         setIcon(RKakaStat);
-
         whichCharacter[KAKASHI] = true;
-        hpMagic = new Bar(whichPlayerNum, whichCharacter);
-
     }
 
     private void teleport() {
