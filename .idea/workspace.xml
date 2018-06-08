@@ -18,9 +18,19 @@
       <file leaf-file-name="Fight_Club.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Fight_Club.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+            <state relative-caret-position="496">
+              <caret line="452" column="38" selection-start-line="452" selection-start-column="38" selection-end-line="452" selection-end-column="38" />
               <folding>
+                <element signature="method#Fight_Club#0;class#Fight_Club#0" />
+                <element signature="class#2660:3381" />
+                <element signature="method#mouseClicked#0;class#2660:3381" />
+                <element signature="method#mousePressed#0;class#2660:3381" />
+                <element signature="method#mouseReleased#0;class#2660:3381" />
+                <element signature="method#mouseEntered#0;class#2660:3381" />
+                <element signature="method#mouseExited#0;class#2660:3381" />
+                <element signature="e#3600#3883#0" />
+                <element signature="e#3926#5648#0" />
+                <element signature="e#5693#6146#0" />
                 <element signature="method#setPLayer#0;class#Fight_Club#0" />
                 <element signature="method#setPLayer#1;class#Fight_Club#0" />
                 <element signature="method#hitProjectile#0;class#Fight_Club#0" />
@@ -38,8 +48,8 @@
       <file leaf-file-name="All_Windows.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -47,7 +57,7 @@
       <file leaf-file-name="Button.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="331">
               <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
               <folding>
                 <element signature="method#Button#0;class#Button#0" />
@@ -157,7 +167,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,8 +190,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,76 +249,78 @@
       <workItem from="1528334192669" duration="1780000" />
       <workItem from="1528394895827" duration="2847000" />
       <workItem from="1528421923082" duration="108000" />
+      <workItem from="1528461639829" duration="75000" />
+      <workItem from="1528461748785" duration="851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45706000" />
+    <option name="totallyTimeSpent" value="46632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="9" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Palette&#9;" order="13" />
-      <window_info id="Image Layers" order="8" />
-      <window_info anchor="right" id="Capture Analysis" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="17" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="14" />
-      <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="16" weight="0.6724387" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.32323232" />
-      <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info id="Capture Tool" order="9" />
-      <window_info id="Designer" order="7" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.25075528" />
-      <window_info anchor="right" id="Database" order="12" />
-      <window_info id="Learn" order="3" weight="0.32930514" />
-      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info id="UI Designer" order="10" />
-      <window_info anchor="right" id="Theme Preview" order="11" />
-      <window_info id="Favorites" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.3968254" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.6724387" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32323232" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Designer" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2620846" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info id="Learn" order="1" weight="0.32930514" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3968254" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32467532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32418302" />
-      <window_info anchor="bottom" id="Messages" order="18" weight="0.32467532" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.6724387" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32418302" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32323232" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3254902" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25075528" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32418302" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39738563" />
       <window_info id="Learn" order="1" weight="0.32930514" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39738563" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.6724387" />
+      <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3254902" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25075528" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +379,16 @@
         <state relative-caret-position="425">
           <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
           <folding>
+            <element signature="e#1928#3039#0" />
+            <element signature="method#setInitLoc#0;class#Wizard#0" />
+            <element signature="method#punch#0;class#Wizard#0" />
+            <element signature="method#kick#0;class#Wizard#0" />
+            <element signature="method#shoot#0;class#Wizard#0" />
+            <element signature="method#superPower#0;class#Wizard#0" />
+            <element signature="method#bulletCreation#0;class#Wizard#0" />
+            <element signature="method#kickSetback#0;class#Wizard#0" />
+            <element signature="method#shootSetback#0;class#Wizard#0" />
+            <element signature="method#punchSetback#0;class#Wizard#0" />
             <element signature="method#setWizPics#0;class#Wizard#0" />
           </folding>
         </state>
@@ -821,7 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="331">
           <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
           <folding>
             <element signature="method#Button#0;class#Button#0" />
@@ -831,16 +853,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state relative-caret-position="315">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Fight_Club.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+        <state relative-caret-position="496">
+          <caret line="452" column="38" selection-start-line="452" selection-start-column="38" selection-end-line="452" selection-end-column="38" />
           <folding>
+            <element signature="method#Fight_Club#0;class#Fight_Club#0" />
+            <element signature="class#2660:3381" />
+            <element signature="method#mouseClicked#0;class#2660:3381" />
+            <element signature="method#mousePressed#0;class#2660:3381" />
+            <element signature="method#mouseReleased#0;class#2660:3381" />
+            <element signature="method#mouseEntered#0;class#2660:3381" />
+            <element signature="method#mouseExited#0;class#2660:3381" />
+            <element signature="e#3600#3883#0" />
+            <element signature="e#3926#5648#0" />
+            <element signature="e#5693#6146#0" />
             <element signature="method#setPLayer#0;class#Fight_Club#0" />
             <element signature="method#setPLayer#1;class#Fight_Club#0" />
             <element signature="method#hitProjectile#0;class#Fight_Club#0" />

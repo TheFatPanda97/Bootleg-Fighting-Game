@@ -13,6 +13,8 @@ public class Fight_Club extends All_Windows {
 
     private final int SUP_LOS_HP = 4;
 
+    private final int RFACE = 0;
+    private final int LFACE = 2;
 
     private final int NORMP_LOS_MGC = 15;
     private final int SUP_LOS_MGC = 2;
@@ -22,10 +24,19 @@ public class Fight_Club extends All_Windows {
     private final int REAL_COUNT = 90;
     private int count = REAL_COUNT;
 
+    private final int X_OFFSET = 6;
     private final int Y_OFFSET = 30;
     private final int WIDTH_OFFSET = 350;
 
     private final int WIN_HEIGHT = 50;
+
+    private final int DIR_TIME = 20;
+    private final int CLI_TIME = 10;
+    private final int CTD_TIME = 1000;
+
+    private final int SEL_WIZARD = 0;
+    private final int SEL_KAKASHI = 1;
+    private final int SEL_ROBOT = 2;
 
     private boolean firstBlood = false;
 
@@ -52,12 +63,11 @@ public class Fight_Club extends All_Windows {
     private Font fttFont = new Font("Aerial", Font.BOLD, 40);
 
 
-
     public Fight_Club() {
 
         lblCountBackground.setIcon(countDown);
         lblCountBackground.setSize(countDown.getIconWidth(), countDown.getIconHeight());
-        lblCountBackground.setLocation(getWidth() / 2 - lblCountBackground.getWidth() / 2, 0);
+        lblCountBackground.setLocation(getWidth() / 2 - lblCountBackground.getWidth() / 2, INTY);
 
         lblRealCount.setSize(countDown.getIconWidth(), countDown.getIconHeight());
         lblRealCount.setForeground(Color.white);
@@ -119,23 +129,23 @@ public class Fight_Club extends All_Windows {
         add(lblCountBackground, 0);
 
 
-        directionTimer = new Timer(20, e -> {
+        directionTimer = new Timer(DIR_TIME, e -> {
 
             if (P1.getX() >= P2.getX() + P2.getWidth()) {
 
-                P1.facing = 2;
-                P2.facing = 0;
+                P1.facing = LFACE;
+                P2.facing = RFACE;
 
             } else if (P2.getX() >= P1.getX() + P1.getWidth()) {
 
-                P1.facing = 0;
-                P2.facing = 2;
+                P1.facing = RFACE;
+                P2.facing = LFACE;
 
             }
 
         });
 
-        collisionTimer = new Timer(10, e -> {
+        collisionTimer = new Timer(CLI_TIME, e -> {
 
             //game over
             if (P1.hpMagic.dead()) {
@@ -188,34 +198,22 @@ public class Fight_Club extends All_Windows {
 
             }
 
-            if (P1.whichCharacter[2] && P1.isSuper() && hitEachOther(P1, P2) && P1.chidori) {
+            if (P1.whichCharacter[KAKASHI] && P1.isSuper() && hitEachOther(P1, P2) && P1.chidori) {
 
                 gettingChidori(P1, P2);
-//                P2.beingHit = false;
-//                P2.beingSuped = true;
-//                P2.hpMagic.decHP(SUP_LOS_HP, P2.isBlocking());
-//                P2.hpMagic.decMagic(SUP_LOS_MGC);
-//
-//                P2.setLocation(P1.getX() + P1.getWidth() / 6, P1.getY());
 
             }
 
-            if (P2.whichCharacter[2] && P2.isSuper() && hitEachOther(P2, P1) && P2.chidori) {
+            if (P2.whichCharacter[KAKASHI] && P2.isSuper() && hitEachOther(P2, P1) && P2.chidori) {
 
                 gettingChidori(P2, P1);
-//                P1.beingHit = false;
-//                P1.beingSuped = true;
-//                P1.hpMagic.decHP(SUP_LOS_HP, P1.isBlocking());
-//                P1.hpMagic.decMagic(SUP_LOS_MGC);
-//
-//                P1.setLocation(P2.getX() + P2.getWidth() / 6, P2.getY());
 
             }
 
 
         });
 
-        countDownTimer = new Timer(1000, e -> {
+        countDownTimer = new Timer(CTD_TIME, e -> {
 
             count--;
             lblRealCount.setText(count + "");
@@ -250,31 +248,31 @@ public class Fight_Club extends All_Windows {
         P1Name = P1N;
         P2Name = P2N;
 
-        if (P1At == 0) {
+        if (P1At == SEL_WIZARD) {
 
-            P1 = new Wizard(1);
+            P1 = new Wizard(PNUM1);
 
-        } else if (P1At == 1) {
+        } else if (P1At == SEL_KAKASHI) {
 
-            P1 = new Kakashi(1);
+            P1 = new Kakashi(PNUM1);
 
-        } else if (P1At == 2) {
+        } else if (P1At == SEL_ROBOT) {
 
-            P1 = new Robot(1);
+            P1 = new Robot(PNUM1);
 
         }
 
-        if (P2At == 0) {
+        if (P2At == SEL_WIZARD) {
 
-            P2 = new Wizard(2);
+            P2 = new Wizard(PNUM2);
 
-        } else if (P2At == 1) {
+        } else if (P2At == SEL_KAKASHI) {
 
-            P2 = new Kakashi(2);
+            P2 = new Kakashi(PNUM2);
 
-        } else if (P2At == 2) {
+        } else if (P2At == SEL_ROBOT) {
 
-            P2 = new Robot(2);
+            P2 = new Robot(PNUM2);
 
         }
 
@@ -296,31 +294,31 @@ public class Fight_Club extends All_Windows {
         P1Name = P1N;
         P2Name = P2N;
 
-        if (P1At == 0) {
+        if (P1At == SEL_WIZARD) {
 
-            P1 = new Wizard(1);
+            P1 = new Wizard(PNUM1);
 
-        } else if (P1At == 1) {
+        } else if (P1At == SEL_KAKASHI) {
 
-            P1 = new Kakashi(1, p, d);
+            P1 = new Kakashi(PNUM1, p, d);
 
-        } else if (P1At == 2) {
+        } else if (P1At == SEL_ROBOT) {
 
-            P1 = new Robot(1);
+            P1 = new Robot(PNUM1);
 
         }
 
-        if (P2At == 0) {
+        if (P2At == SEL_WIZARD) {
 
-            P2 = new Wizard(2);
+            P2 = new Wizard(PNUM2);
 
-        } else if (P2At == 1) {
+        } else if (P2At == SEL_KAKASHI) {
 
-            P2 = new Kakashi(2, p, d);
+            P2 = new Kakashi(PNUM2, p, d);
 
-        } else if (P2At == 2) {
+        } else if (P2At == SEL_ROBOT) {
 
-            P2 = new Robot(2);
+            P2 = new Robot(PNUM2);
 
         }
 
@@ -411,13 +409,13 @@ public class Fight_Club extends All_Windows {
 
         } else {
 
-            if (a.whichCharacter[0]) {
+            if (a.whichCharacter[WIZARD]) {
 
                 b.hpMagic.decHP(Player.SUPER_DMG, b.isBlocking());
                 b.setBack(SUPER_HITBACK);
                 b.hpMagic.decMagic(SUPER_HITBACK / 2);
 
-            } else if (a.whichCharacter[1]) {
+            } else if (a.whichCharacter[ROBOT]) {
 
                 b.hpMagic.decHP(Player.SUPER_DMG / SUP_DILUTE, b.isBlocking());
 
@@ -434,7 +432,7 @@ public class Fight_Club extends All_Windows {
         b.hpMagic.decHP(SUP_LOS_HP, b.isBlocking());
         b.hpMagic.decMagic(SUP_LOS_MGC);
 
-        b.setLocation(a.getX() + b.getWidth() / 6, a.getY());
+        b.setLocation(a.getX() + b.getWidth() / X_OFFSET, a.getY());
 
     }
 
