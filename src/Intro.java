@@ -15,12 +15,13 @@ public class Intro extends All_Windows {
     private Button btnHigh = new Button(3);
 
     private final int DISTANCE = 30;
+    private final int BTN_Y = 450;
 
     public Intro() {
 
         Main.rw.readFile();
 
-        background.setBounds(0, 0, width, height);
+        background.setBounds(INTX, INTY, width, height);
         background.setIcon(imgRescaler(IntroScreen, width, height));
 
         lblTitle.setSize(imgTitle.getIconWidth(), imgTitle.getIconHeight());
@@ -29,7 +30,7 @@ public class Intro extends All_Windows {
         lblHighlight.setIcon(imgHighlight);
         lblHighlight.setBounds(DX, DY, imgHighlight.getIconWidth(), imgHighlight.getIconHeight());
 
-        btnStart.setBounds(DISTANCE, 450, 250, 80);
+        btnStart.setLocation(DISTANCE, BTN_Y);
         btnStart.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -64,7 +65,7 @@ public class Intro extends All_Windows {
             }
         });
 
-        btnHigh.setBounds(btnStart.getX() + btnStart.getWidth() + DISTANCE, 450, 250, 80);
+        btnHigh.setLocation(btnStart.getX() + btnStart.getWidth() + DISTANCE, btnStart.getY());
         btnHigh.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -100,7 +101,7 @@ public class Intro extends All_Windows {
             }
         });
 
-        btnExit.setBounds(btnHigh.getX() + btnHigh.getWidth() + DISTANCE, 450, 250, 80);
+        btnExit.setLocation(btnHigh.getX() + btnHigh.getWidth() + DISTANCE, btnStart.getY());
         btnExit.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -141,7 +142,7 @@ public class Intro extends All_Windows {
             }
         });
 
-        centerSetter(lblTitle,btnHigh);
+        centerSetter(lblTitle, btnHigh);
 
         add(lblHighlight);
         add(btnStart);

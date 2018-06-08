@@ -27,7 +27,6 @@ public class Player extends JLabel {
     Timer jumpTimer;
     Timer stopTimer;
     Timer bulletTimer;
-    Timer hitTimer;
 
     protected final int COMMON_FLOOR = 80;
 
@@ -68,8 +67,24 @@ public class Player extends JLabel {
     protected final int JUMP_HEIGHT = 55;
     protected final int ROB_SHOOT = -40;
 
-    protected Bar hpMagic;
+    protected final int MOVE_TIMER = 10;
+    protected final int JUMP_TIMER = 20;
+    protected final int BULLET_TIMER = 20;
 
+    protected final int RFACE = 0;
+    protected final int LFACE = 2;
+
+    protected final int DBULLET_FACE = -1;
+
+    protected final int PNUM1 = 1;
+    protected final int PNUM2 = 2;
+
+    protected final int INTX = 0;
+    protected final int INTY = 0;
+
+    protected final int INTX_OFFSET = 30;
+
+    protected Bar hpMagic;
     protected boolean dontMove;
 
 
@@ -83,7 +98,7 @@ public class Player extends JLabel {
 
         stopMoving();
 
-        moveAct(10, e -> {
+        moveAct(MOVE_TIMER, e -> {
 
             outOfBounds();
             //if pressed D
@@ -107,7 +122,7 @@ public class Player extends JLabel {
 
         });
 
-        jumpAct(20, e -> {
+        jumpAct(JUMP_TIMER, e -> {
 
             if (jumpHeight == 0) {
 
@@ -149,22 +164,22 @@ public class Player extends JLabel {
 
         });
 
-        bulletAct(20, e -> {
+        bulletAct(BULLET_TIMER, e -> {
 
             for (int i = 0; i < allBulltes.size(); i++) {
 
-                if (allBulltes.get(i).face == -1) {
+                if (allBulltes.get(i).face == DBULLET_FACE) {
 
                     allBulltes.get(i).face = facing;
 
                 }
 
 
-                if (allBulltes.get(i).face == 0) {
+                if (allBulltes.get(i).face == LFACE) {
 
                     allBulltes.get(i).moveHorizon(projectSpeed);
 
-                } else if (allBulltes.get(i).face == 2) {
+                } else if (allBulltes.get(i).face == RFACE) {
 
                     allBulltes.get(i).moveHorizon(-projectSpeed);
 
@@ -182,17 +197,12 @@ public class Player extends JLabel {
 
         });
 
-        hitAct(20, e -> {
-
-
-        });
-
 
     }
 
     protected boolean facingLeft() {
 
-        if (facing == 2) {
+        if (facing == LFACE) {
 
             return true;
 
@@ -204,7 +214,7 @@ public class Player extends JLabel {
 
     protected boolean facingRight() {
 
-        if (facing == 0) {
+        if (facing == RFACE) {
 
             return true;
 
@@ -217,14 +227,14 @@ public class Player extends JLabel {
     protected void setWhichPlayer(int whichPlayerNum) {
 
 
-        if (whichPlayerNum == 1) {
+        if (whichPlayerNum == PNUM1) {
 
-            facing = 0;
+            facing = RFACE;
             setKeyBindingP1();
 
-        } else if (whichPlayerNum == 2) {
+        } else if (whichPlayerNum == PNUM2) {
 
-            facing = 2;
+            facing = LFACE;
             setKeyBindingP2();
 
         }
@@ -250,12 +260,12 @@ public class Player extends JLabel {
 
         allBoolMove[w][h] = true;
 
-        if (facing == 0) {
+        if (facing == RFACE) {
 
             setSize(allPic[w][h].getIconWidth(), allPic[w][h].getIconHeight());
             setIcon(allPic[w][h]);
 
-        } else if (facing == 2) {
+        } else if (facing == LFACE) {
 
             setSize(allPic[w + facing][h].getIconWidth(), allPic[w + facing][h].getIconHeight());
             setIcon(allPic[w + facing][h]);
@@ -270,11 +280,11 @@ public class Player extends JLabel {
         allBoolMove[w][h] = false;
         count = 0;
 
-        if (whichPlayerNum == 1) {
+        if (whichPlayerNum == PNUM1) {
 
             Main.fightWindow.P2.beingHit = false;
 
-        } else if (whichPlayerNum == 2) {
+        } else if (whichPlayerNum == PNUM2) {
 
             Main.fightWindow.P1.beingHit = false;
 
@@ -290,9 +300,10 @@ public class Player extends JLabel {
 
         }
 
-        for (int i = 0; i < 2; i++) {
 
-            for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < allBoolMove.length; i++) {
+
+            for (int j = 0; j < allBoolMove[0].length; j++) {
 
                 if (allBoolMove[i][j]) {
 
@@ -315,11 +326,11 @@ public class Player extends JLabel {
 
     protected void setBack(int a) {
 
-        if (facing == 2) {
+        if (facing == LFACE) {
 
             moveHorizontal(a);
 
-        } else if (facing == 0) {
+        } else if (facing == RFACE) {
 
             moveHorizontal(-a);
 
@@ -329,14 +340,14 @@ public class Player extends JLabel {
 
     protected void setInitLoc(int whichPlayerNum) {
 
-        if (whichPlayerNum == 1) {
+        if (whichPlayerNum == PNUM1) {
 
-            setBounds(0, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
+            setBounds(INTX, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
 
 
-        } else if (whichPlayerNum == 2) {
+        } else if (whichPlayerNum == PNUM2) {
 
-            setBounds(Fight_Club.width - INITAL_WIDTH - 30, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
+            setBounds(Fight_Club.width - INITAL_WIDTH - INTX_OFFSET, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
 
         }
 
@@ -485,9 +496,9 @@ public class Player extends JLabel {
 
     }
 
-    private  void PLeft() {
+    private void PLeft() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
+        if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
 
             set(1, 0);
 
@@ -495,9 +506,9 @@ public class Player extends JLabel {
 
     }
 
-    private  void PRight() {
+    private void PRight() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
+        if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
 
             set(1, 2);
 
@@ -505,9 +516,9 @@ public class Player extends JLabel {
 
     }
 
-    private  void RLeft() {
+    private void RLeft() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
+        if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
 
             reset(1, 0);
 
@@ -515,9 +526,9 @@ public class Player extends JLabel {
 
     }
 
-    private  void RRight() {
+    private void RRight() {
 
-        if (!isAttacking() && !isBlocking() && !GameOver&&!dontMove) {
+        if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
 
             reset(1, 2);
 
@@ -525,7 +536,7 @@ public class Player extends JLabel {
 
     }
 
-    private  void jump() {
+    private void jump() {
 
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver && !dontMove) {
 
@@ -661,24 +672,14 @@ public class Player extends JLabel {
 
     }
 
-    private void hitAct(int delay, ActionListener actionListener) {
 
-        hitTimer = new Timer(delay, e -> {
-
-            actionListener.actionPerformed(e);
-
-        });
-
-    }
-
-
-    private  void outOfBounds() {
+    private void outOfBounds() {
 
         if (getX() + getWidth() >= Fight_Club.width) {
 
             setLocation(Fight_Club.width - getWidth(), getY());
 
-        } else if (getX() <= 0) {
+        } else if (getX() <= INTX) {
 
             setLocation(0, getY());
 
@@ -689,9 +690,9 @@ public class Player extends JLabel {
     protected void stopMoving() {
 
         //boolean for recording which button is pressed
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < allBoolMove.length; i++) {
 
-            for (int j = 0; j < 6; j++) {
+            for (int j = 0; j < allBoolMove[0].length; j++) {
 
                 allBoolMove[i][j] = false;
 

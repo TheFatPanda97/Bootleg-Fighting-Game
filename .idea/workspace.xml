@@ -3,7 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="89c730e4-f1e9-4b90-9b16-2b04326604f2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fight_Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fight_Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/High_Score$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/High_Score$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/High_Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/High_Score.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/High_Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/High_Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Intro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,31 +32,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Fight_Club.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Fight_Club.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fight_Club.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="452" column="38" selection-start-line="452" selection-start-column="38" selection-end-line="452" selection-end-column="38" />
+            <state relative-caret-position="-217">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
-                <element signature="method#Fight_Club#0;class#Fight_Club#0" />
-                <element signature="class#2660:3381" />
-                <element signature="method#mouseClicked#0;class#2660:3381" />
-                <element signature="method#mousePressed#0;class#2660:3381" />
-                <element signature="method#mouseReleased#0;class#2660:3381" />
-                <element signature="method#mouseEntered#0;class#2660:3381" />
-                <element signature="method#mouseExited#0;class#2660:3381" />
-                <element signature="e#3600#3883#0" />
-                <element signature="e#3926#5648#0" />
-                <element signature="e#5693#6146#0" />
-                <element signature="method#setPLayer#0;class#Fight_Club#0" />
-                <element signature="method#setPLayer#1;class#Fight_Club#0" />
-                <element signature="method#hitProjectile#0;class#Fight_Club#0" />
-                <element signature="method#superProjectile#0;class#Fight_Club#0" />
-                <element signature="method#hitEachOther#0;class#Fight_Club#0" />
-                <element signature="method#dmgSet#0;class#Fight_Club#0" />
-                <element signature="method#gettingChidori#0;class#Fight_Club#0" />
-                <element signature="method#restart#0;class#Fight_Club#0" />
-                <element signature="method#endGame#0;class#Fight_Club#0" />
+                <element signature="e#1814#5983#0" />
+                <element signature="e#5989#6874#0" />
+                <element signature="e#6880#7748#0" />
+                <element signature="e#7754#8294#0" />
+                <element signature="e#8300#8704#0" />
+                <element signature="e#8710#8824#0" />
+                <element signature="e#8830#9616#0" />
+                <element signature="e#9622#9900#0" />
+                <element signature="e#9906#10154#0" />
               </folding>
             </state>
           </provider>
@@ -48,8 +55,89 @@
       <file leaf-file-name="All_Windows.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="270">
+              <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="689" column="32" selection-start-line="689" selection-start-column="32" selection-end-line="689" selection-end-column="32" />
+              <folding>
+                <element signature="e#2073#4297#0" />
+                <element signature="e#2245#2698#0" />
+                <element signature="e#2722#3539#0" />
+                <element signature="e#3565#4246#0" />
+                <element signature="e#4303#4430#0" />
+                <element signature="e#4436#4564#0" />
+                <element signature="e#4570#4832#0" />
+                <element signature="e#4838#4940#0" />
+                <element signature="e#4946#5054#0" />
+                <element signature="e#5060#5470#0" />
+                <element signature="e#5476#6372#0" />
+                <element signature="e#6378#6511#0" />
+                <element signature="e#6517#6694#0" />
+                <element signature="e#6700#7092#0" />
+                <element signature="e#7099#7997#0" />
+                <element signature="e#8003#9210#0" />
+                <element signature="e#8167#8207#0" />
+                <element signature="e#8209#8249#0" />
+                <element signature="e#8338#8378#0" />
+                <element signature="e#8380#8420#0" />
+                <element signature="e#8506#8545#0" />
+                <element signature="e#8547#8586#0" />
+                <element signature="e#8668#8706#0" />
+                <element signature="e#8787#8826#0" />
+                <element signature="e#8909#8947#0" />
+                <element signature="e#9032#9071#0" />
+                <element signature="e#9156#9200#0" />
+                <element signature="e#9216#9340#0" />
+                <element signature="e#9346#9468#0" />
+                <element signature="e#9474#9641#0" />
+                <element signature="e#9647#9836#0" />
+                <element signature="e#9842#9979#0" />
+                <element signature="e#9985#10123#0" />
+                <element signature="e#10129#10268#0" />
+                <element signature="e#10274#10414#0" />
+                <element signature="e#10420#10641#0" />
+                <element signature="e#10647#10725#0" />
+                <element signature="e#10731#10808#0" />
+                <element signature="e#10814#10914#0" />
+                <element signature="e#10920#11062#0" />
+                <element signature="e#11069#11460#0" />
+                <element signature="e#11466#12168#0" />
+                <element signature="e#12174#12676#0" />
+                <element signature="e#12214#12282#0" />
+                <element signature="e#12683#12863#0" />
+                <element signature="e#12790#12855#0" />
+                <element signature="e#12869#13046#0" />
+                <element signature="e#12972#13037#0" />
+                <element signature="e#13052#13217#0" />
+                <element signature="e#13143#13208#0" />
+                <element signature="e#13223#13404#0" />
+                <element signature="e#13330#13395#0" />
+                <element signature="e#13592#13832#0" />
+                <element signature="e#13838#14083#0" />
+                <element signature="e#14089#14217#0" />
+                <element signature="e#14223#14473#0" />
+                <element signature="e#14479#14894#0" />
+                <element signature="e#14900#14971#0" />
+                <element signature="e#14977#15048#0" />
+                <element signature="e#15054#15128#0" />
+                <element signature="e#15134#15207#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projectile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Projectile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -57,10 +145,10 @@
       <file leaf-file-name="Button.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+            <state relative-caret-position="370">
+              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
               <folding>
-                <element signature="method#Button#0;class#Button#0" />
+                <element signature="class#1161:1754" />
               </folding>
             </state>
           </provider>
@@ -70,8 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>kickSetback</find>
-      <find>whichPlayer</find>
       <find>getClass().getResource(</find>
       <find>allkakaData</find>
       <find>src/Resource/Kakashi/</find>
@@ -100,6 +186,8 @@
       <find>0</find>
       <find>getRootPane(),</find>
       <find>stopMoving</find>
+      <find>-1</find>
+      <find>facing</find>
     </findStrings>
     <replaceStrings>
       <replace>/src/Resource/Kakashi/DLC/</replace>
@@ -126,14 +214,11 @@
         <option value="$PROJECT_DIR$/src/DLC.txt" />
         <option value="$PROJECT_DIR$/src/Resource/All_Data/High Score.txt" />
         <option value="$PROJECT_DIR$/src/Stack.java" />
-        <option value="$PROJECT_DIR$/src/Projectile.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
         <option value="$PROJECT_DIR$/src/FightClub.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Intro.java" />
         <option value="$PROJECT_DIR$/src/HighScore.java" />
         <option value="$PROJECT_DIR$/src/Bar.java" />
-        <option value="$PROJECT_DIR$/src/Button.java" />
         <option value="$PROJECT_DIR$/src/AllWindows.java" />
         <option value="$PROJECT_DIR$/src/Read_Write.java" />
         <option value="$PROJECT_DIR$/src/CharacterSelect.java" />
@@ -142,9 +227,13 @@
         <option value="$PROJECT_DIR$/src/Robot.java" />
         <option value="$PROJECT_DIR$/src/Wizard.java" />
         <option value="$PROJECT_DIR$/src/Kakashi.java" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/All_Windows.java" />
+        <option value="$PROJECT_DIR$/src/High_Score.java" />
         <option value="$PROJECT_DIR$/src/Fight_Club.java" />
+        <option value="$PROJECT_DIR$/src/Button.java" />
+        <option value="$PROJECT_DIR$/src/Intro.java" />
+        <option value="$PROJECT_DIR$/src/Projectile.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
       </list>
     </option>
   </component>
@@ -250,12 +339,12 @@
       <workItem from="1528394895827" duration="2847000" />
       <workItem from="1528421923082" duration="108000" />
       <workItem from="1528461639829" duration="75000" />
-      <workItem from="1528461748785" duration="851000" />
+      <workItem from="1528461748785" duration="4155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46632000" />
+    <option name="totallyTimeSpent" value="49936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
@@ -263,6 +352,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32467532" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -276,6 +366,7 @@
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.2620846" />
       <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32323232" />
       <window_info id="Learn" order="1" weight="0.32930514" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -285,11 +376,9 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3968254" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32467532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32418302" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
@@ -357,11 +446,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CharacterSelect.java" />
     <entry file="file://$PROJECT_DIR$/src/CharacterSelect.java" />
     <entry file="file://$PROJECT_DIR$/src/FightClub.java" />
     <entry file="file://$PROJECT_DIR$/src/Button.java">
@@ -550,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="167" column="11" selection-start-line="167" selection-start-column="11" selection-end-line="167" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -615,16 +696,6 @@
             <element signature="method#shootSetback#0;class#Robot#0" />
             <element signature="method#punchSetback#0;class#Robot#0" />
             <element signature="method#setRobPics#0;class#Robot#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Intro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="9" />
-          <folding>
-            <element signature="method#remove#0;class#Intro#0" />
           </folding>
         </state>
       </provider>
@@ -768,120 +839,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/High_Score.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        <state relative-caret-position="360">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
-            <element signature="e#2073#4271#0" />
-            <element signature="e#2245#2672#0" />
-            <element signature="e#2696#3513#0" />
-            <element signature="e#3539#4220#0" />
-            <element signature="e#4243#4261#0" />
-            <element signature="e#4277#4404#0" />
-            <element signature="e#4410#4538#0" />
-            <element signature="e#4544#4827#0" />
-            <element signature="e#4833#4935#0" />
-            <element signature="e#4941#5049#0" />
-            <element signature="e#5055#5465#0" />
-            <element signature="e#5471#6367#0" />
-            <element signature="e#6373#6506#0" />
-            <element signature="e#6512#6689#0" />
-            <element signature="e#6695#7087#0" />
-            <element signature="e#7094#7992#0" />
-            <element signature="e#7998#9205#0" />
-            <element signature="e#8162#8202#0" />
-            <element signature="e#8204#8244#0" />
-            <element signature="e#8333#8373#0" />
-            <element signature="e#8375#8415#0" />
-            <element signature="e#8501#8540#0" />
-            <element signature="e#8542#8581#0" />
-            <element signature="e#8663#8701#0" />
-            <element signature="e#8782#8821#0" />
-            <element signature="e#8904#8942#0" />
-            <element signature="e#9027#9066#0" />
-            <element signature="e#9151#9195#0" />
-            <element signature="e#9211#9335#0" />
-            <element signature="e#9341#9463#0" />
-            <element signature="e#9469#9636#0" />
-            <element signature="e#9642#9831#0" />
-            <element signature="e#9837#9974#0" />
-            <element signature="e#9980#10118#0" />
-            <element signature="e#10124#10263#0" />
-            <element signature="e#10269#10409#0" />
-            <element signature="e#10415#10636#0" />
-            <element signature="e#10642#10720#0" />
-            <element signature="e#10726#10803#0" />
-            <element signature="e#10809#10909#0" />
-            <element signature="e#10915#11057#0" />
-            <element signature="e#11064#11455#0" />
-            <element signature="e#11461#12163#0" />
-            <element signature="e#12169#12671#0" />
-            <element signature="e#12209#12277#0" />
-            <element signature="e#12678#12858#0" />
-            <element signature="e#12785#12850#0" />
-            <element signature="e#12864#13041#0" />
-            <element signature="e#12967#13032#0" />
-            <element signature="e#13047#13212#0" />
-            <element signature="e#13138#13203#0" />
-            <element signature="e#13218#13399#0" />
-            <element signature="e#13325#13390#0" />
-            <element signature="e#13405#13580#0" />
-            <element signature="e#13506#13571#0" />
-            <element signature="e#13587#13827#0" />
-            <element signature="e#13833#14078#0" />
-            <element signature="e#14084#14212#0" />
-            <element signature="e#14218#14468#0" />
-            <element signature="e#14474#14889#0" />
-            <element signature="e#14895#14966#0" />
-            <element signature="e#14972#15043#0" />
-            <element signature="e#15049#15123#0" />
-            <element signature="e#15129#15202#0" />
+            <element signature="method#High_Score#0;class#High_Score#0" />
+            <element signature="class#829:1397" />
+            <element signature="method#mouseClicked#0;class#829:1397" />
+            <element signature="method#mousePressed#0;class#829:1397" />
+            <element signature="method#mouseReleased#0;class#829:1397" />
+            <element signature="method#mouseEntered#0;class#829:1397" />
+            <element signature="method#mouseExited#0;class#829:1397" />
+            <element signature="method#setScore#0;class#High_Score#0" />
+            <element signature="method#updateScore#0;class#High_Score#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Intro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="method#Intro#0;class#Intro#0" />
+            <element signature="class#1208:1872" />
+            <element signature="method#mouseClicked#0;class#1208:1872" />
+            <element signature="method#mousePressed#0;class#1208:1872" />
+            <element signature="method#mouseReleased#0;class#1208:1872" />
+            <element signature="method#mouseEntered#0;class#1208:1872" />
+            <element signature="method#mouseExited#0;class#1208:1872" />
+            <element signature="class#2004:2713" />
+            <element signature="method#mouseClicked#0;class#2004:2713" />
+            <element signature="method#mousePressed#0;class#2004:2713" />
+            <element signature="method#mouseReleased#0;class#2004:2713" />
+            <element signature="method#mouseEntered#0;class#2004:2713" />
+            <element signature="method#mouseExited#0;class#2004:2713" />
+            <element signature="class#2843:3641" />
+            <element signature="method#mouseClicked#0;class#2843:3641" />
+            <element signature="method#mousePressed#0;class#2843:3641" />
+            <element signature="method#mouseReleased#0;class#2843:3641" />
+            <element signature="method#mouseEntered#0;class#2843:3641" />
+            <element signature="method#mouseExited#0;class#2843:3641" />
+            <element signature="method#remove#0;class#Intro#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        <state relative-caret-position="370">
+          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
           <folding>
-            <element signature="method#Button#0;class#Button#0" />
+            <element signature="class#1161:1754" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fight_Club.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#1814#5983#0" />
+            <element signature="e#5989#6874#0" />
+            <element signature="e#6880#7748#0" />
+            <element signature="e#7754#8294#0" />
+            <element signature="e#8300#8704#0" />
+            <element signature="e#8710#8824#0" />
+            <element signature="e#8830#9616#0" />
+            <element signature="e#9622#9900#0" />
+            <element signature="e#9906#10154#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="270">
+          <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fight_Club.java">
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="452" column="38" selection-start-line="452" selection-start-column="38" selection-end-line="452" selection-end-column="38" />
+        <state relative-caret-position="286">
+          <caret line="689" column="32" selection-start-line="689" selection-start-column="32" selection-end-line="689" selection-end-column="32" />
           <folding>
-            <element signature="method#Fight_Club#0;class#Fight_Club#0" />
-            <element signature="class#2660:3381" />
-            <element signature="method#mouseClicked#0;class#2660:3381" />
-            <element signature="method#mousePressed#0;class#2660:3381" />
-            <element signature="method#mouseReleased#0;class#2660:3381" />
-            <element signature="method#mouseEntered#0;class#2660:3381" />
-            <element signature="method#mouseExited#0;class#2660:3381" />
-            <element signature="e#3600#3883#0" />
-            <element signature="e#3926#5648#0" />
-            <element signature="e#5693#6146#0" />
-            <element signature="method#setPLayer#0;class#Fight_Club#0" />
-            <element signature="method#setPLayer#1;class#Fight_Club#0" />
-            <element signature="method#hitProjectile#0;class#Fight_Club#0" />
-            <element signature="method#superProjectile#0;class#Fight_Club#0" />
-            <element signature="method#hitEachOther#0;class#Fight_Club#0" />
-            <element signature="method#dmgSet#0;class#Fight_Club#0" />
-            <element signature="method#gettingChidori#0;class#Fight_Club#0" />
-            <element signature="method#restart#0;class#Fight_Club#0" />
-            <element signature="method#endGame#0;class#Fight_Club#0" />
+            <element signature="e#2073#4297#0" />
+            <element signature="e#2245#2698#0" />
+            <element signature="e#2722#3539#0" />
+            <element signature="e#3565#4246#0" />
+            <element signature="e#4303#4430#0" />
+            <element signature="e#4436#4564#0" />
+            <element signature="e#4570#4832#0" />
+            <element signature="e#4838#4940#0" />
+            <element signature="e#4946#5054#0" />
+            <element signature="e#5060#5470#0" />
+            <element signature="e#5476#6372#0" />
+            <element signature="e#6378#6511#0" />
+            <element signature="e#6517#6694#0" />
+            <element signature="e#6700#7092#0" />
+            <element signature="e#7099#7997#0" />
+            <element signature="e#8003#9210#0" />
+            <element signature="e#8167#8207#0" />
+            <element signature="e#8209#8249#0" />
+            <element signature="e#8338#8378#0" />
+            <element signature="e#8380#8420#0" />
+            <element signature="e#8506#8545#0" />
+            <element signature="e#8547#8586#0" />
+            <element signature="e#8668#8706#0" />
+            <element signature="e#8787#8826#0" />
+            <element signature="e#8909#8947#0" />
+            <element signature="e#9032#9071#0" />
+            <element signature="e#9156#9200#0" />
+            <element signature="e#9216#9340#0" />
+            <element signature="e#9346#9468#0" />
+            <element signature="e#9474#9641#0" />
+            <element signature="e#9647#9836#0" />
+            <element signature="e#9842#9979#0" />
+            <element signature="e#9985#10123#0" />
+            <element signature="e#10129#10268#0" />
+            <element signature="e#10274#10414#0" />
+            <element signature="e#10420#10641#0" />
+            <element signature="e#10647#10725#0" />
+            <element signature="e#10731#10808#0" />
+            <element signature="e#10814#10914#0" />
+            <element signature="e#10920#11062#0" />
+            <element signature="e#11069#11460#0" />
+            <element signature="e#11466#12168#0" />
+            <element signature="e#12174#12676#0" />
+            <element signature="e#12214#12282#0" />
+            <element signature="e#12683#12863#0" />
+            <element signature="e#12790#12855#0" />
+            <element signature="e#12869#13046#0" />
+            <element signature="e#12972#13037#0" />
+            <element signature="e#13052#13217#0" />
+            <element signature="e#13143#13208#0" />
+            <element signature="e#13223#13404#0" />
+            <element signature="e#13330#13395#0" />
+            <element signature="e#13592#13832#0" />
+            <element signature="e#13838#14083#0" />
+            <element signature="e#14089#14217#0" />
+            <element signature="e#14223#14473#0" />
+            <element signature="e#14479#14894#0" />
+            <element signature="e#14900#14971#0" />
+            <element signature="e#14977#15048#0" />
+            <element signature="e#15054#15128#0" />
+            <element signature="e#15134#15207#0" />
           </folding>
         </state>
       </provider>

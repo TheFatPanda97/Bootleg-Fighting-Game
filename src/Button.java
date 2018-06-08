@@ -15,7 +15,7 @@ public class Button extends JLabel {
     private ImageIcon HHigh = new ImageIcon("src/Resource/Buttons/HHigh.png");
 
     private final int INT_WIDTH = 250;
-    private final int INT_HEIGHT = 90;
+    private final int INT_HEIGHT = 80;
 
     private final int IMG_STATIC = 0;
     private final int IMG_HIGH = 1;

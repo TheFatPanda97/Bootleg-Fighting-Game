@@ -15,8 +15,14 @@ public class High_Score extends All_Windows {
     private JLabel lblBackground = new JLabel();
     private JLabel lblGamePlay = new JLabel();
 
-    private Button btnInfo = new Button(2);
+    private Button btnInfo = new Button(BTN_MAIN);
+
     private final int SIDE_LENGTH = 20;
+    private final int SCRL_WIDTH = 100;
+    private final int SCRL_HEIGHT = 450;
+
+    private final int GAMEPLAY_OFFSET = 20;
+    private final int GAMEPLAY_WIDTH = 870;
 
 
     public High_Score() {
@@ -53,12 +59,12 @@ public class High_Score extends All_Windows {
         });
 
 
-        lblBackground.setBounds(0, 0, width, height);
+        lblBackground.setBounds(INTX, INTY, width, height);
         lblBackground.setIcon(imgRescaler(IntroScreen, width, height));
 
-        ScrollView.setBounds(SIDE_LENGTH, SIDE_LENGTH, 100, 450);
+        ScrollView.setBounds(SIDE_LENGTH, SIDE_LENGTH, SCRL_WIDTH, SCRL_HEIGHT);
 
-        lblGamePlay.setBounds(ScrollView.getX() + ScrollView.getWidth() + 20, ScrollView.getY(), 870, ScrollView.getHeight());
+        lblGamePlay.setBounds(ScrollView.getX() + ScrollView.getWidth() + GAMEPLAY_OFFSET, ScrollView.getY(), GAMEPLAY_WIDTH, ScrollView.getHeight());
         lblGamePlay.setIcon(imgRescaler(imgPlay, lblGamePlay.getWidth(), lblGamePlay.getHeight()));
 
         add(btnInfo);
