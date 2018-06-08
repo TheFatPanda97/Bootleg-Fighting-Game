@@ -20,22 +20,30 @@ public class Wizard extends Player {
     private ImageIcon LNormWizSpin = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_SPin_v1.gif");
     private ImageIcon LNormWizLight = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Lightning_v4.gif");
 
+    private final int MOVE_SPEED = 8;
+    private final int PROJ_SPEED = 30;
+
+    private final int PUNCH_SPEED = 18;
+    private final int KICK_SPEED = 18;
+    private final int SHOOT_SPEED = 25;
+    private final int SUPER_SPEED = 30;
+
     public Wizard(int WPN) {
 
         super();
         whichPlayerNum = WPN;
 
         setWizPics(whichPlayerNum);
-        setInitLoc(whichPlayerNum);
+        setInitLoc(whichPlayerNum, LNormWizStat, RNormWizStat);
         setWhichPlayer(whichPlayerNum);
-        setMoveSpeed(8);
-        setProjectSpeed(30);
+        setMoveSpeed(MOVE_SPEED);
+        setProjectSpeed(PROJ_SPEED);
 
 
         stopAct(e -> {
 
             //punch
-            if (allBoolMove[1][3] && count == 18) {
+            if (allBoolMove[1][3] && count == PUNCH_SPEED) {
 
                 if (facingLeft()) {
 
@@ -47,7 +55,7 @@ public class Wizard extends Player {
                 stopTimer.stop();
 
                 //kick
-            } else if (allBoolMove[1][4] && count == 18) {
+            } else if (allBoolMove[1][4] && count == KICK_SPEED) {
 
                 setLocation(getLocation().x, getY() - spinDown);
                 stopMoving();
@@ -55,7 +63,7 @@ public class Wizard extends Player {
                 stopTimer.stop();
 
                 //shoot
-            } else if (allBoolMove[1][5] && count == 25) {
+            } else if (allBoolMove[1][5] && count == SHOOT_SPEED) {
 
                 stopMoving();
                 if (facingLeft()) {
@@ -68,7 +76,7 @@ public class Wizard extends Player {
                 stopTimer.stop();
 
                 //super
-            } else if (allBoolMove[0][3] && count == 30) {
+            } else if (allBoolMove[0][3] && count == SUPER_SPEED) {
 
                 stopMoving();
                 emergencyStop = false;
@@ -84,23 +92,6 @@ public class Wizard extends Player {
 
 
         movementTimer.start();
-
-    }
-
-    public void setInitLoc(int whichPlayerNum) {
-
-        if (whichPlayerNum == 1) {
-
-            setIcon(RNormWizStat);
-            setBounds(0, Fight_Club.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
-
-
-        } else if (whichPlayerNum == 2) {
-
-            setIcon(LNormWizStat);
-            setBounds(Fight_Club.width - LNormWizStat.getIconWidth() - 30, Fight_Club.height - LNormWizStat.getIconHeight() - COMMON_FLOOR, LNormWizStat.getIconWidth(), LNormWizStat.getIconHeight());
-
-        }
 
     }
 
@@ -154,7 +145,7 @@ public class Wizard extends Player {
 
     public void bulletCreation() {
 
-        allBulltes.add(new Projectile(this, facing, 0));
+        allBulltes.add(new Projectile(this, facing));
         super.bulletCreation();
 
     }
@@ -211,9 +202,8 @@ public class Wizard extends Player {
 
 
         setIcon(RNormWizStat);
-        setBounds(0, Fight_Club.height - RNormWizStat.getIconHeight() - COMMON_FLOOR, RNormWizStat.getIconWidth(), RNormWizStat.getIconHeight());
 
-        whichCharacter[0] = true;
+        whichCharacter[WIZARD] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }

@@ -180,11 +180,11 @@ public class Player extends JLabel {
                 }
 
 
-                if (allBulltes.get(i).face == LFACE) {
+                if (allBulltes.get(i).face == RFACE) {
 
                     allBulltes.get(i).moveHorizon(projectSpeed);
 
-                } else if (allBulltes.get(i).face == RFACE) {
+                } else if (allBulltes.get(i).face == LFACE) {
 
                     allBulltes.get(i).moveHorizon(-projectSpeed);
 
@@ -343,18 +343,22 @@ public class Player extends JLabel {
 
     }
 
-    protected void setInitLoc(int whichPlayerNum) {
+    protected void setInitLoc(int whichPlayerNum, ImageIcon LFace, ImageIcon RFace) {
+
 
         if (whichPlayerNum == PNUM1) {
 
-            setBounds(INTX, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
+            setIcon(RFace);
+            setBounds(INTX, Fight_Club.height - RFace.getIconHeight() - COMMON_FLOOR, RFace.getIconWidth(), RFace.getIconHeight());
 
 
         } else if (whichPlayerNum == PNUM2) {
 
-            setBounds(Fight_Club.width - INITAL_WIDTH - INTX_OFFSET, Fight_Club.height - INITAL_HEIGHT - COMMON_FLOOR, INITAL_WIDTH, INITAL_HEIGHT);
+            setIcon(LFace);
+            setBounds(Fight_Club.width - LFace.getIconWidth() - INTX_OFFSET, Fight_Club.height - LFace.getIconHeight() - COMMON_FLOOR, LFace.getIconWidth(), LFace.getIconHeight());
 
         }
+
 
     }
 

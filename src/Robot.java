@@ -20,6 +20,15 @@ public class Robot extends Player {
     private ImageIcon LNormRobKick = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Kick_v2.gif");
     private ImageIcon LNormRobSlam = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Ground_Slam_v2.gif");
 
+    private final int MOVE_SPEED = 11;
+    private final int PROJ_SPEED = 20;
+
+    private final int PUNCH_SPEED = 18;
+    private final int KICK_SPEED = 30;
+    private final int SHOOT_SPEED = 25;
+    private final int SUPER_SPEED = 30;
+
+
     public Robot(int WPN) {
 
         super();
@@ -27,14 +36,14 @@ public class Robot extends Player {
 
         setRobPics(whichPlayerNum);
         setWhichPlayer(whichPlayerNum);
-        setInitLoc(whichPlayerNum);
-        setMoveSpeed(11);
-        setProjectSpeed(20);
+        setInitLoc(whichPlayerNum,LNormRobStat,RNormRobStat);
+        setMoveSpeed(MOVE_SPEED);
+        setProjectSpeed(PROJ_SPEED);
 
         stopAct(e -> {
 
             //punch
-            if (allBoolMove[1][3] && count == 18) {
+            if (allBoolMove[1][3] && count == PUNCH_SPEED) {
 
                 if (facingLeft()) {
 
@@ -48,7 +57,7 @@ public class Robot extends Player {
                 stopTimer.stop();
 
                 //kick
-            } else if (allBoolMove[1][4] && count == 30) {
+            } else if (allBoolMove[1][4] && count == KICK_SPEED) {
 
                 stopMoving();
 
@@ -63,7 +72,7 @@ public class Robot extends Player {
                 stopTimer.stop();
 
                 //shoot
-            } else if (allBoolMove[1][5] && count == 25) {
+            } else if (allBoolMove[1][5] && count == SHOOT_SPEED) {
 
 
                 if (facingLeft()) {
@@ -76,7 +85,7 @@ public class Robot extends Player {
                 stopTimer.stop();
 
                 //super
-            } else if (allBoolMove[0][3] && count == 30) {
+            } else if (allBoolMove[0][3] && count == SUPER_SPEED) {
 
                 stopMoving();
                 reset(0, 3);
@@ -144,32 +153,15 @@ public class Robot extends Player {
 
     public void bulletCreation() {
 
-        allBulltes.add(new Projectile(this, facing, ROB_SHOOT, 1));
+        allBulltes.add(new Projectile(this, facing, ROB_SHOOT));
         super.bulletCreation();
 
     }
 
     private void bulletCreation(boolean sups) {
 
-        allBulltes.add(new Projectile(this, facing, 1, whichPlayerNum, sups));
+        allBulltes.add(new Projectile(this, facing, whichPlayerNum, sups));
         super.bulletCreation();
-
-    }
-
-    public void setInitLoc(int whichPlayerNum) {
-
-        if (whichPlayerNum == 1) {
-
-            setIcon(RNormRobStat);
-            setBounds(0, Fight_Club.height - RNormRobStat.getIconHeight() - COMMON_FLOOR, RNormRobStat.getIconWidth(), RNormRobStat.getIconHeight());
-
-
-        } else if (whichPlayerNum == 2) {
-
-            setIcon(LNormRobStat);
-            setBounds(Fight_Club.width - LNormRobStat.getIconWidth() - 30, Fight_Club.height - LNormRobStat.getIconHeight() - COMMON_FLOOR, LNormRobStat.getIconWidth(), LNormRobStat.getIconHeight());
-
-        }
 
     }
 
@@ -226,7 +218,7 @@ public class Robot extends Player {
         allPic[3][4] = LNormRobKick;
         allPic[3][5] = LNormRobShot;
 
-        whichCharacter[1] = true;
+        whichCharacter[ROBOT] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
 

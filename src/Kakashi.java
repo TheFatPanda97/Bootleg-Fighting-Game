@@ -56,7 +56,7 @@ public class Kakashi extends Player {
 
         setKakaIntState();
         setKakaPics(whichPlayerNum);
-        setInitLoc(whichPlayerNum);
+        setInitLoc(whichPlayerNum,LKakaStat,RKakaStat);
         setWhichPlayer(whichPlayerNum);
         setMoveSpeed(allkakaData.get(IMOVE_SPEED));
         setProjectSpeed(allkakaData.get(IPROJ_SPEED));
@@ -74,7 +74,7 @@ public class Kakashi extends Player {
 
         setKakaIntState();
         setKakaPics(whichPlayerNum, p);
-        setInitLoc(whichPlayerNum);
+        setInitLoc(whichPlayerNum,LKakaStat,RKakaStat);
         setWhichPlayer(whichPlayerNum);
         setMoveSpeed(d.get(IMOVE_SPEED));
         setProjectSpeed(d.get(IPROJ_SPEED));
@@ -320,23 +320,6 @@ public class Kakashi extends Player {
 
     }
 
-    public void setInitLoc(int whichPlayerNum) {
-
-        if (whichPlayerNum == PNUM1) {
-
-            setIcon(RKakaStat);
-            setBounds(INTX, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
-
-
-        } else if (whichPlayerNum == PNUM2) {
-
-            setIcon(LKakaStat);
-            setBounds(Fight_Club.width - LKakaStat.getIconWidth() - INTX_OFFSET, Fight_Club.height - LKakaStat.getIconHeight() - COMMON_FLOOR, LKakaStat.getIconWidth(), LKakaStat.getIconHeight());
-
-        }
-
-    }
-
     //setup pics
     private void setKakaPics(int whichPlayerNum) {
 
@@ -386,14 +369,12 @@ public class Kakashi extends Player {
 
 
         setIcon(RKakaStat);
-        setBounds(INTX, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
 
     }
 
     //setup pics
-
     private void setKakaPics(int whichPlayerNum, ImageIcon[][] p) {
 
         allPic = p;
@@ -403,7 +384,6 @@ public class Kakashi extends Player {
         RKakaChi = allPic[0][3];
 
         setIcon(RKakaStat);
-        setBounds(INTX, Fight_Club.height - RKakaStat.getIconHeight() - COMMON_FLOOR, RKakaStat.getIconWidth(), RKakaStat.getIconHeight());
 
         whichCharacter[KAKASHI] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);

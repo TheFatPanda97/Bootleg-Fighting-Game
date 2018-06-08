@@ -10,7 +10,7 @@ public class Projectile extends JLabel {
     private  ImageIcon RRobSuper = new ImageIcon("src/Resource/Shot/RRobSuper.gif");
     private  ImageIcon LRobSuper = new ImageIcon("src/Resource/Shot/LRobSuper.gif");
 
-    private ImageIcon[][] allShot = new ImageIcon[3][4];
+    private ImageIcon[][] allShot = new ImageIcon[2][4];
 
     public int face = -1;
     private int count;
@@ -21,11 +21,15 @@ public class Projectile extends JLabel {
     public Timer explosionTimer;
     private Timer stopTimer;
 
-    public Projectile(JLabel icon, int facing, int WPN) {
+    private final int NORM_SHOT = 0;
+    private final int SUPS_SHOT = 1;
+
+
+    public Projectile(JLabel icon, int facing) {
 
         setShots();
-        setIcon(allShot[WPN][facing]);
-        setBounds(icon.getX() + 30, Math.round(icon.getY() + icon.getHeight() / 2), allShot[WPN][facing].getIconWidth(), allShot[WPN][facing].getIconHeight());
+        setIcon(allShot[NORM_SHOT][facing]);
+        setBounds(icon.getX() + 30, Math.round(icon.getY() + icon.getHeight() / 2), allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
         setOpaque(false);
 
         explosionAct(40, e -> {
@@ -46,11 +50,11 @@ public class Projectile extends JLabel {
 
     }
 
-    public Projectile(JLabel icon, int facing, int additionalHeight, int WPN) {
+    public Projectile(JLabel icon, int facing, int additionalHeight) {
 
         setShots();
-        setIcon(allShot[WPN][facing]);
-        setBounds(icon.getX() + 30, Math.round(icon.getY() + icon.getHeight() / 2) + additionalHeight, allShot[WPN][facing].getIconWidth(), allShot[WPN][facing].getIconHeight());
+        setIcon(allShot[NORM_SHOT][facing]);
+        setBounds(icon.getX() + 30, Math.round(icon.getY() + icon.getHeight() / 2) + additionalHeight, allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
         setOpaque(false);
 
         explosionAct(20, e -> {
@@ -71,12 +75,12 @@ public class Projectile extends JLabel {
 
     }
 
-    public Projectile(JLabel icon, int facing, int WPN, int whichPlayerNum, boolean sups) {
+    public Projectile(JLabel icon, int facing, int whichPlayerNum, boolean sups) {
 
         supsBullet = sups;
         setShots();
-        setIcon(allShot[WPN][facing + WPN]);
-        setBounds(icon.getX() + 30, icon.getY() + icon.getHeight() - allShot[WPN][facing + WPN].getIconHeight(), allShot[WPN][facing + WPN].getIconWidth(), allShot[WPN][facing + WPN].getIconHeight());
+        setIcon(allShot[SUPS_SHOT][facing + SUPS_SHOT]);
+        setBounds(icon.getX() + 30, icon.getY() + icon.getHeight() - allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconWidth(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight());
         setOpaque(false);
 
         stopAct(20, e -> {
@@ -84,7 +88,7 @@ public class Projectile extends JLabel {
             if (count == 35) {
 
                 count = 0;
-                allShot[WPN][facing + WPN].getImage().flush();
+                allShot[SUPS_SHOT][facing + SUPS_SHOT].getImage().flush();
                 remove();
 
                 if (whichPlayerNum == 1) {
@@ -168,7 +172,7 @@ public class Projectile extends JLabel {
     public void remove() {
 
         //   face = -2;
-        setLocation(200, 2000);
+        setLocation(2000, 2000);
 
     }
 
