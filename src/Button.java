@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/** in charge of the button in all classes*/
 public class Button extends JLabel {
 
+    //all button assets
     private ImageIcon[][] allButtonImg = new ImageIcon[4][2];
     private ImageIcon SStart = new ImageIcon("src/Resource/Buttons/SStart.png");
     private ImageIcon HStart = new ImageIcon("src/Resource/Buttons/HStart.png");
@@ -25,8 +27,9 @@ public class Button extends JLabel {
 
         setSize(INT_WIDTH, INT_HEIGHT);
         setAllButtonImg();
-        setIcon(allButtonImg[set][IMG_STATIC]);
+        setIcon(allButtonImg[set][IMG_STATIC]);//set the initial icon of button
 
+        //change icon of the button depending on what event is triggered
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -60,6 +63,7 @@ public class Button extends JLabel {
 
     }
 
+    //set all the images in button array
     private void setAllButtonImg() {
 
         allButtonImg[0][0] = SStart;
@@ -70,7 +74,6 @@ public class Button extends JLabel {
         allButtonImg[2][1] = HMain;
         allButtonImg[3][0] = SHigh;
         allButtonImg[3][1] = HHigh;
-
 
     }
 
