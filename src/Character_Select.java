@@ -16,32 +16,40 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * window that allows for different maps and characters to be selected
+ */
 public class Character_Select extends All_Windows {
 
+    //records if DLC is downloaded for the first time
     private boolean firstDownload;
 
     private ImageIcon CSelect = new ImageIcon("src/Resource/Screen_Background/player selection.jpg");
     private ImageIcon imgHighlight = new ImageIcon("src/Resource/Decoration/Button Highlight.png");
 
+    //all character faces
     private ImageIcon WizFace = new ImageIcon("src/Resource/Mugshots/RWizFace.png");
     private ImageIcon KakaFace = new ImageIcon("src/Resource/Mugshots/KakaFace.png");
     private ImageIcon RobFace = new ImageIcon("src/Resource/Mugshots/RobFace.png");
 
+    //hexagon for selecting characters
     private ImageIcon P1Select = new ImageIcon("src/Resource/Hexagon/P1.png");
     private ImageIcon P2Select = new ImageIcon("src/Resource/Hexagon/P2.png");
     private ImageIcon Together = new ImageIcon("src/Resource/Hexagon/Together.png");
 
-    public ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
-    public ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
+    //all characters
+    private ImageIcon RNormWizStat = new ImageIcon("src/Resource/Wizard/R_Norm_Wiz_Stat_v1.gif");
+    private ImageIcon LNormWizStat = new ImageIcon("src/Resource/Wizard/L_Norm_Wiz_Stat_v1.gif");
 
-    public ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
-    public ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
+    private ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
+    private ImageIcon LNormRobStat = new ImageIcon("src/Resource/Robot/L_Norm_Rob_Stat_v2.gif");
 
-    public ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
-    public ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
+    private ImageIcon RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
+    private ImageIcon LKakaStat = new ImageIcon("src/Resource/Kakashi/LKakaStat.gif");
 
     private ImageIcon Fire = new ImageIcon("src/Resource/Decoration/Fire.gif");
 
+    //all maps
     private ImageIcon FJap = new ImageIcon("src/Resource/Fighting_Background/Japan.gif");
     private ImageIcon FCad = new ImageIcon("src/Resource/Fighting_Background/Canada.gif");
     private ImageIcon FIdk = new ImageIcon("src/Resource/Fighting_Background/IDK.gif");
@@ -66,6 +74,7 @@ public class Character_Select extends All_Windows {
     private JLabel lblBigP2 = new JLabel();
     private JLabel lblmapSelect = new JLabel();
 
+    //txtField for record player names
     private JTextField P1Name, P2Name;
 
     private JLabel[] allFire = new JLabel[6];
@@ -77,6 +86,7 @@ public class Character_Select extends All_Windows {
     private Button btnMain = new Button(2);
     private Button btnStart = new Button(0);
 
+    //records player selection cursors
     private int P1At = 0;
     private int P2At = 2;
 
@@ -88,7 +98,7 @@ public class Character_Select extends All_Windows {
     private final int FIRE_SIZE = 32;
 
     private final int ICON_X = 600;
-    private final int ICON_Y =590;
+    private final int ICON_Y = 590;
 
     private final int MAP_OFFSET = 162;
     private final int MAP_WIDTH = 300;
@@ -99,20 +109,25 @@ public class Character_Select extends All_Windows {
 
     private final int NAME_LIMIT = 13;
 
+    private final int P2_MULTIPLY = 5;
+
     private final Font NAME_FONT = new Font("Aerial", Font.BOLD, 30);
 
     private boolean downloadSuccess;
 
     private Color transparent = new Color(0, 0, 0, 0);
 
-
+    //default constructor
     public Character_Select() {
 
+        //sets the image for both map and character
         setAllCharacter();
         setAllFires();
 
+        //resets background to correct size and adds it
         addLabel(background, imgRescaler(CSelect, width, height), INTX, INTY, false);
 
+        //setting attributes of player 1 name text field
         P1Name = new JTextField();
         P1Name.setBounds(CORNER_DIS, height - TEXT_HEIGHT - CORNER_DIS, TEXT_WIDTH, TEXT_HEIGHT);
         P1Name.setFont(NAME_FONT);
@@ -122,6 +137,7 @@ public class Character_Select extends All_Windows {
         P1Name.setCaretColor(Color.WHITE);
         add(P1Name, 0);
 
+        //setting attributes of player 2 name text field
         P2Name = new JTextField();
         P2Name.setBounds(width - TEXT_WIDTH - CORNER_DIS, height - TEXT_HEIGHT - CORNER_DIS, TEXT_WIDTH, TEXT_HEIGHT);
         P2Name.setFont(NAME_FONT);
@@ -131,54 +147,22 @@ public class Character_Select extends All_Windows {
         P2Name.setCaretColor(Color.WHITE);
         add(P2Name, 0);
 
+        //adding all elements to screen
         addLabel(lblKaka, imgRescaler(KakaFace, ICON_SIZE, ICON_SIZE), ICON_X, ICON_Y);
         addLabel(lblWiz, imgRescaler(WizFace, ICON_SIZE, ICON_SIZE), lblKaka.getX() - lblKaka.getWidth(), ICON_Y);
         addLabel(lblRob, imgRescaler(RobFace, ICON_SIZE, ICON_SIZE), lblKaka.getX() + lblKaka.getWidth(), ICON_Y);
         addLabel(lblBigP1, RNormWizStat, CORNER_DIS, P1Name.getY() - RNormWizStat.getIconHeight() - CORNER_DIS);
-        addLabel(lblBigP2, LNormRobStat, width - LNormRobStat.getIconWidth() - CORNER_DIS * 5, P2Name.getY() - LNormRobStat.getIconHeight() - CORNER_DIS);
+        addLabel(lblBigP2, LNormRobStat, width - LNormRobStat.getIconWidth() - CORNER_DIS * P2_MULTIPLY, P2Name.getY() - LNormRobStat.getIconHeight() - CORNER_DIS);
         addLabel(lblP1, imgRescaler(P1Select, ICON_SIZE, ICON_SIZE), lblWiz.getX(), lblWiz.getY());
         addLabel(lblP2, imgRescaler(P2Select, ICON_SIZE, ICON_SIZE), lblRob.getX(), lblRob.getY());
         addLabel(lblmapSelect, imgRescaler(Together, FIRE_SIZE, FIRE_SIZE), DX, DY);
+        addLabel(lblHighlight, imgHighlight, DX, DY);
+        addLabel(lblMapArea, imgRescaler(FJap, MAP_WIDTH, MAP_HEIGHT), lblWiz.getX(), lblWiz.getY() - MAP_OFFSET);
 
-
+        //default map is Japan
         selectMap(5);
 
-        lblMapArea.setBounds(lblWiz.getX(), lblWiz.getY() - MAP_OFFSET, MAP_WIDTH, MAP_HEIGHT);
-        lblMapArea.setIcon(imgRescaler(FJap, lblMapArea.getWidth(), lblMapArea.getHeight()));
-        lblMapArea.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-
-            }
-        });
-
-        Main.fightWindow.background.setIcon(imgRescaler(FJap, width, height));
-        Main.fightWindow.background.setBounds(INTX, INTY, width, height);
-
-        lblHighlight.setIcon(imgHighlight);
-        lblHighlight.setBounds(DX, DY, imgHighlight.getIconWidth(), imgHighlight.getIconHeight());
-
+        //main menu button
         btnMain.setLocation(CORNER_DIS, CORNER_DIS);
         btnMain.addMouseListener(new MouseListener() {
             @Override
@@ -202,6 +186,7 @@ public class Character_Select extends All_Windows {
             @Override
             public void mouseEntered(MouseEvent e) {
 
+                //sets selected cursor
                 centerSetter(lblHighlight, btnMain);
 
             }
@@ -214,6 +199,7 @@ public class Character_Select extends All_Windows {
             }
         });
 
+        //start game button
         btnStart.setLocation(width - btnMain.getWidth() - CORNER_DIS, CORNER_DIS);
         btnStart.addMouseListener(new MouseListener() {
             @Override
@@ -224,6 +210,7 @@ public class Character_Select extends All_Windows {
             @Override
             public void mousePressed(MouseEvent e) {
 
+                //start game
                 startGame();
 
             }
@@ -248,6 +235,7 @@ public class Character_Select extends All_Windows {
             }
         });
 
+        //request the focus so you can select maps and character when clicking on the background
         background.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -277,6 +265,7 @@ public class Character_Select extends All_Windows {
             }
         });
 
+        //all maps show a preview when it is hovered and set the back in game to that when clicked
         allFire[0].addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -457,7 +446,7 @@ public class Character_Select extends All_Windows {
             }
         });
 
-
+        //selects characters
         addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -467,20 +456,22 @@ public class Character_Select extends All_Windows {
             @Override
             public void keyPressed(KeyEvent e) {
 
-                setTogether();
-
+                // player 1
                 if (e.getKeyCode() == KeyEvent.VK_D && P1At < allCharacter.length - 1) {
 
+                    //position of cursor is moved right is D is pressed, but only if it's not at the last character
                     setAt(lblP1, ++P1At);
                     setBig(lblBigP1, P1allCharacter, P1At);
 
                 } else if (e.getKeyCode() == KeyEvent.VK_A && P1At > SELECT_LIMIT) {
 
+                    //position of cursor is moved left is D is pressed, but only if it's not at the first character
                     setAt(lblP1, --P1At);
                     setBig(lblBigP1, P1allCharacter, P1At);
 
                 }
 
+                //same as player 1 except arrow keys
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT && P2At < allCharacter.length - 1) {
 
                     setAt(lblP2, ++P2At);
@@ -493,6 +484,7 @@ public class Character_Select extends All_Windows {
 
                 }
 
+                //change color of cursor if both player selects same character
                 setTogether();
 
 
@@ -504,16 +496,16 @@ public class Character_Select extends All_Windows {
             }
         });
 
-        add(lblMapArea, 0);
-        add(lblHighlight, 0);
         add(btnMain, 0);
         add(btnStart, 0);
 
 
     }
 
+    //setting maps selection fires
     private void setAllFires() {
 
+        //adding maps selection button and setting their attributes
         for (int i = 0; i < allFire.length; i++) {
 
             allFire[i] = new JLabel();
@@ -523,6 +515,7 @@ public class Character_Select extends All_Windows {
 
         }
 
+        //location of each fire is specific to where the map is
         allFire[0].setLocation(150, 150);
         allFire[1].setLocation(130, 250);
         allFire[2].setLocation(380, 250);
@@ -532,6 +525,7 @@ public class Character_Select extends All_Windows {
 
     }
 
+    //setting images of all characters
     private void setAllCharacter() {
 
         allCharacter[0] = lblWiz;
@@ -548,16 +542,18 @@ public class Character_Select extends All_Windows {
 
     }
 
+    //method for adding jlabel
     private void addLabel(JLabel a, ImageIcon b, int x, int y) {
 
 
         a.setIcon(b);
         a.setBounds(x, y, b.getIconWidth(), b.getIconHeight());
-        add(a, 0);
+        add(a, 0);// set on top
 
 
     }
 
+    //identical to addLabel() except the jlabel is added to the bottom
     private void addLabel(JLabel a, ImageIcon b, int x, int y, boolean f) {
 
 
@@ -568,52 +564,63 @@ public class Character_Select extends All_Windows {
 
     }
 
+    //sets location of character selection cursor
     private void setAt(JLabel a, int b) {
 
         a.setLocation(allCharacter[b].getX(), allCharacter[b].getY());
 
     }
 
+    //set the big image of which character is selected
     private void setBig(JLabel a, ImageIcon[] b, int c) {
 
-        if (b[c] != null) {
-
-            a.setSize(b[c].getIconWidth(), b[c].getIconHeight());
-
-        }
+        a.setSize(b[c].getIconWidth(), b[c].getIconHeight());
         a.setIcon(b[c]);
 
     }
 
+    //color change for if the same character is selected
     private void setTogether() {
 
-        if (lblP1.getX() == lblP2.getX()) {
+        //player 2 icon is set to purple if both P1 and P2 and selecting same player, since player 2 is on top, its icon will display
+        if (P1At == P2At) {
 
             lblP2.setIcon(imgRescaler(Together, ICON_SIZE, ICON_SIZE));
 
         } else {
 
+            //if selecting different players, then player 2 is set to it's normal blue color
             lblP2.setIcon(imgRescaler(P2Select, ICON_SIZE, ICON_SIZE));
+
         }
 
     }
 
+    //moves jlabel outside of jframe and removes it
     private void remove(JLabel a) {
 
         a.setLocation(DX, DY);
 
     }
 
+    //start the fight
     private void startGame() {
 
+        //if all stating game condition is satisfied
         if (startGameCondition()) {
 
+            //if player didn't select DLC, then just set to normal players
             if (!firstDownload) {
 
                 Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText());
 
+            } else {
+
+                Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
+
             }
 
+            //this screen is set to invisible and fight window is set to visible, and the countdown for that starts
             setVisible(false);
             Main.fightWindow.setVisible(true);
             Main.fightWindow.countDownTimer.start();
@@ -623,38 +630,39 @@ public class Character_Select extends All_Windows {
 
     }
 
+    //conditions to start gam e
     private boolean startGameCondition() {
 
+        //players didn't enter names
         if (P1Name.getText().equals("") || P2Name.getText().equals("")) {
 
             JOptionPane.showMessageDialog(null, "Please choose a name for both fighters");
             return false;
 
 
+            //player name is too long
         } else if (P1Name.getText().toCharArray().length > NAME_LIMIT || P2Name.getText().toCharArray().length > NAME_LIMIT) {
 
             JOptionPane.showMessageDialog(null, "Name has to be shorter than 14 letters");
             return false;
 
-
+            //player names are all numbers
         } else if (isNumber(P1Name.getText()) || isNumber(P2Name.getText())) {
 
             JOptionPane.showMessageDialog(null, "Name can't be all numbers");
             return false;
 
+            //players have same name
         } else if (P1Name.getText().toLowerCase().equals(P2Name.getText().toLowerCase())) {
 
             JOptionPane.showMessageDialog(null, "Players can't have same name");
             return false;
 
-        } else if (firstDownload) {
-
-            Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
-            return true;
-
+        //ahh this is the DLC part, if either players selects Kakashi
         } else if (P1At == SELECT_KAKASHI || P2At == SELECT_KAKASHI) {
 
-            if (!Main.rw.getDLC()) {
+            //if the DLC hasn't being downloaded yet
+            if (!Main.rw.getDLC() && !firstDownload) {
 
                 String code = JOptionPane.showInputDialog(null, "Kakashi is a DLC \nWhisper into Shawn's ears: \"SHAWN SO SMART O GOD\" and he will tell you the DLC code\nDeen you are not allowed");
 
@@ -668,6 +676,7 @@ public class Character_Select extends All_Windows {
 
                     try {
 
+                        //URL ofr the assets
                         URL RWalk = new URL("https://i.imgur.com/PkpuyZd.gif");
                         URL RJump = new URL("https://i.imgur.com/hnzWgcC.gif");
                         URL RBlock = new URL("https://i.imgur.com/Qwou1ue.gif");
@@ -692,6 +701,7 @@ public class Character_Select extends All_Windows {
 
                         Scanner read = new Scanner(new InputStreamReader(KakaData.openStream()));
 
+                        //the downloaded movement file is sorted and added to allKakaData arraylist
                         while (read.hasNext()) {
 
                             allKakaData.add(Integer.parseInt(read.nextLine()));
@@ -749,8 +759,6 @@ public class Character_Select extends All_Windows {
                         Files.copy(KakaData.openStream(), Paths.get(System.getProperty("user.dir") + "/src/Resource/All_Data/KakaData.txt"));
 
                         firstDownload = true;
-                        Main.fightWindow.setPLayer(P1At, P2At, P1Name.getText(), P2Name.getText(), allKakaImg, allKakaData);
-
                         JOptionPane.showMessageDialog(null, "and the DLC is downloaded. Enjoy being overpowered :)");
                         downloadSuccess = true;
 
@@ -799,14 +807,17 @@ public class Character_Select extends All_Windows {
 
     }
 
+    //set the map for fight window
     private void selectMap(int i) {
 
+        //depending on which fire is selected, map will be set
         lblmapSelect.setLocation(allFire[i].getX(), allFire[i].getY());
         Main.fightWindow.background.setIcon(imgRescaler(allMaps[i], width, height));
         Main.fightWindow.background.setBounds(INTX, INTY, width, height);
 
     }
 
+    //allows for a preview of what the map looks like
     private void previewmap(ImageIcon a) {
 
         lblMapArea.setIcon(imgRescaler(a, lblMapArea.getWidth(), lblMapArea.getHeight()));
@@ -814,8 +825,10 @@ public class Character_Select extends All_Windows {
 
     }
 
+    //checks if a string is a number
     private boolean isNumber(String s) {
 
+        //very dumb but works
         try {
 
             Integer.parseInt(s);
@@ -827,7 +840,7 @@ public class Character_Select extends All_Windows {
         }
 
     }
-
+    
     boolean getdownloadSucces() {
 
         return downloadSuccess;
