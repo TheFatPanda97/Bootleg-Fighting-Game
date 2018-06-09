@@ -1,14 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 
-/**in charge of health and magic bar */
+/**
+ * in charge of health and magic bar
+ */
 public class Bar extends JLabel {
 
     private final int RHP_XMOVE = 6;
     private final int LHP_XMOVE = 7;
     private final int HP_Y = 16;
     private final int HP_WIDTH = 300;
-    private final int HP_HEIGHT = 35;
+    private final int HP_HEIGHT = 34;
 
     private final int INTX = 0;
     private final int INTY = 0;
@@ -84,15 +86,17 @@ public class Bar extends JLabel {
 
             }
 
+            //initial state of hp bar is green and good
             hp.setBackground(Color.green);
             hp.setBounds(mugshot.getWidth() + RHP_XMOVE, HP_Y, HP_WIDTH, HP_HEIGHT);
             hp.setOpaque(true);
 
+            //initial state of hp bar is blue and good
             magic.setBackground(Color.cyan);
             magic.setBounds(mugshot.getWidth() + RMGC_XMOVE, MGC_Y + Y_OFFSET, INT_WIDTH, MGC_HEIGHT);
             magic.setOpaque(true);
 
-
+            //same as player 1 code except location of bar is top right
         } else if (whichPlayerNum == PNUM2) {
 
             setBounds(Fight_Club.width - RBar.getIconWidth(), INTY, RBar.getIconWidth(), RBar.getIconHeight());
@@ -128,79 +132,84 @@ public class Bar extends JLabel {
 
         }
 
+        //adds all elements to bar instance
         add(hp);
         add(magic);
         add(mugshot);
 
     }
 
+    //as the title suggests, it detects if the hp is depleted
     public boolean dead() {
 
+        //if the hp is less than 0
         return hp.getWidth() <= INT_WIDTH;
-
 
     }
 
+    //deducts health
     public void decHP(int deduct, boolean isBlocking) {
 
+        //is the other player is not blocking
         if (!isBlocking) {
 
+            //the hp reduce depending what attack is carried out
             hp.setSize(hp.getWidth() - deduct, hp.getHeight());
 
+            //player 2's HP bar needs to be right as health goes down, or else the bar would deplete from the right instead of left
             if (whichPlayerNum == PNUM2) {
 
-                hp.setLocation(hp.getLocation().x + deduct, hp.getY());
+                //moves the bar left depending on how much HP is taken
+                P2BarSet(hp, deduct);
 
             }
 
         } else {
 
+            //if the other player is blocking, then the hp reduce by half depending what attack is carried out
             hp.setSize(hp.getWidth() - deduct / HALF_MGC, hp.getHeight());
 
+            //same as if the other player is blocking
             if (whichPlayerNum == PNUM2) {
 
-                hp.setLocation(hp.getLocation().x + deduct / HALF_MGC, hp.getY());
+                P2BarSet(hp, deduct / HALF_MGC);
 
             }
 
         }
 
-        if (hp.getWidth() <= HP_WIDTH / 2) {
-
-            hp.setBackground(Color.yellow);
-
-            if (hp.getWidth() <= HP_WIDTH / 3) {
-
-                hp.setBackground(Color.red);
-
-            }
-
-        }
+        //change HP bar color depending on how much health is left
+        colorChange();
 
     }
 
+    //deducts magic
     public void decMagic(int deduct) {
 
+        //if the amount of magic left is smaller than the amount deducted, then set it to 0
         if (magic.getWidth() - deduct <= INT_WIDTH) {
 
             magic.setSize(INT_WIDTH, MGC_HEIGHT);
 
         } else {
 
+            //just deduct normally
             magic.setSize(magic.getWidth() - deduct, MGC_HEIGHT);
 
         }
 
-
+        //if player 2
         if (whichPlayerNum == PNUM2) {
 
-            if (magic.getWidth() <= INT_WIDTH) {
+            //if the there's is no magic, set it to the initial location
+            if (magic.getWidth() == INT_WIDTH) {
 
                 magic.setLocation(LMGC_XMOVE + MGC_WIDTH, magic.getY());
 
             } else {
 
-                magic.setLocation(magic.getLocation().x + deduct, magic.getY());
+                //if not then just move right by "deduct" amount
+                P2BarSet(magic, deduct);
 
             }
 
@@ -208,28 +217,32 @@ public class Bar extends JLabel {
 
     }
 
+    //adds magic (default)
     public void addMagic() {
 
+        //if adding magic will exceed max amount of magic
         if (magic.getWidth() + MGC_ADD >= MGC_WIDTH) {
 
+            //set to max amount of magic
             magic.setSize(MGC_WIDTH, MGC_HEIGHT);
 
         } else {
 
+            //if not then just add magic
             magic.setSize(magic.getWidth() + MGC_ADD, MGC_HEIGHT);
 
         }
 
-
+        //similar to decMagic
         if (whichPlayerNum == PNUM2) {
 
-            if (magic.getWidth() >= MGC_WIDTH) {
+            if (magic.getWidth() == MGC_WIDTH) {
 
                 magic.setLocation(LMGC_XMOVE, magic.getY());
 
             } else {
 
-                magic.setLocation(magic.getLocation().x - MGC_ADD, magic.getY());
+                P2BarSet(magic, -MGC_ADD);
 
             }
 
@@ -237,8 +250,10 @@ public class Bar extends JLabel {
 
     }
 
+    //adds specific amount of magic
     public void addMagic(int a) {
 
+        //identical to addMagic() except the amount of magic added is different
         if (magic.getWidth() + a >= MGC_WIDTH) {
 
             magic.setSize(MGC_WIDTH, MGC_HEIGHT);
@@ -250,15 +265,15 @@ public class Bar extends JLabel {
         }
 
 
-        if (whichPlayerNum == 2) {
+        if (whichPlayerNum == PNUM2) {
 
-            if (magic.getWidth() >= MGC_WIDTH) {
+            if (magic.getWidth() == MGC_WIDTH) {
 
                 magic.setLocation(LMGC_XMOVE, magic.getY());
 
             } else {
 
-                magic.setLocation(magic.getLocation().x - a, magic.getY());
+                P2BarSet(magic, -a);
 
             }
 
@@ -266,18 +281,22 @@ public class Bar extends JLabel {
 
     }
 
+    //if a player attacks first, they get extra magic
     public void firstBlood() {
 
+        //amount of magic added is double
         magic.setSize(magic.getWidth() + MGC_ADD * DOUBLE_MGC, MGC_HEIGHT);
 
+        //P2 bar location offset
         if (whichPlayerNum == PNUM2) {
 
-            magic.setLocation(magic.getLocation().x - MGC_ADD * DOUBLE_MGC, magic.getY());
+            P2BarSet(magic, - MGC_ADD * DOUBLE_MGC);
 
         }
 
     }
 
+    //detects if a player has enough for tasks
     public boolean hasMagic(int enough) {
 
         if (magic.getWidth() >= enough) {
@@ -287,6 +306,32 @@ public class Bar extends JLabel {
         }
 
         return false;
+
+    }
+
+    //changes health bar color
+    private void colorChange() {
+
+        if (hp.getWidth() <= HP_WIDTH / 2) {
+
+            //if less than half health, then change to yellow
+            hp.setBackground(Color.yellow);
+
+            if (hp.getWidth() <= HP_WIDTH / 3) {
+
+                //if less than third health, then change to red
+                hp.setBackground(Color.red);
+
+            }
+
+        }
+
+    }
+
+    //methods that set the bar to correct location for player 2
+    private void P2BarSet(JLabel a, int deduct) {
+
+        a.setLocation(a.getLocation().x + deduct, a.getY());
 
     }
 

@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c730e4-f1e9-4b90-9b16-2b04326604f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Bar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Bar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/LBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/LBar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/RBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/RBar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/All_Windows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/All_Windows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resource/Status/LBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resource/Status/RBar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resource/Status/RBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resource/Status/LBar.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,15 +26,20 @@
       <file leaf-file-name="Bar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Bar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
+            <state relative-caret-position="547">
+              <caret line="330" column="63" selection-start-line="330" selection-start-column="63" selection-end-line="330" selection-end-column="63" />
               <folding>
+                <element signature="docComment;class#Bar#0" />
+                <element signature="method#Bar#0;class#Bar#0" />
                 <element signature="method#dead#0;class#Bar#0" />
+                <element signature="method#decHP#0;class#Bar#0" />
                 <element signature="method#decMagic#0;class#Bar#0" />
                 <element signature="method#addMagic#0;class#Bar#0" />
                 <element signature="method#addMagic#1;class#Bar#0" />
                 <element signature="method#firstBlood#0;class#Bar#0" />
                 <element signature="method#hasMagic#0;class#Bar#0" />
+                <element signature="method#colorChange#0;class#Bar#0" />
+                <element signature="method#P2BarSet#0;class#Bar#0" />
               </folding>
             </state>
           </provider>
@@ -247,12 +239,12 @@
       <workItem from="1528421923082" duration="108000" />
       <workItem from="1528461639829" duration="75000" />
       <workItem from="1528461748785" duration="7477000" />
-      <workItem from="1528493200099" duration="2506000" />
+      <workItem from="1528493200099" duration="4587000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55764000" />
+    <option name="totallyTimeSpent" value="57845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1536" height="864" extended-state="0" />
@@ -268,7 +260,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.6724387" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32287583" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32287583" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="4" />
@@ -392,12 +384,17 @@
         <state relative-caret-position="425">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
+            <element signature="docComment;class#Bar#0" />
+            <element signature="method#Bar#0;class#Bar#0" />
             <element signature="method#dead#0;class#Bar#0" />
+            <element signature="method#decHP#0;class#Bar#0" />
             <element signature="method#decMagic#0;class#Bar#0" />
             <element signature="method#addMagic#0;class#Bar#0" />
             <element signature="method#addMagic#1;class#Bar#0" />
             <element signature="method#firstBlood#0;class#Bar#0" />
             <element signature="method#hasMagic#0;class#Bar#0" />
+            <element signature="method#colorChange#0;class#Bar#0" />
+            <element signature="method#P2BarSet#0;class#Bar#0" />
           </folding>
         </state>
       </provider>
@@ -789,15 +786,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
+        <state relative-caret-position="547">
+          <caret line="330" column="63" selection-start-line="330" selection-start-column="63" selection-end-line="330" selection-end-column="63" />
           <folding>
+            <element signature="docComment;class#Bar#0" />
+            <element signature="method#Bar#0;class#Bar#0" />
             <element signature="method#dead#0;class#Bar#0" />
+            <element signature="method#decHP#0;class#Bar#0" />
             <element signature="method#decMagic#0;class#Bar#0" />
             <element signature="method#addMagic#0;class#Bar#0" />
             <element signature="method#addMagic#1;class#Bar#0" />
             <element signature="method#firstBlood#0;class#Bar#0" />
             <element signature="method#hasMagic#0;class#Bar#0" />
+            <element signature="method#colorChange#0;class#Bar#0" />
+            <element signature="method#P2BarSet#0;class#Bar#0" />
           </folding>
         </state>
       </provider>
