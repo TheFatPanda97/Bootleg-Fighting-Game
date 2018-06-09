@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c730e4-f1e9-4b90-9b16-2b04326604f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Intro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Kakashi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Kakashi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Projectile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Projectile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Wizard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Wizard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kakashi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kakashi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Bar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Bar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/LBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/LBar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/RBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Resource/Status/RBar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/All_Windows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/All_Windows.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resource/Status/LBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resource/Status/RBar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resource/Status/RBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resource/Status/LBar.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,140 +30,24 @@
       <file leaf-file-name="All_Windows.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" selection-start-line="14" selection-end-line="15" />
+            <state relative-caret-position="255">
+              <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Intro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Intro.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="160" selection-start-line="160" selection-end-line="160" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Read_Write.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="method#getStackInfo#0;class#Read_Write#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bar.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Bar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="79" column="54" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="54" />
+            <state relative-caret-position="360">
+              <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
               <folding>
+                <element signature="method#dead#0;class#Bar#0" />
+                <element signature="method#decMagic#0;class#Bar#0" />
+                <element signature="method#addMagic#0;class#Bar#0" />
+                <element signature="method#addMagic#1;class#Bar#0" />
+                <element signature="method#firstBlood#0;class#Bar#0" />
                 <element signature="method#hasMagic#0;class#Bar#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kakashi.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Kakashi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-              <folding>
-                <element signature="e#2239#5126#0" />
-                <element signature="e#2307#5117#0" />
-                <element signature="e#5132#6104#0" />
-                <element signature="e#5203#6096#0" />
-                <element signature="e#6110#6358#0" />
-                <element signature="e#6364#6516#0" />
-                <element signature="e#6522#6654#0" />
-                <element signature="e#6660#6801#0" />
-                <element signature="e#6807#7038#0" />
-                <element signature="e#7044#7081#0" />
-                <element signature="e#7087#7212#0" />
-                <element signature="e#7218#7296#0" />
-                <element signature="e#7302#7588#0" />
-                <element signature="e#7594#9870#0" />
-                <element signature="e#9876#10215#0" />
-                <element signature="e#10221#10431#0" />
-                <element signature="e#10437#10651#0" />
-                <element signature="e#10694#10883#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Robot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Robot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3196">
-              <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wizard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Wizard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="179" column="48" selection-start-line="179" selection-start-column="48" selection-end-line="179" selection-end-column="48" />
-              <folding>
-                <element signature="method#Wizard#0;class#Wizard#0" />
-                <element signature="method#punch#0;class#Wizard#0" />
-                <element signature="method#kick#0;class#Wizard#0" />
-                <element signature="method#shoot#0;class#Wizard#0" />
-                <element signature="method#superPower#0;class#Wizard#0" />
-                <element signature="method#bulletCreation#0;class#Wizard#0" />
-                <element signature="method#kickSetback#0;class#Wizard#0" />
-                <element signature="method#shootSetback#0;class#Wizard#0" />
-                <element signature="method#punchSetback#0;class#Wizard#0" />
-                <element signature="method#setWizPics#0;class#Wizard#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Projectile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Projectile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="188" column="25" selection-start-line="188" selection-start-column="25" selection-end-line="188" selection-end-column="25" />
-              <folding>
-                <element signature="method#Projectile#0;class#Projectile#0" />
-                <element signature="method#Projectile#1;class#Projectile#0" />
-                <element signature="method#Projectile#2;class#Projectile#0" />
-                <element signature="method#moveHorizon#0;class#Projectile#0" />
-                <element signature="method#setExplosion#0;class#Projectile#0" />
-                <element signature="method#setShots#0;class#Projectile#0" />
-                <element signature="method#explosionAct#0;class#Projectile#0" />
-                <element signature="method#stopAct#0;class#Projectile#0" />
-                <element signature="method#remove#0;class#Projectile#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Button.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Button.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-              <folding>
-                <element signature="class#1161:1754" />
               </folding>
             </state>
           </provider>
@@ -165,8 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>src/Resource/Kakashi/</find>
-      <find>&quot;src/Resource/All_Data/&quot;</find>
       <find>&quot;/src/Resource/All_Data/&quot;</find>
       <find>selectionSort</find>
       <find>void</find>
@@ -194,12 +84,14 @@
       <find>-1</find>
       <find>facing</find>
       <find>WPN</find>
-      <find />
+      <find>, int WCN</find>
+      <find>KakaFace</find>
+      <find>40</find>
     </findStrings>
     <replaceStrings>
       <replace>/src/Resource/Kakashi/DLC/</replace>
       <replace>path</replace>
-      <replace />
+      <replace>private void</replace>
       <replace>GameOver</replace>
       <replace>INTX</replace>
       <replace>INTY</replace>
@@ -226,22 +118,22 @@
         <option value="$PROJECT_DIR$/src/FightClub.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/HighScore.java" />
-        <option value="$PROJECT_DIR$/src/Bar.java" />
         <option value="$PROJECT_DIR$/src/AllWindows.java" />
         <option value="$PROJECT_DIR$/src/Read_Write.java" />
         <option value="$PROJECT_DIR$/src/CharacterSelect.java" />
         <option value="$PROJECT_DIR$/src/Character_Select.java" />
         <option value="$PROJECT_DIR$/src/Resource/All_Data/DLC.txt" />
-        <option value="$PROJECT_DIR$/src/All_Windows.java" />
         <option value="$PROJECT_DIR$/src/High_Score.java" />
         <option value="$PROJECT_DIR$/src/Fight_Club.java" />
         <option value="$PROJECT_DIR$/src/Button.java" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/Robot.java" />
         <option value="$PROJECT_DIR$/src/Wizard.java" />
         <option value="$PROJECT_DIR$/src/Projectile.java" />
         <option value="$PROJECT_DIR$/src/Intro.java" />
         <option value="$PROJECT_DIR$/src/Kakashi.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/All_Windows.java" />
+        <option value="$PROJECT_DIR$/src/Bar.java" />
       </list>
     </option>
   </component>
@@ -283,6 +175,13 @@
               <item name="Shawn_Summative" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shawn_Summative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shawn_Summative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource" type="462c0819:PsiDirectoryNode" />
+              <item name="Status" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -348,12 +247,12 @@
       <workItem from="1528421923082" duration="108000" />
       <workItem from="1528461639829" duration="75000" />
       <workItem from="1528461748785" duration="7477000" />
-      <workItem from="1528493200099" duration="221000" />
+      <workItem from="1528493200099" duration="2506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53496000" />
+    <option name="totallyTimeSpent" value="55764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1536" height="864" extended-state="0" />
@@ -369,12 +268,13 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.6724387" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32287583" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32287583" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.26206434" />
       <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32287583" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="6" />
@@ -386,7 +286,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32323232" />
       <window_info id="Learn" order="1" weight="0.32930514" />
     </layout>
     <layout-to-restore>
@@ -459,8 +358,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CharacterSelect.java" />
-    <entry file="file://$PROJECT_DIR$/src/FightClub.java" />
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -495,6 +392,11 @@
         <state relative-caret-position="425">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
+            <element signature="method#dead#0;class#Bar#0" />
+            <element signature="method#decMagic#0;class#Bar#0" />
+            <element signature="method#addMagic#0;class#Bar#0" />
+            <element signature="method#addMagic#1;class#Bar#0" />
+            <element signature="method#firstBlood#0;class#Bar#0" />
             <element signature="method#hasMagic#0;class#Bar#0" />
           </folding>
         </state>
@@ -746,6 +648,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="method#High_Score#0;class#High_Score#0" />
+            <element signature="class#829:1397" />
+            <element signature="method#mouseClicked#0;class#829:1397" />
+            <element signature="method#mousePressed#0;class#829:1397" />
+            <element signature="method#mouseReleased#0;class#829:1397" />
+            <element signature="method#mouseEntered#0;class#829:1397" />
+            <element signature="method#mouseExited#0;class#829:1397" />
+            <element signature="method#setScore#0;class#High_Score#0" />
+            <element signature="method#updateScore#0;class#High_Score#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,26 +669,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Button.java">
+    <entry file="file://$PROJECT_DIR$/src/Intro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        <state relative-caret-position="2686">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="class#1161:1754" />
+            <element signature="method#getStackInfo#0;class#Read_Write#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="-1989">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kakashi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+          <folding>
+            <element signature="e#2239#5126#0" />
+            <element signature="e#2307#5117#0" />
+            <element signature="e#5132#6104#0" />
+            <element signature="e#5203#6096#0" />
+            <element signature="e#6110#6358#0" />
+            <element signature="e#6364#6516#0" />
+            <element signature="e#6522#6654#0" />
+            <element signature="e#6660#6801#0" />
+            <element signature="e#6807#7038#0" />
+            <element signature="e#7044#7081#0" />
+            <element signature="e#7087#7212#0" />
+            <element signature="e#7218#7296#0" />
+            <element signature="e#7302#7588#0" />
+            <element signature="e#7594#9870#0" />
+            <element signature="e#9876#10215#0" />
+            <element signature="e#10221#10431#0" />
+            <element signature="e#10437#10651#0" />
+            <element signature="e#10694#10883#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wizard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="547">
           <caret line="179" column="48" selection-start-line="179" selection-start-column="48" selection-end-line="179" selection-end-column="48" />
           <folding>
             <element signature="method#Wizard#0;class#Wizard#0" />
@@ -789,13 +743,6 @@
             <element signature="method#punchSetback#0;class#Wizard#0" />
             <element signature="method#setWizPics#0;class#Wizard#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Robot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3196">
-          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -817,63 +764,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
+    <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" selection-start-line="14" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Intro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="370">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
           <folding>
-            <element signature="method#getStackInfo#0;class#Read_Write#0" />
+            <element signature="class#1161:1754" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/All_Windows.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resource/Status/LBar.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resource/Status/RBar.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="79" column="54" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="54" />
+        <state relative-caret-position="360">
+          <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
           <folding>
+            <element signature="method#dead#0;class#Bar#0" />
+            <element signature="method#decMagic#0;class#Bar#0" />
+            <element signature="method#addMagic#0;class#Bar#0" />
+            <element signature="method#addMagic#1;class#Bar#0" />
+            <element signature="method#firstBlood#0;class#Bar#0" />
             <element signature="method#hasMagic#0;class#Bar#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kakashi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding>
-            <element signature="e#2239#5126#0" />
-            <element signature="e#2307#5117#0" />
-            <element signature="e#5132#6104#0" />
-            <element signature="e#5203#6096#0" />
-            <element signature="e#6110#6358#0" />
-            <element signature="e#6364#6516#0" />
-            <element signature="e#6522#6654#0" />
-            <element signature="e#6660#6801#0" />
-            <element signature="e#6807#7038#0" />
-            <element signature="e#7044#7081#0" />
-            <element signature="e#7087#7212#0" />
-            <element signature="e#7218#7296#0" />
-            <element signature="e#7302#7588#0" />
-            <element signature="e#7594#9870#0" />
-            <element signature="e#9876#10215#0" />
-            <element signature="e#10221#10431#0" />
-            <element signature="e#10437#10651#0" />
-            <element signature="e#10694#10883#0" />
           </folding>
         </state>
       </provider>

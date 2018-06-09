@@ -37,9 +37,6 @@ public class Player extends JLabel {
     protected final int PROJECTILE_MGI = 25;
     protected final int SUPER_MGI = 200;
 
-    protected final int INITAL_WIDTH = 40;
-    protected final int INITAL_HEIGHT = 300;
-
     protected int jumpHeight;
     protected int jumpSpeed = 5;
     protected int moveSpeed;
@@ -81,7 +78,6 @@ public class Player extends JLabel {
     protected final int PNUM2 = 2;
 
     protected final int INTX = 0;
-    protected final int INTY = 0;
 
     protected final int INTX_OFFSET = 30;
 
@@ -191,7 +187,7 @@ public class Player extends JLabel {
                 }
 
 
-                if (allBulltes.get(i).getX() >= Fight_Club.width || allBulltes.get(i).getX() <= -allBulltes.get(i).getWidth()) {
+                if (allBulltes.get(i).getX() >= Fight_Club.width || allBulltes.get(i).getX() <= INTX) {
 
                     allBulltes.get(i).remove();
 

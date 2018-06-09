@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**in charge of health and magic bar */
 public class Bar extends JLabel {
 
     private final int RHP_XMOVE = 6;
@@ -24,16 +25,18 @@ public class Bar extends JLabel {
     private final int MGC_WIDTH = 200;
     private final int MGC_HEIGHT = 25;
 
+    //number assigned to which player it is
     private final int PNUM1 = 1;
     private final int PNUM2 = 2;
 
+    //number assigned to each type of player
     private final int WIZARD = 0;
     private final int ROBOT = 1;
     private final int KAKASHI = 2;
 
-
     public static final int MGC_ADD = 20;
 
+    //stores which player the bar instance is
     private int whichPlayerNum;
 
     private ImageIcon RBar = new ImageIcon("src/Resource/Status/RBar.png");
@@ -49,19 +52,20 @@ public class Bar extends JLabel {
     public JLabel hp = new JLabel();
     private JLabel magic = new JLabel();
 
-
+    // constructor
     public Bar(int WPN, boolean[] whichPlayer) {
 
         whichPlayerNum = WPN;
         setOpaque(false);
 
-
+        //if player 1
         if (whichPlayerNum == PNUM1) {
 
-            setBounds(INTX, INTY, RBar.getIconWidth(), RBar.getIconHeight());
-            setIcon(RBar);
+            //set the health and magic bar to top left
+            setBounds(INTX, INTY, LBar.getIconWidth(), LBar.getIconHeight());
+            setIcon(LBar);
 
-
+            //depending on which player is selected, the correct mugshot face will be selected
             if (whichPlayer[WIZARD]) {
 
                 mugshot.setBounds(INTX, INTY, RWizFace.getIconWidth(), RWizFace.getIconHeight());
@@ -70,12 +74,10 @@ public class Bar extends JLabel {
 
             } else if (whichPlayer[ROBOT]) {
 
-
                 mugshot.setBounds(INTX, INTY, RobFace.getIconWidth(), RobFace.getIconHeight());
                 mugshot.setIcon(RobFace);
 
             } else if (whichPlayer[KAKASHI]) {
-
 
                 mugshot.setBounds(INTX, INTY, KakaFace.getIconWidth(), KakaFace.getIconHeight());
                 mugshot.setIcon(KakaFace);
@@ -93,8 +95,8 @@ public class Bar extends JLabel {
 
         } else if (whichPlayerNum == PNUM2) {
 
-            setBounds(Fight_Club.width - LBar.getIconWidth(), INTY, LBar.getIconWidth(), LBar.getIconHeight());
-            setIcon(LBar);
+            setBounds(Fight_Club.width - RBar.getIconWidth(), INTY, RBar.getIconWidth(), RBar.getIconHeight());
+            setIcon(RBar);
 
             if (whichPlayer[WIZARD]) {
 
@@ -115,7 +117,6 @@ public class Bar extends JLabel {
                 mugshot.setIcon(KakaFace);
 
             }
-
 
             hp.setBackground(Color.green);
             hp.setBounds(LHP_XMOVE, HP_Y, HP_WIDTH, HP_HEIGHT);
@@ -159,6 +160,18 @@ public class Bar extends JLabel {
             if (whichPlayerNum == PNUM2) {
 
                 hp.setLocation(hp.getLocation().x + deduct / HALF_MGC, hp.getY());
+
+            }
+
+        }
+
+        if (hp.getWidth() <= HP_WIDTH / 2) {
+
+            hp.setBackground(Color.yellow);
+
+            if (hp.getWidth() <= HP_WIDTH / 3) {
+
+                hp.setBackground(Color.red);
 
             }
 
