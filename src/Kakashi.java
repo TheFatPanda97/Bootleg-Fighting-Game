@@ -55,7 +55,7 @@ public class Kakashi extends Player {
         whichPlayerNum = WPN;
 
         setKakaIntState();
-        setKakaPics(whichPlayerNum);
+        setKakaPics();
         setInitLoc(whichPlayerNum,LKakaStat,RKakaStat);
         setWhichPlayer(whichPlayerNum);
         setMoveSpeed(allkakaData.get(IMOVE_SPEED));
@@ -75,7 +75,7 @@ public class Kakashi extends Player {
         allkakaData = d;
 
         setKakaIntState();
-        setKakaPics(whichPlayerNum, p);
+        setKakaPics(p);
         setInitLoc(whichPlayerNum,LKakaStat,RKakaStat);
         setWhichPlayer(whichPlayerNum);
         setMoveSpeed(d.get(IMOVE_SPEED));
@@ -325,7 +325,7 @@ public class Kakashi extends Player {
     }
 
     //setup pics
-    private void setKakaPics(int whichPlayerNum) {
+    private void setKakaPics() {
 
         RKakaStat = new ImageIcon("src/Resource/Kakashi/RKakaStat.gif");
         RKakaWalk = new ImageIcon("src/Resource/Kakashi/DLC/RKakaWalk.gif");
@@ -377,7 +377,7 @@ public class Kakashi extends Player {
     }
 
     //setup pics
-    private void setKakaPics(int whichPlayerNum, ImageIcon[][] p) {
+    private void setKakaPics(ImageIcon[][] p) {
 
         allPic = p;
 

@@ -622,18 +622,13 @@ public class Player extends JLabel {
 
     protected void removeKakaKeyBinder() {
 
-//        System.out.println(Main.fightWindow.P1.whichCharacter[2]);
-//        System.out.println(Main.fightWindow.P2.whichCharacter[2]);
 
-        if (!Main.fightWindow.P1.whichCharacter[2] && !Main.fightWindow.P2.whichCharacter[2]) {
+        im.remove(KeyStroke.getKeyStroke("T"));
+        im.remove(KeyStroke.getKeyStroke("I"));
 
-            im.remove(KeyStroke.getKeyStroke("T"));
-            im.remove(KeyStroke.getKeyStroke("I"));
+        ap.remove(KeyStroke.getKeyStroke("T"));
+        ap.remove(KeyStroke.getKeyStroke("I"));
 
-            ap.remove(KeyStroke.getKeyStroke("T"));
-            ap.remove(KeyStroke.getKeyStroke("I"));
-
-        }
 
     }
 

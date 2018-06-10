@@ -137,7 +137,7 @@ public class Projectile extends JLabel {
 
     }
 
-    public void setExplosion() {
+    public void setExplosionIcon() {
 
         if (face == RFACE) {
 

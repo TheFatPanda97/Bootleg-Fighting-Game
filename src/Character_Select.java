@@ -840,7 +840,7 @@ public class Character_Select extends All_Windows {
         }
 
     }
-    
+
     boolean getdownloadSucces() {
 
         return downloadSuccess;

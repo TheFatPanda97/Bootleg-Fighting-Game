@@ -4,9 +4,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-
+/**
+ * where the fighting happens
+ */
 public class Fight_Club extends All_Windows {
 
+    //variables that set player 2 back the correct amount
     private final int NORMAL_HITBACK = 100;
     private final int SUPER_HITBACK = 300;
     private final int CONT_HITBACK = 10;
@@ -21,7 +24,8 @@ public class Fight_Club extends All_Windows {
 
     private final int SUP_DILUTE = 100;
 
-    private final int REAL_COUNT = 90;
+    //count down
+    private final int REAL_COUNT = 30;
     private int count = REAL_COUNT;
 
     private final int X_OFFSET = 6;
@@ -37,6 +41,8 @@ public class Fight_Club extends All_Windows {
     private final int SEL_WIZARD = 0;
     private final int SEL_KAKASHI = 1;
     private final int SEL_ROBOT = 2;
+
+    private final int BULLET_STOP = -2;
 
     private boolean firstBlood = false;
 
@@ -62,29 +68,34 @@ public class Fight_Club extends All_Windows {
 
     private Font fttFont = new Font("Aerial", Font.BOLD, 40);
 
-
+    //default constructor
     public Fight_Club() {
 
+        //the countdown screen hexagon
         lblCountBackground.setIcon(countDown);
         lblCountBackground.setSize(countDown.getIconWidth(), countDown.getIconHeight());
         lblCountBackground.setLocation(getWidth() / 2 - lblCountBackground.getWidth() / 2, INTY);
 
+        //the actual countdown label
         lblRealCount.setSize(countDown.getIconWidth(), countDown.getIconHeight());
         lblRealCount.setForeground(Color.white);
         lblRealCount.setLocation(lblCountBackground.getX(), lblCountBackground.getY());
         lblRealCount.setFont(fttFont);
 
+        //the game over label
         lblKO.setSize(over.getIconWidth(), over.getIconHeight());
         lblKO.setLocation(width / 2 - lblKO.getWidth() / 2, height / 2 - lblRealCount.getWidth() / 2);
         lblKO.setIcon(over);
         lblKO.setVisible(false);
 
+        //displays who won
         lblWin.setSize(over.getIconWidth() + WIDTH_OFFSET, WIN_HEIGHT);
         lblWin.setLocation(width / 2 - lblWin.getWidth() / 2, lblKO.getY() + lblKO.getHeight());
         lblWin.setFont(fttFont);
         lblWin.setForeground(Color.white);
         lblWin.setVisible(false);
 
+        //main menu button
         btnMain.setLocation(width / 2 - btnMain.getWidth() / 2, lblWin.getY() + lblWin.getHeight() + Y_OFFSET);
         btnMain.addMouseListener(new MouseListener() {
             @Override
@@ -121,21 +132,24 @@ public class Fight_Club extends All_Windows {
         });
         btnMain.setVisible(false);
 
-
         add(btnMain, 0);
         add(lblWin, 0);
         add(lblKO, 0);
         add(lblRealCount, 0);
         add(lblCountBackground, 0);
 
-
+        //determine which direction a player is facing at all times
         directionTimer = new Timer(DIR_TIME, e -> {
 
+            //is player 1 is on the right of player 2
             if (P1.getX() >= P2.getX() + P2.getWidth()) {
 
+                //player 2 face right
+                //player 1 face left
                 P1.facing = LFACE;
                 P2.facing = RFACE;
 
+                //vice versa
             } else if (P2.getX() >= P1.getX() + P1.getWidth()) {
 
                 P1.facing = RFACE;
@@ -145,9 +159,10 @@ public class Fight_Club extends All_Windows {
 
         });
 
+        //determine if a player hurts another
         collisionTimer = new Timer(CLI_TIME, e -> {
 
-            //game over
+            //if either player is dead, then game over
             if (P1.hpMagic.dead()) {
 
                 endGame(P2Name);
@@ -158,6 +173,7 @@ public class Fight_Club extends All_Windows {
 
             }
 
+            //if either players hit each other, then move them back a little back
             if (hitProjectile(P1, P2)) {
 
                 P2.setBack(NORMAL_HITBACK);
@@ -171,6 +187,7 @@ public class Fight_Club extends All_Windows {
 
             }
 
+            //this applies to robot, his super move is a projectile, but does more damage than a normal projectil
             if (superProjectile(P1, P2)) {
 
                 P2.setBack(CONT_HITBACK);
@@ -185,6 +202,7 @@ public class Fight_Club extends All_Windows {
             }
 
 
+            //punch and kicks
             if (hitEachOther(P1, P2) && P1.isAttacking() && !P2.beingHit) {
 
                 dmgSet(P1, P2);
@@ -198,6 +216,7 @@ public class Fight_Club extends All_Windows {
 
             }
 
+            //this applies to kakashi's super move
             if (P1.whichCharacter[KAKASHI] && P1.isSuper() && hitEachOther(P1, P2) && P1.chidori) {
 
                 gettingChidori(P1, P2);
@@ -213,21 +232,26 @@ public class Fight_Club extends All_Windows {
 
         });
 
+        //countdown
         countDownTimer = new Timer(CTD_TIME, e -> {
 
             count--;
             lblRealCount.setText(count + "");
 
+            //if count down is zero
             if (count == 0) {
 
+                //if both character have the same amount of hp, then no one wins
                 if (P1.hpMagic.hp.getWidth() == P2.hpMagic.hp.getWidth()) {
 
                     endGame("NO ONE");
 
+                    //player 1 wins
                 } else if (P1.hpMagic.hp.getWidth() > P2.hpMagic.hp.getWidth()) {
 
                     endGame(P1Name);
 
+                    //player 2 wins
                 } else {
 
                     endGame(P2Name);
@@ -242,6 +266,7 @@ public class Fight_Club extends All_Windows {
 
     }
 
+    //sets which player is fighting
     public void setPLayer(int P1At, int P2At, String P1N, String P2N) {
 
         lblRealCount.setText(count + "");
@@ -276,24 +301,24 @@ public class Fight_Club extends All_Windows {
 
         }
 
-
+        KakaRemove(P1At, P2At);
         add(P1.hpMagic);
         add(P2.hpMagic);
         add(P1);
         add(P2);
         add(background);
-        P1.removeKakaKeyBinder();
-        P2.removeKakaKeyBinder();
         collisionTimer.start();
         directionTimer.start();
     }
 
+    //this is used for when the DLC is first downloaded, the new files are not detected by the current compile
     public void setPLayer(int P1At, int P2At, String P1N, String P2N, ImageIcon[][] p, ArrayList<Integer> d) {
 
         lblRealCount.setText(count + "");
         P1Name = P1N;
         P2Name = P2N;
 
+        //identical to the above method but the image assets and stop timer numbers are accessed through the parameters
         if (P1At == SEL_WIZARD) {
 
             P1 = new Wizard(PNUM1);
@@ -322,7 +347,7 @@ public class Fight_Club extends All_Windows {
 
         }
 
-
+        KakaRemove(P1At, P2At);
         add(P1.hpMagic);
         add(P2.hpMagic);
         add(P1);
@@ -332,17 +357,20 @@ public class Fight_Club extends All_Windows {
         directionTimer.start();
     }
 
+    //detects if a player's bullets hits the other player
     private boolean hitProjectile(Player a, Player b) {
 
         for (Projectile x : a.allBulltes) {
 
+            //if the bullets hits, it hasn't exploded yet, and it's a normal bullet
             if (x.getBounds().intersects(b.getBounds()) && !x.explode && !x.supsBullet) {
 
-                x.setExplosion();
-                x.face = -2;
-                x.explode = true;
-                x.explosionTimer.start();
+                x.setExplosionIcon();//bullet explodes images
+                x.face = BULLET_STOP;//the number stops the bullet from moving
+                x.explode = true;//bullet has exploded
+                x.explosionTimer.start();//how the long the bullet will explode for
 
+                //the player that got hit loses magic and health
                 b.hpMagic.decHP(Player.PROJECTTILE_DMG, b.isBlocking());
                 b.hpMagic.decMagic(NORMP_LOS_MGC);
 
@@ -358,6 +386,7 @@ public class Fight_Club extends All_Windows {
 
     }
 
+    //identical to the above method except damage is done continuously instead of all at once
     private boolean superProjectile(Player a, Player b) {
 
         for (Projectile x : a.allBulltes) {
@@ -381,32 +410,36 @@ public class Fight_Club extends All_Windows {
 
     }
 
+    //if the player contacts each other
     private boolean hitEachOther(JLabel a, JLabel b) {
 
         return a.getBounds().intersects(b.getBounds());
 
     }
 
+    //damage and magic gain for punching and kicking
     private void dmgSet(Player a, Player b) {
 
+        //first blood gives extra magic, happens on the first attack
         if (!firstBlood) {
 
             a.hpMagic.firstBlood();
             firstBlood = true;
-
         }
 
 
         b.beingHit = true;
 
 
+        //if it's not a super moves
         if (!a.isSuper()) {
 
-            a.hpMagic.addMagic();
-            b.hpMagic.addMagic(Bar.MGC_ADD / 2);
-            b.hpMagic.decHP(Player.PUNCH_DMG, b.isBlocking());
-            b.setBack(NORMAL_HITBACK);
+            a.hpMagic.addMagic();//player a get magic
+            b.hpMagic.addMagic(Bar.MGC_ADD / 2);//player b gets half amount of normal magic
+            b.hpMagic.decHP(Player.PUNCH_DMG, b.isBlocking());//player b losses health
+            b.setBack(NORMAL_HITBACK);//player b moves back a little bit
 
+            //super moves, basically the same as the top except each character does different amount of damage
         } else {
 
             if (a.whichCharacter[WIZARD]) {
@@ -425,33 +458,41 @@ public class Fight_Club extends All_Windows {
 
     }
 
+    //kakashi's super move, similar to other players's except much more damage
     private void gettingChidori(Player a, Player b) {
 
         b.beingHit = false;
-        b.beingSuped = true;
+        b.beingSuped = true;//prevents player b from blocking while they are getting hit
         b.hpMagic.decHP(SUP_LOS_HP, b.isBlocking());
         b.hpMagic.decMagic(SUP_LOS_MGC);
 
-        b.setLocation(a.getX() + b.getWidth() / X_OFFSET, a.getY());
+        b.setLocation(a.getX() + b.getWidth() / X_OFFSET, a.getY());// the location of player b is always in front of the player a
 
     }
 
+    //games restart once player dies
     private void restart() {
 
+        //this instance of the player are remvoed
         remove(P1);
         remove(P2);
         remove(P1.hpMagic);
         remove(P2.hpMagic);
+
         P1.hpMagic = null;
         P2.hpMagic = null;
         P1 = null;
         P2 = null;
+
+        //countdown is reset
         count = REAL_COUNT;
 
     }
 
+    //what happens when the game ends
     private void endGame(String name) {
 
+        //all the game over label are displayed
         Player.setGameOver(true);
         lblWin.setVisible(true);
         lblKO.setVisible(true);
@@ -460,14 +501,29 @@ public class Fight_Club extends All_Windows {
         directionTimer.stop();
         collisionTimer.stop();
 
+        //if the winning player has a new high score
         if (Main.rw.newHighScore(name, count)) {
 
             lblWin.setText(name + " WINS WITH NEW HIGH SCORE!!");
 
+            //if winning player doesn't have high score
         } else {
 
             lblWin.setText(name + " WINS!!");
 
+
+        }
+
+    }
+
+    //removes kakashi's special move keys
+    private void KakaRemove(int P1At, int P2At) {
+
+    //because Kakashi has a extra move, he's extra key is removed if no one chose him
+        if (P1At != SEL_WIZARD && P2At != SEL_WIZARD) {
+
+            P1.removeKakaKeyBinder();
+            P2.removeKakaKeyBinder();
 
         }
 
