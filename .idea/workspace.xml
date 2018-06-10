@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c730e4-f1e9-4b90-9b16-2b04326604f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/All_Windows.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Fight_Club.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/High_Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/High_Score.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Projectile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Projectile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/All_Windows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/All_Windows.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fight_Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fight_Club.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/High_Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/High_Score.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Intro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intro.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,34 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="High_Score.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/High_Score.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="method#High_Score#0;class#High_Score#0" />
-                <element signature="class#1007:1575" />
-                <element signature="method#setScore#0;class#High_Score#0" />
-                <element signature="method#updateScore#0;class#High_Score#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Intro.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Intro.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Intro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+            <state relative-caret-position="986">
+              <caret line="163" column="34" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
               <folding>
                 <element signature="class#1266:1930" />
                 <element signature="method#mouseClicked#0;class#1266:1930" />
-                <element signature="method#mousePressed#0;class#1266:1930" />
                 <element signature="method#mouseReleased#0;class#1266:1930" />
                 <element signature="method#mouseEntered#0;class#1266:1930" />
                 <element signature="method#mouseExited#0;class#1266:1930" />
+                <element signature="class#2067:2776" />
                 <element signature="method#mouseClicked#0;class#2067:2776" />
+                <element signature="method#mousePressed#0;class#2067:2776" />
                 <element signature="method#mouseReleased#0;class#2067:2776" />
                 <element signature="method#mouseEntered#0;class#2067:2776" />
                 <element signature="method#mouseExited#0;class#2067:2776" />
@@ -197,8 +174,8 @@
         <option value="$PROJECT_DIR$/src/Projectile.java" />
         <option value="$PROJECT_DIR$/src/All_Windows.java" />
         <option value="$PROJECT_DIR$/src/Fight_Club.java" />
-        <option value="$PROJECT_DIR$/src/Intro.java" />
         <option value="$PROJECT_DIR$/src/High_Score.java" />
+        <option value="$PROJECT_DIR$/src/Intro.java" />
       </list>
     </option>
   </component>
@@ -306,12 +283,12 @@
       <workItem from="1528461639829" duration="75000" />
       <workItem from="1528461748785" duration="7477000" />
       <workItem from="1528493200099" duration="8442000" />
-      <workItem from="1528595427870" duration="5066000" />
+      <workItem from="1528595427870" duration="5407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66766000" />
+    <option name="totallyTimeSpent" value="67107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
@@ -857,18 +834,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/High_Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="method#High_Score#0;class#High_Score#0" />
+            <element signature="class#1007:1575" />
+            <element signature="method#setScore#0;class#High_Score#0" />
+            <element signature="method#updateScore#0;class#High_Score#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Intro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+        <state relative-caret-position="986">
+          <caret line="163" column="34" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
           <folding>
             <element signature="class#1266:1930" />
             <element signature="method#mouseClicked#0;class#1266:1930" />
-            <element signature="method#mousePressed#0;class#1266:1930" />
             <element signature="method#mouseReleased#0;class#1266:1930" />
             <element signature="method#mouseEntered#0;class#1266:1930" />
             <element signature="method#mouseExited#0;class#1266:1930" />
+            <element signature="class#2067:2776" />
             <element signature="method#mouseClicked#0;class#2067:2776" />
+            <element signature="method#mousePressed#0;class#2067:2776" />
             <element signature="method#mouseReleased#0;class#2067:2776" />
             <element signature="method#mouseEntered#0;class#2067:2776" />
             <element signature="method#mouseExited#0;class#2067:2776" />
@@ -879,19 +870,6 @@
             <element signature="method#mouseEntered#0;class#2911:3709" />
             <element signature="method#mouseExited#0;class#2911:3709" />
             <element signature="method#remove#0;class#Intro#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/High_Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="method#High_Score#0;class#High_Score#0" />
-            <element signature="class#1007:1575" />
-            <element signature="method#setScore#0;class#High_Score#0" />
-            <element signature="method#updateScore#0;class#High_Score#0" />
           </folding>
         </state>
       </provider>
