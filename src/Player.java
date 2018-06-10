@@ -59,7 +59,6 @@ public class Player extends JLabel {
     protected int KakaSuperDistance = 26;
 
     protected int projectSpeed;
-    protected int projectStart = 0;
     protected int facing = 0;
 
     protected int whichPlayerNum = 0;
@@ -328,36 +327,25 @@ public class Player extends JLabel {
 
         }
 
-
-        for (int i = 0; i < allBoolMove.length; i++) {
-
-            for (int j = 0; j < allBoolMove[0].length; j++) {
-
-                if (allBoolMove[i][j]) {
-
-                    setIcon(allPic[i + facing][j]);
-                    setSize(allPic[i + facing][j].getIconWidth(), allPic[i + facing][j].getIconHeight());
-
-                }
-
-            }
-
-        }
-
     }
 
+    //sets the player to the ground
     protected void setLocGround() {
 
+        //uses the static image size to determine where to put the character
         setLocation(getX(), Fight_Club.height - allPic[0][0].getIconHeight() - COMMON_FLOOR);
 
     }
 
+    //moves player backwards depending on which way they are facing
     protected void setBack(int a) {
 
+        //if facing left, then move right
         if (facing == LFACE) {
 
             moveHorizontal(a);
 
+        //vice-versa
         } else if (facing == RFACE) {
 
             moveHorizontal(-a);
@@ -366,6 +354,7 @@ public class Player extends JLabel {
 
     }
 
+    //initial initial location of the players
     protected void setInitLoc(int whichPlayerNum, ImageIcon LFace, ImageIcon RFace) {
 
 
@@ -385,7 +374,6 @@ public class Player extends JLabel {
 
     }
 
-
     //sets all the keybinders for player 1
     protected void setKeyBindingP1() {
 
@@ -401,7 +389,7 @@ public class Player extends JLabel {
         //sets the movement up
         addKeyBinder(KeyEvent.VK_W, "P1Jump", e -> jump());
 
-        //sets the movement hit
+        //sets the movement punch
         addKeyBinder(KeyEvent.VK_F, "P1Hit", e -> punch());
 
         //sets the movement kick
@@ -460,7 +448,7 @@ public class Player extends JLabel {
 
         });
 
-        //sets the movement hit
+        //sets the movement punch
         addKeyBinder(KeyEvent.VK_J, "P2Hit", e -> {
 
             punch();
@@ -505,31 +493,34 @@ public class Player extends JLabel {
 
     }
 
+    //pressing block button
     private void PBlock() {
 
+        //is the player isn't attacking, jumping, getting super moved, or the game isn't over yet
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
             stopMoving();
-            set(1, 1);
+            set(1, 1);//sets the icon to the blocking image
 
         }
 
 
     }
 
+    //release block button
     private void RBlock() {
 
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver) {
 
-            //      hpMagic.magicTimer.stop();
-            reset(1, 1);
-
+            reset(1, 1);//sets the image back to static or what ever move the player is still doing
         }
 
     }
 
+    //press left button
     private void PLeft() {
 
+        //similar to above method conditions except the action can't be conducted when the player is blocking and don't move is kakaashi's second super move
         if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
 
             set(1, 0);
@@ -538,6 +529,7 @@ public class Player extends JLabel {
 
     }
 
+    //press right button
     private void PRight() {
 
         if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
@@ -548,6 +540,7 @@ public class Player extends JLabel {
 
     }
 
+    //release left button
     private void RLeft() {
 
         if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
@@ -558,6 +551,7 @@ public class Player extends JLabel {
 
     }
 
+    //release right button
     private void RRight() {
 
         if (!isAttacking() && !isBlocking() && !GameOver && !dontMove) {
@@ -573,13 +567,14 @@ public class Player extends JLabel {
         if (!isAttacking() && !isJumping() && !beingSuped && !GameOver && !dontMove) {
 
             set(0, 1);
-            jumpHeight = JUMP_HEIGHT;
+            jumpHeight = JUMP_HEIGHT;//initiates jump timer
             jumpTimer.start();
 
         }
 
     }
 
+    //the methods below doesn't have conditions because it's different for every character
     protected void punch() {
 
         set(1, 3);
@@ -611,11 +606,13 @@ public class Player extends JLabel {
 
     }
 
-
+    //method for adding key moves
     protected void addKeyBinder(int KeyCode, String id, ActionListener actionListener) {
 
+        //input maps records which key has a action associated with it
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, false), "Pressed Once " + id);
 
+        //action map conducts the action passed in
         ap.put("Pressed Once " + id, new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -626,10 +623,11 @@ public class Player extends JLabel {
 
     }
 
+    //similar to above method but there's a release action as well
     private void addKeyBinder(int KeyCode, String id, ActionListener actionListenerP, ActionListener actionListenerR) {
 
         im.put(KeyStroke.getKeyStroke(KeyCode, 0, false), "Pressed " + id);
-        im.put(KeyStroke.getKeyStroke(KeyCode, 0, true), "Released " + id);
+        im.put(KeyStroke.getKeyStroke(KeyCode, 0, true), "Released " + id);//onkeyrelase set to true to carry a action when a key is release
 
         ap.put("Pressed " + id, new AbstractAction() {
             @Override
@@ -637,7 +635,6 @@ public class Player extends JLabel {
                 actionListenerP.actionPerformed(e);
             }
         });
-
         ap.put("Released " + id, new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -647,19 +644,19 @@ public class Player extends JLabel {
 
     }
 
+    //removes kakashi's special key
     protected void removeKakaKeyBinder() {
 
-
+        //I and T key
         im.remove(KeyStroke.getKeyStroke("T"));
         im.remove(KeyStroke.getKeyStroke("I"));
 
         ap.remove(KeyStroke.getKeyStroke("T"));
         ap.remove(KeyStroke.getKeyStroke("I"));
 
-
     }
 
-
+    //pass in actionlister for moveTimer
     private void moveAct(int delay, ActionListener actionListener) {
 
         movementTimer = new Timer(delay, e -> {
@@ -669,6 +666,7 @@ public class Player extends JLabel {
         });
     }
 
+    //methods below are the same methods above
     private void jumpAct(int delay, ActionListener actionListener) {
 
         jumpTimer = new Timer(delay, e -> {
@@ -699,7 +697,7 @@ public class Player extends JLabel {
 
     }
 
-
+    //stops the player from walking out of the frame
     private void outOfBounds() {
 
         if (getX() + getWidth() >= Fight_Club.width) {
@@ -714,6 +712,7 @@ public class Player extends JLabel {
 
     }
 
+    //sets all movement boolean to false, thus stop the player from moving
     protected void stopMoving() {
 
         //boolean for recording which button is pressed
@@ -730,13 +729,15 @@ public class Player extends JLabel {
 
     }
 
+    //adds bullet to screen bullet
     protected void bulletCreation() {
 
-        Main.fightWindow.add(allBulltes.get(projectStart), 0);
-        ++projectStart;
+        //the actual bullet is created in the sub class
+        Main.fightWindow.add(allBulltes.get(allBulltes.size()-1), 0);//the created bullet is added on the top of the main screen
 
     }
 
+    //checks if no action is conducted
     private boolean isAllBoolFalse(boolean[][] t) {
 
         for (boolean[] a : t) {
@@ -757,19 +758,8 @@ public class Player extends JLabel {
 
     }
 
+    //checks if the player is attacking, excluding super moves
     public boolean isAttacking() {
-
-        if (allBoolMove[0][3]) {
-
-            return true;
-
-        }
-
-        if (allBoolMove[0][4]) {
-
-            return true;
-
-        }
 
         if (allBoolMove[1][3]) {
 
@@ -799,9 +789,22 @@ public class Player extends JLabel {
 
     }
 
+    //if super move is pressed
     protected boolean isSuper() {
 
-        return allBoolMove[0][3];
+        if (allBoolMove[0][3]) {
+
+            return true;
+
+        }
+
+        else if (allBoolMove[0][4]) {
+
+            return true;
+
+        }
+
+        return false;
 
     }
 

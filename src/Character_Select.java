@@ -841,7 +841,8 @@ public class Character_Select extends All_Windows {
 
     }
 
-    boolean getdownloadSucces() {
+    //returns downLoad success variable
+    boolean getdownloadSuccess() {
 
         return downloadSuccess;
 

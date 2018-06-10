@@ -152,17 +152,13 @@ public class Kakashi extends Player {
                 moveVertical(-KakaSuperDistance);
                 reset(0, 3);
 
-                if (whichPlayerNum == PNUM1) {
+                if (whichPlayerNum == PNUM1 && Main.fightWindow.P2.beingSuped) {
 
-                    Main.fightWindow.P2.reset(1, 1);
-                    Main.fightWindow.P2.beingSuped = false;
-                    Main.fightWindow.P2.setLocation(Main.fightWindow.P2.getX(), getY());
+                    supReset(Main.fightWindow.P2);
 
-                } else {
+                } else if (whichPlayerNum == PNUM2 && Main.fightWindow.P1.beingSuped){
 
-                    Main.fightWindow.P1.reset(1, 1);
-                    Main.fightWindow.P1.beingSuped = false;
-                    Main.fightWindow.P1.setLocation(Main.fightWindow.P1.getX(), getY());
+                    supReset(Main.fightWindow.P1);
 
                 }
 
@@ -372,7 +368,6 @@ public class Kakashi extends Player {
         allPic[3][5] = LKakaTele;
 
 
-        setIcon(RKakaStat);
         whichCharacter[KAKASHI] = true;
     }
 
@@ -386,7 +381,6 @@ public class Kakashi extends Player {
         RKakaChi = allPic[0][3];
 
 
-        setIcon(RKakaStat);
         whichCharacter[KAKASHI] = true;
     }
 
@@ -424,6 +418,13 @@ public class Kakashi extends Player {
 
         //complete magic here
         return new ImageIcon(img.getImage().getScaledInstance(w, h, Image.SCALE_DEFAULT));
+
+    }
+
+    private void supReset(Player a) {
+
+        a.beingSuped = false;
+        a.setLocation(a.getX(), getY());
 
     }
 
