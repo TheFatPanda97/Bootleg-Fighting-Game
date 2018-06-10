@@ -28,6 +28,7 @@ public class Wizard extends Player {
     private final int SHOOT_SPEED = 25;
     private final int SUPER_SPEED = 30;
 
+    //default constructor
     public Wizard(int WPN) {
 
         super();
@@ -40,6 +41,7 @@ public class Wizard extends Player {
         setProjectSpeed(PROJ_SPEED);
 
 
+        //stop timer actionlister, unique for every character
         stopAct(e -> {
 
             //punch
@@ -57,6 +59,7 @@ public class Wizard extends Player {
                 //kick
             } else if (allBoolMove[1][4] && count == KICK_SPEED) {
 
+                //when spinning, the character is moved slightly lower, this method moves it slightly higher
                 setLocation(getLocation().x, getY() - spinDown);
                 stopMoving();
                 reset(1, 4);
@@ -199,9 +202,6 @@ public class Wizard extends Player {
         allPic[3][3] = LNormWizPunch;
         allPic[3][4] = LNormWizSpin;
         allPic[3][5] = LNormWizShot;
-
-
-        setIcon(RNormWizStat);
 
         whichCharacter[WIZARD] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);

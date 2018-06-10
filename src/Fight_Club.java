@@ -186,7 +186,7 @@ public class Fight_Club extends All_Windows {
 
             }
 
-            //this applies to robot, his super move is a projectile, but does more damage than a normal projectil
+            //this applies to robot, his super move is a projectile, but does more damage than a normal projectile
             if (superProjectile(P1, P2)) {
 
                 P2.setBack(CONT_HITBACK);
@@ -201,7 +201,7 @@ public class Fight_Club extends All_Windows {
             }
 
 
-            //punch and kicks
+            //punch and kick, and super move
             if (hitEachOther(P1, P2) && P1.isAttacking() && !P2.beingHit) {
 
                 dmgSet(P1, P2);
@@ -212,6 +212,20 @@ public class Fight_Club extends All_Windows {
             if (hitEachOther(P2, P1) && P2.isAttacking() && !P1.beingHit) {
 
                 dmgSet(P2, P1);
+
+            }
+
+            //super move
+            if (hitEachOther(P1, P2) && P1.isSuper() && !P2.beingHit) {
+
+                dmgSuperSet(P1, P2);
+
+            }
+
+
+            if (hitEachOther(P2, P1) && P2.isSuper() && !P1.beingHit) {
+
+                dmgSuperSet(P2, P1);
 
             }
 
@@ -428,30 +442,28 @@ public class Fight_Club extends All_Windows {
 
 
         b.beingHit = true;
+        a.hpMagic.addMagic();//player a get magic
+        b.hpMagic.addMagic(Bar.MGC_ADD / 2);//player b gets half amount of normal magic
+        b.hpMagic.decHP(Player.PUNCH_DMG, b.isBlocking());//player b losses health
+        b.setBack(NORMAL_HITBACK);//player b moves back a little bit
 
+    }
 
-        //if it's not a super moves
-        if (!a.isSuper()) {
+    //damage and magic gain for super move
+    private void dmgSuperSet(Player a, Player b) {
 
-            a.hpMagic.addMagic();//player a get magic
-            b.hpMagic.addMagic(Bar.MGC_ADD / 2);//player b gets half amount of normal magic
-            b.hpMagic.decHP(Player.PUNCH_DMG, b.isBlocking());//player b losses health
-            b.setBack(NORMAL_HITBACK);//player b moves back a little bit
+        b.beingHit = true;
 
-            //super moves, basically the same as the top except each character does different amount of damage
-        } else {
+        //super moves, basically the same as the top except each character does different amount of damage
+        if (a.whichCharacter[WIZARD]) {
 
-            if (a.whichCharacter[WIZARD]) {
+            b.hpMagic.decHP(Player.SUPER_DMG, b.isBlocking());
+            b.setBack(SUPER_HITBACK);
+            b.hpMagic.decMagic(SUPER_HITBACK / 2);
 
-                b.hpMagic.decHP(Player.SUPER_DMG, b.isBlocking());
-                b.setBack(SUPER_HITBACK);
-                b.hpMagic.decMagic(SUPER_HITBACK / 2);
+        } else if (a.whichCharacter[ROBOT]) {
 
-            } else if (a.whichCharacter[ROBOT]) {
-
-                b.hpMagic.decHP(Player.SUPER_DMG / SUP_DILUTE, b.isBlocking());
-
-            }
+            b.hpMagic.decHP(Player.SUPER_DMG / SUP_DILUTE, b.isBlocking());
 
         }
 
@@ -518,7 +530,7 @@ public class Fight_Club extends All_Windows {
     //removes kakashi's special move keys
     private void KakaRemove(int P1At, int P2At) {
 
-    //because Kakashi has a extra move, he's extra key is removed if no one chose him
+        //because Kakashi has a extra move, he's extra key is removed if no one chose him
         if (P1At != SEL_KAKASHI && P2At != SEL_KAKASHI) {
 
             P1.removeKakaKeyBinder();
