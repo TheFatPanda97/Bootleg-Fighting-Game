@@ -50,7 +50,7 @@ public class Kakashi extends Player {
 
         super();
 
-        allkakaData = Main.rw.readKakaData();
+        allkakaData = Main.rw.readDLCData();
 
         whichPlayerNum = WPN;
 

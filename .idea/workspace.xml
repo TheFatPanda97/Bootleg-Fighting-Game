@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89c730e4-f1e9-4b90-9b16-2b04326604f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shawn_Summative/Projectile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shawn_Summative/Projectile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kakashi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kakashi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Read_Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Read_Write.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,22 +16,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Projectile.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Projectile.java">
+      <file leaf-file-name="Read_Write.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="163" column="77" selection-start-line="163" selection-start-column="77" selection-end-line="163" selection-end-column="77" />
+            <state relative-caret-position="359">
+              <caret line="210" column="31" selection-start-line="210" selection-start-column="31" selection-end-line="210" selection-end-column="31" />
               <folding>
-                <element signature="method#Projectile#0;class#Projectile#0" />
-                <element signature="e#1728#2010#0" />
-                <element signature="method#Projectile#1;class#Projectile#0" />
-                <element signature="method#Projectile#2;class#Projectile#0" />
-                <element signature="e#3205#3715#0" />
-                <element signature="method#moveHorizon#0;class#Projectile#0" />
-                <element signature="method#setExplosionIcon#0;class#Projectile#0" />
-                <element signature="method#explosionAct#0;class#Projectile#0" />
-                <element signature="method#stopAct#0;class#Projectile#0" />
-                <element signature="method#remove#0;class#Projectile#0" />
+                <element signature="method#readFile#0;class#Read_Write#0" />
+                <element signature="method#readDLCData#0;class#Read_Write#0" />
+                <element signature="method#writeMessage#0;class#Read_Write#0" />
+                <element signature="method#writeMessage#1;class#Read_Write#0" />
+                <element signature="method#newHighScore#0;class#Read_Write#0" />
+                <element signature="method#selectionSort#0;class#Read_Write#0" />
+                <element signature="method#switchNums#0;class#Read_Write#0" />
+                <element signature="method#getDLC#0;class#Read_Write#0" />
+                <element signature="method#setDLC#0;class#Read_Write#0" />
+                <element signature="method#getStackInfo#0;class#Read_Write#0" />
               </folding>
             </state>
           </provider>
@@ -104,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/HighScore.java" />
         <option value="$PROJECT_DIR$/src/AllWindows.java" />
-        <option value="$PROJECT_DIR$/src/Read_Write.java" />
         <option value="$PROJECT_DIR$/src/CharacterSelect.java" />
         <option value="$PROJECT_DIR$/src/Robot.java" />
         <option value="$PROJECT_DIR$/src/Wizard.java" />
@@ -119,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/Character_Select.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/Projectile.java" />
+        <option value="$PROJECT_DIR$/src/Read_Write.java" />
       </list>
     </option>
   </component>
@@ -132,6 +131,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="19" />
+    <option name="y" value="-8" />
     <option name="width" value="1366" />
     <option name="height" value="768" />
   </component>
@@ -227,12 +228,12 @@
       <workItem from="1528461748785" duration="7477000" />
       <workItem from="1528493200099" duration="8442000" />
       <workItem from="1528595427870" duration="6922000" />
-      <workItem from="1528638610581" duration="3927000" />
+      <workItem from="1528638610581" duration="5393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72549000" />
+    <option name="totallyTimeSpent" value="74015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="840" extended-state="6" />
@@ -506,13 +507,6 @@
     <entry file="file://$PROJECT_DIR$/src/Resource/Kakashi/DLC/RKakaSuper.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wizard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
@@ -614,6 +608,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="method#High_Score#0;class#High_Score#0" />
+            <element signature="class#1007:1575" />
+            <element signature="method#setScore#0;class#High_Score#0" />
+            <element signature="method#updateScore#0;class#High_Score#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -847,19 +847,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projectile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="163" column="77" selection-start-line="163" selection-start-column="77" selection-end-line="163" selection-end-column="77" />
+        <state relative-caret-position="478">
+          <caret line="197" column="40" selection-start-line="197" selection-start-column="40" selection-end-line="197" selection-end-column="40" />
           <folding>
             <element signature="method#Projectile#0;class#Projectile#0" />
             <element signature="e#1728#2010#0" />
             <element signature="method#Projectile#1;class#Projectile#0" />
+            <element signature="e#2423#2705#0" />
             <element signature="method#Projectile#2;class#Projectile#0" />
             <element signature="e#3205#3715#0" />
             <element signature="method#moveHorizon#0;class#Projectile#0" />
             <element signature="method#setExplosionIcon#0;class#Projectile#0" />
+            <element signature="method#setShots#0;class#Projectile#0" />
             <element signature="method#explosionAct#0;class#Projectile#0" />
+            <element signature="e#4395#4460#0" />
             <element signature="method#stopAct#0;class#Projectile#0" />
+            <element signature="e#4578#4643#0" />
             <element signature="method#remove#0;class#Projectile#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Read_Write.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="210" column="31" selection-start-line="210" selection-start-column="31" selection-end-line="210" selection-end-column="31" />
+          <folding>
+            <element signature="method#readFile#0;class#Read_Write#0" />
+            <element signature="method#readDLCData#0;class#Read_Write#0" />
+            <element signature="method#writeMessage#0;class#Read_Write#0" />
+            <element signature="method#writeMessage#1;class#Read_Write#0" />
+            <element signature="method#newHighScore#0;class#Read_Write#0" />
+            <element signature="method#selectionSort#0;class#Read_Write#0" />
+            <element signature="method#switchNums#0;class#Read_Write#0" />
+            <element signature="method#getDLC#0;class#Read_Write#0" />
+            <element signature="method#setDLC#0;class#Read_Write#0" />
+            <element signature="method#getStackInfo#0;class#Read_Write#0" />
           </folding>
         </state>
       </provider>

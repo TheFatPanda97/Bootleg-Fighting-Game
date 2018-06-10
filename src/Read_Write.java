@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-
+//file IO class
 public class Read_Write {
 
     private String highFileName = "High Score.txt";
@@ -12,21 +12,24 @@ public class Read_Write {
     private int currentHighScore = 0;
     private Stack stackInfo = new Stack();
 
+    //reads high score file
     public void readFile() {
 
         try {
 
-            stackInfo.clear();
-            Scanner readHigh = new Scanner(new File(System.getProperty("user.dir") + path + highFileName));
-            Scanner readDLC = new Scanner(new File(System.getProperty("user.dir") + path + DLCFileName));
+            stackInfo.clear();//clear current stack that stores the high score
+            Scanner readHigh = new Scanner(new File(System.getProperty("user.dir") + path + highFileName));//high score file
+            Scanner readDLC = new Scanner(new File(System.getProperty("user.dir") + path + DLCFileName));//DLC password file
             System.out.print("Files found...");
 
+            //if the DLC file is empty
             if (!readDLC.hasNext()) {
 
                 writeMessage("No DLC Yet");
 
             } else {
 
+                //if DLC has correct code
                 if (readDLC.nextLine().equals("SHAWN SO SMART O GOD")) {
 
                     DLC = true;
@@ -35,8 +38,10 @@ public class Read_Write {
 
             }
 
+            //while there's a nextline in the high score window
             while (readHigh.hasNext()) {
 
+                //the name and score are stored in a stack
                 String name = readHigh.nextLine();
                 int score = Integer.parseInt(readHigh.nextLine());
 
@@ -49,6 +54,7 @@ public class Read_Write {
 
             readHigh.close();
 
+            //if the stack isn't empty, ten record the current high score from the stack
             if (!stackInfo.isEmpty()) {
 
                 currentHighScore = stackInfo.top.score;
@@ -67,20 +73,25 @@ public class Read_Write {
 
     }
 
-    public ArrayList<Integer> readKakaData() {
+    //reads and returns kakasshi's stop timer data in a arraylist
+    public ArrayList<Integer> readDLCData() {
 
         ArrayList<Integer> tempArray = new ArrayList<>();
+
         try {
 
-            Scanner readData = new Scanner(new File(System.getProperty("user.dir") + path + KakaFileName));
+            Scanner readData = new Scanner(new File(System.getProperty("user.dir") + path + KakaFileName));//the DLC data
             System.out.print("Files found...");
+
 
             while (readData.hasNext()) {
 
+                //the data is added to th arraylist
                 tempArray.add(Integer.parseInt(readData.nextLine()));
 
             }
 
+            //the data is not in order so sort them
             selectionSort(tempArray);
 
 
@@ -98,15 +109,15 @@ public class Read_Write {
 
     }
 
+    //writes a line in the DLC password txt
     public void writeMessage(String s) {
 
         try {
 
-            PrintWriter outputStream = new PrintWriter(System.getProperty("user.dir") + path + DLCFileName);
+            PrintWriter outputStream = new PrintWriter(System.getProperty("user.dir") + path + DLCFileName);//DLC password doc
             System.out.print("File found during writing...");
 
-
-            outputStream.println(s);
+            outputStream.println(s);//overrides first line with string 's'
             outputStream.close();
 
             System.out.println("File written successfully!!");
@@ -120,14 +131,16 @@ public class Read_Write {
 
     }
 
+    //writes high score to high score txt
     private void writeMessage(Node n) {
 
         try {
 
+            //append allows for adding new lines, instead of overwriting
             PrintWriter outputStream = new PrintWriter(new FileWriter(System.getProperty("user.dir") + path + highFileName, true));
             System.out.print("File found during writing...");
 
-
+            //prints the name then there high score from node
             outputStream.println(n.name);
             outputStream.println(n.score);
             outputStream.close();
@@ -148,8 +161,10 @@ public class Read_Write {
 
     }
 
+    //returns if new high score is created
     public boolean newHighScore(String name, int s) {
 
+        //if the stack isn't empty, then the op stack is the high score
         if (!stackInfo.isEmpty()) {
 
             currentHighScore = stackInfo.top.score;
@@ -160,11 +175,12 @@ public class Read_Write {
 
         }
 
+        //if the new score is larger than the high score
         if (s > currentHighScore) {
 
-            stackInfo.push(name, s);
-            currentHighScore = s;
-            writeMessage(stackInfo.top);
+            stackInfo.push(name, s);//adds it to stack
+            currentHighScore = s;//records new highs score
+            writeMessage(stackInfo.top);//write the new high score to the high score txt
             return true;
 
         }
@@ -192,6 +208,7 @@ public class Read_Write {
 
     }
 
+    //help method for selection sort
     private void switchNums(int i, int index, ArrayList<Integer> a) {
 
         int temp = a.get(i);

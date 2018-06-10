@@ -195,7 +195,7 @@ public class Projectile extends JLabel {
 
     }
 
-    //moves the bullet outside the frame 
+    //moves the bullet outside the frame
     public void remove() {
 
         setLocation(REMOVE_TO);
