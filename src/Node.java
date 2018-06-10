@@ -1,7 +1,8 @@
+//used to stores individual information about a high score
 public class Node {
 
-    public String name;
-    public int score;
+    public String name;//high score winner name
+    public int score;//high score
     public Node next;
 
 

@@ -1,3 +1,4 @@
+//used to store high scores
 public class Stack {
 
     private int size = 0;
@@ -17,6 +18,7 @@ public class Stack {
 
     }
 
+    //pops every node out of the stack
     public void clear() {
 
         for (int i = size; i > 0; i--) {
