@@ -41,6 +41,8 @@ public class All_Windows extends JFrame {
         setUndecorated(true);
         setLocationRelativeTo(null);
 
+        background.setBounds(INTX, INTY, width, height);
+
     }
 
     //resize images to correct size

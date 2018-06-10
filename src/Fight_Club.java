@@ -51,7 +51,6 @@ public class Fight_Club extends All_Windows {
     private ImageIcon countDown = new ImageIcon("src/Resource/Hexagon/Count Down.png");
     private ImageIcon over = new ImageIcon("src/Resource/Decoration/GameOver.gif");
 
-    public JLabel background = new JLabel();
     private JLabel lblCountBackground = new JLabel();
     private JLabel lblRealCount = new JLabel(count + "", SwingConstants.CENTER);
     private JLabel lblKO = new JLabel();
@@ -520,7 +519,7 @@ public class Fight_Club extends All_Windows {
     private void KakaRemove(int P1At, int P2At) {
 
     //because Kakashi has a extra move, he's extra key is removed if no one chose him
-        if (P1At != SEL_WIZARD && P2At != SEL_WIZARD) {
+        if (P1At != SEL_KAKASHI && P2At != SEL_KAKASHI) {
 
             P1.removeKakaKeyBinder();
             P2.removeKakaKeyBinder();

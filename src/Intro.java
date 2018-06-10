@@ -21,7 +21,6 @@ public class Intro extends All_Windows {
 
         Main.rw.readFile();
 
-        background.setBounds(INTX, INTY, width, height);
         background.setIcon(imgRescaler(IntroScreen, width, height));
 
         lblTitle.setSize(imgTitle.getIconWidth(), imgTitle.getIconHeight());
