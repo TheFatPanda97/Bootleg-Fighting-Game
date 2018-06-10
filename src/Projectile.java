@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+//bullet that's wizard and robot shoot, also the super move of robot
 public class Projectile extends JLabel {
 
     private ImageIcon RShot = new ImageIcon("src/Resource/Shot/RShot.gif");
@@ -11,9 +12,9 @@ public class Projectile extends JLabel {
     private  ImageIcon RRobSuper = new ImageIcon("src/Resource/Shot/RRobSuper.gif");
     private  ImageIcon LRobSuper = new ImageIcon("src/Resource/Shot/LRobSuper.gif");
 
-    private ImageIcon[][] allShot = new ImageIcon[2][4];
+    private ImageIcon[][] allShot = new ImageIcon[2][4];//stores all image assests
 
-    public int face = -1;
+    public int face = -1;//which way the bullet is facing
     private int count;
 
     public boolean explode = false;
@@ -39,23 +40,23 @@ public class Projectile extends JLabel {
     private final int RFACE = 0;
     private final int LFACE = 2;
 
-    private final Point REMOVE_TO = new Point(2000, 2000);
+    private final Point REMOVE_TO = new Point(5000, 5000);//point which the bullet is sent to once they are removed
 
-
+    //default constructor
     public Projectile(JLabel icon, int facing) {
 
         setShots();
         setIcon(allShot[NORM_SHOT][facing]);
-        setBounds(icon.getX() + INTX_OFFSET, Math.round(icon.getY() + icon.getHeight() / 2), allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());
-        setOpaque(false);
+        setBounds(icon.getX() + INTX_OFFSET, Math.round(icon.getY() + icon.getHeight() / 2), allShot[NORM_SHOT][facing].getIconWidth(), allShot[NORM_SHOT][facing].getIconHeight());//sets the bullet in the middle of the player
 
+        //records when the bullet has exploded
         explosionAct(EXPLOSION_TIMER, e -> {
 
             if (count == COUNT_LIMIT) {
 
                 count = 0;
-                RExplosion.getImage().flush();
-                LExplosion.getImage().flush();
+                RExplosion.getImage().flush();//resets the right explosion gif
+                LExplosion.getImage().flush();//resets the left explosion gif
                 remove();
                 explosionTimer.stop();
 
@@ -67,6 +68,7 @@ public class Projectile extends JLabel {
 
     }
 
+    //identical to the top except the bullet is placed with additionalHeight
     public Projectile(JLabel icon, int facing, int additionalHeight) {
 
         setShots();
@@ -92,20 +94,22 @@ public class Projectile extends JLabel {
 
     }
 
+    //robot's super move
     public Projectile(JLabel icon, int facing, int whichPlayerNum, boolean sups) {
 
-        supsBullet = sups;
+        supsBullet = sups;//records if the current projectile is a super move
         setShots();
         setIcon(allShot[SUPS_SHOT][facing + SUPS_SHOT]);
         setBounds(icon.getX() + INTX_OFFSET, icon.getY() + icon.getHeight() - allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconWidth(), allShot[SUPS_SHOT][facing + SUPS_SHOT].getIconHeight());
         setOpaque(false);
 
+        //stops the super move after a certain amount of time
         stopAct(STOP_TIMER, e -> {
 
             if (count == SUPER_COUNT_LIMIT) {
 
                 count = 0;
-                allShot[SUPS_SHOT][facing + SUPS_SHOT].getImage().flush();
+                allShot[SUPS_SHOT][facing + SUPS_SHOT].getImage().flush();//rest the super move bullet
                 remove();
 
                 if (whichPlayerNum == PNUM1) {
@@ -131,12 +135,14 @@ public class Projectile extends JLabel {
 
     }
 
+    //moves the bullet horizontally
     public void moveHorizon(int m) {
 
         setLocation(getLocation().x + m, getY());
 
     }
 
+    //set the image to explosion icon
     public void setExplosionIcon() {
 
         if (face == RFACE) {
@@ -152,8 +158,10 @@ public class Projectile extends JLabel {
 
     }
 
+    //set image in correct index in array
     private void setShots() {
 
+        //how convenient that the facing corresponds with the correct images
         allShot[0][0] = RShot;
         allShot[0][2] = LShot;
 
@@ -163,9 +171,9 @@ public class Projectile extends JLabel {
         allShot[1][1] = RRobSuper;
         allShot[1][3] = LRobSuper;
 
-
     }
 
+    //explosion timer actionlistener
     private void explosionAct(int delay, ActionListener actionListener) {
 
         explosionTimer = new Timer(delay, e -> {
@@ -176,6 +184,7 @@ public class Projectile extends JLabel {
 
     }
 
+    //stop timer actionlistener
     private void stopAct(int delay, ActionListener actionListener) {
 
         stopTimer = new Timer(delay, e -> {
@@ -186,6 +195,7 @@ public class Projectile extends JLabel {
 
     }
 
+    //moves the bullet outside the frame 
     public void remove() {
 
         setLocation(REMOVE_TO);
