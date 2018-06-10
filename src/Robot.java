@@ -1,5 +1,6 @@
 import javax.swing.*;
 
+//robot character
 public class Robot extends Player {
 
     private ImageIcon RNormRobStat = new ImageIcon("src/Resource/Robot/R_Norm_Rob_Stat_v2.gif");
@@ -28,7 +29,7 @@ public class Robot extends Player {
     private final int SHOOT_SPEED = 25;
     private final int SUPER_SPEED = 30;
 
-
+    //default constructor
     public Robot(int WPN) {
 
         super();
@@ -40,6 +41,7 @@ public class Robot extends Player {
         setMoveSpeed(MOVE_SPEED);
         setProjectSpeed(PROJ_SPEED);
 
+        //unique to each character, every character's move stop at a different time
         stopAct(e -> {
 
             //punch
@@ -139,6 +141,7 @@ public class Robot extends Player {
 
     }
 
+    //similar to shoot, but the bullet is much stronger
     public void superPower() {
 
         if (!isAttacking() && hpMagic.hasMagic(SUPER_MGI) && !isBlocking() && !GameOver && !dontMove) {
@@ -158,6 +161,7 @@ public class Robot extends Player {
 
     }
 
+    //creates a very powerful bullet as super move
     private void bulletCreation(boolean sups) {
 
         allBulltes.add(new Projectile(this, facing, whichPlayerNum, sups));
@@ -196,6 +200,7 @@ public class Robot extends Player {
 
     }
 
+    //sets all robot pics
     private void setRobPics(int whichPlayerNum) {
 
         allPic[0][0] = RNormRobStat;
@@ -220,7 +225,6 @@ public class Robot extends Player {
 
         whichCharacter[ROBOT] = true;
         hpMagic = new Bar(whichPlayerNum, whichCharacter);
-
 
     }
 
