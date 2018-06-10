@@ -4,23 +4,26 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+//all character extend to this super class
 public class Player extends JLabel {
 
-
     protected static boolean GameOver = false;
-    protected boolean atTop = false;
-    protected boolean emergencyStop = false;
+    protected boolean atTop = false;//whether a player is flying
+    protected boolean emergencyStop = false;//this for if a wizard is doing the super move in air
     protected boolean beingSuped = false;
     protected boolean[][] allBoolMove = new boolean[2][6];
     protected boolean[] whichCharacter = new boolean[3];
     public boolean chidori;
     public boolean beingHit;
 
+    //stores all button clicks
     InputMap im = Main.fightWindow.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
     ActionMap ap = Main.fightWindow.getRootPane().getActionMap();
 
+    //all player image assets
     protected ImageIcon[][] allPic = new ImageIcon[4][6];
 
+    //all bullets of a player
     protected ArrayList<Projectile> allBulltes = new ArrayList<>();
 
     Timer movementTimer;
@@ -28,7 +31,7 @@ public class Player extends JLabel {
     Timer stopTimer;
     Timer bulletTimer;
 
-    protected final int COMMON_FLOOR = 80;
+    protected final int COMMON_FLOOR = 80;//the floor height
 
     public static final int PROJECTTILE_DMG = 14;
     public static final int PUNCH_DMG = 12;
@@ -85,24 +88,29 @@ public class Player extends JLabel {
     protected final int ROBOT = 1;
     protected final int KAKASHI = 2;
 
-    protected Bar hpMagic;
-    protected boolean dontMove;
+    protected Bar hpMagic;//health and magic
+    protected boolean dontMove;//player not allowed to move
 
-
+    //default constructor
     public Player() {
 
+        //sets the character selected to null
         for (int i = 0; i < whichCharacter.length; i++) {
 
             whichCharacter[i] = false;
 
         }
 
+        //stops the player from moving
         stopMoving();
 
+        //movement actionlister for timer
         moveAct(MOVE_TIMER, e -> {
 
+            //stops the player from moving outside the frame
             outOfBounds();
-            //if pressed D
+
+            //if pressed D or right
             if (allBoolMove[1][2] && !dontMove) {
 
                 //move right
@@ -111,31 +119,34 @@ public class Player extends JLabel {
 
             }
 
-            //if press A
+            //if press A or left
             if (allBoolMove[1][0] && !dontMove) {
 
                 //move left
                 moveHorizontal(-moveSpeed);
-                //   set(1,0,allPic);
 
             }
 
 
         });
 
+        //jump actionlistener
         jumpAct(JUMP_TIMER, e -> {
 
+            //player height stops increasing
             if (jumpHeight == 0) {
 
                 atTop = true;
 
             }
 
+            //if not at top, the player's Y location decreases exponentially
             if (!atTop) {
 
                 setLocation(getX(), getLocation().y - jumpHeight);
                 jumpHeight -= jumpSpeed;
 
+            //if not at top, the player's Y location increases exponentially
             } else {
 
                 setLocation(getX(), getLocation().y + jumpHeight);
@@ -143,16 +154,17 @@ public class Player extends JLabel {
 
             }
 
+            //if the wizard is doing super move in mid air, stop jump timer
             if (emergencyStop) {
 
                 atTop = false;
-                jumpHeight = JUMP_HEIGHT;
+                jumpHeight = JUMP_HEIGHT;// reset the jump to default
                 emergencyStop = false;
                 jumpTimer.stop();
 
-
             }
 
+            //if the player lands on the floor, then stop this timer
             if (getLocation().y >= Fight_Club.height - getHeight() - COMMON_FLOOR) {
 
                 atTop = false;
@@ -165,28 +177,32 @@ public class Player extends JLabel {
 
         });
 
+        //bullet actionlister
         bulletAct(BULLET_TIMER, e -> {
 
+            //loops though the array containing all bullet on frame of the player
             for (int i = 0; i < allBulltes.size(); i++) {
 
+                //determines the facing of the bullet when it's first fired, it's same as where the player is facing
                 if (allBulltes.get(i).face == DBULLET_FACE) {
 
                     allBulltes.get(i).face = facing;
 
                 }
 
-
+                //if the bullet is facing right then move it right
                 if (allBulltes.get(i).face == RFACE) {
 
                     allBulltes.get(i).moveHorizon(projectSpeed);
 
+                //face left then move left
                 } else if (allBulltes.get(i).face == LFACE) {
 
                     allBulltes.get(i).moveHorizon(-projectSpeed);
 
                 }
 
-
+                //if the bullet moves out out the frame, then remove it
                 if (allBulltes.get(i).getX() >= Fight_Club.width || allBulltes.get(i).getX() <= INTX) {
 
                     allBulltes.get(i).remove();
@@ -201,6 +217,7 @@ public class Player extends JLabel {
 
     }
 
+    //if the player is facing left
     protected boolean facingLeft() {
 
         if (facing == LFACE) {
@@ -213,6 +230,7 @@ public class Player extends JLabel {
 
     }
 
+    //if the player is facing right
     protected boolean facingRight() {
 
         if (facing == RFACE) {
@@ -225,18 +243,20 @@ public class Player extends JLabel {
 
     }
 
-    protected void setWhichPlayer(int whichPlayerNum) {
+    //set player 1 or 2 control
+    protected void setWhichPlayerKeys(int whichPlayerNum) {
 
-
+        //player 1 at the beginning face right
         if (whichPlayerNum == PNUM1) {
 
             facing = RFACE;
-            setKeyBindingP1();
+            setKeyBindingP1();//set player 1 control
 
+        //player 2 face left
         } else if (whichPlayerNum == PNUM2) {
 
             facing = LFACE;
-            setKeyBindingP2();
+            setKeyBindingP2();//sets player 2 controls
 
         }
 
@@ -257,6 +277,7 @@ public class Player extends JLabel {
 
     }
 
+    //sets which button is pressed and the corresponding image
     protected void set(int w, int h) {
 
         allBoolMove[w][h] = true;
@@ -266,6 +287,7 @@ public class Player extends JLabel {
             setSize(allPic[w][h].getIconWidth(), allPic[w][h].getIconHeight());
             setIcon(allPic[w][h]);
 
+        //face left has another set of image with same row, but different column
         } else if (facing == LFACE) {
 
             setSize(allPic[w + facing][h].getIconWidth(), allPic[w + facing][h].getIconHeight());
@@ -276,24 +298,29 @@ public class Player extends JLabel {
 
     }
 
+    //resets which button is pressed
     protected void reset(int w, int h) {
 
-        allBoolMove[w][h] = false;
-        count = 0;
+        allBoolMove[w][h] = false;//that button is set to false
+        count = 0;//this integer records when a button
 
+        //if the current instance is player 1, then player 2 can be hit again
         if (whichPlayerNum == PNUM1) {
 
             Main.fightWindow.P2.beingHit = false;
 
+        //vice versa
         } else if (whichPlayerNum == PNUM2) {
 
             Main.fightWindow.P1.beingHit = false;
 
         }
 
+        //resets the gifs
         allPic[w + facing][h].getImage().flush();
         allPic[w][h].getImage().flush();
 
+        //if the player is not doing other attack, then set it to
         if (isAllBoolFalse(allBoolMove)) {
 
             setIcon(allPic[facing][0]);

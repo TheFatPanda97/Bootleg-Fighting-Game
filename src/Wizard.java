@@ -35,7 +35,7 @@ public class Wizard extends Player {
 
         setWizPics(whichPlayerNum);
         setInitLoc(whichPlayerNum, LNormWizStat, RNormWizStat);
-        setWhichPlayer(whichPlayerNum);
+        setWhichPlayerKeys(whichPlayerNum);
         setMoveSpeed(MOVE_SPEED);
         setProjectSpeed(PROJ_SPEED);
 

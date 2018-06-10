@@ -35,7 +35,7 @@ public class Robot extends Player {
         whichPlayerNum = WPN;
 
         setRobPics(whichPlayerNum);
-        setWhichPlayer(whichPlayerNum);
+        setWhichPlayerKeys(whichPlayerNum);
         setInitLoc(whichPlayerNum,LNormRobStat,RNormRobStat);
         setMoveSpeed(MOVE_SPEED);
         setProjectSpeed(PROJ_SPEED);

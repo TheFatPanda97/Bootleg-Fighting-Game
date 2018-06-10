@@ -57,7 +57,7 @@ public class Kakashi extends Player {
         setKakaIntState();
         setKakaPics();
         setInitLoc(whichPlayerNum,LKakaStat,RKakaStat);
-        setWhichPlayer(whichPlayerNum);
+        setWhichPlayerKeys(whichPlayerNum);
         setMoveSpeed(allkakaData.get(IMOVE_SPEED));
         setProjectSpeed(allkakaData.get(IPROJ_SPEED));
 
@@ -77,7 +77,7 @@ public class Kakashi extends Player {
         setKakaIntState();
         setKakaPics(p);
         setInitLoc(whichPlayerNum,LKakaStat,RKakaStat);
-        setWhichPlayer(whichPlayerNum);
+        setWhichPlayerKeys(whichPlayerNum);
         setMoveSpeed(d.get(IMOVE_SPEED));
         setProjectSpeed(d.get(IPROJ_SPEED));
 
